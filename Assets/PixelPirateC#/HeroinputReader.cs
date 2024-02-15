@@ -34,6 +34,7 @@ namespace PixelPirate
             if (context.canceled)
             {
                 _hero.Attack();
+                
             }
         }
     }

@@ -32,6 +32,7 @@ namespace PixelPirate
         [SerializeField] private SpawnComponent _footStepRunParticles;
         [SerializeField] private SpawnComponent _footStepJumpParticles;
         [SerializeField] private SpawnComponent _footStepFallParticles;
+        [SerializeField] private SpawnComponent _attackParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
@@ -221,6 +222,10 @@ namespace PixelPirate
         public void SpawFootFallDust()
         {
             _footStepFallParticles.Spawn();
+        }
+        public void SpawAttackDust()
+        {
+            _attackParticles.Spawn();
         }
 
         public void Attack()

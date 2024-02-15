@@ -22,7 +22,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 30ce5e81b63bd2848bb14e2573f57958, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 30ce5e81b63bd2848bb14e2573f57958, type: 3}
+      value: {fileID: 21300000, guid: 979b5fb253a25084ca0f21a76d68f49e, type: 3}
     - time: 0.2
       value: {fileID: 21300000, guid: ba2afc761e3467a4fadb361c534d3a41, type: 3}
     attribute: m_Sprite
@@ -45,7 +45,7 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: 30ce5e81b63bd2848bb14e2573f57958, type: 3}
-    - {fileID: 21300000, guid: 30ce5e81b63bd2848bb14e2573f57958, type: 3}
+    - {fileID: 21300000, guid: 979b5fb253a25084ca0f21a76d68f49e, type: 3}
     - {fileID: 21300000, guid: ba2afc761e3467a4fadb361c534d3a41, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -74,6 +74,13 @@ AnimationClip:
   m_Events:
   - time: 0.1
     functionName: OnAttackKey
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.1
+    functionName: SpawAttackDust
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

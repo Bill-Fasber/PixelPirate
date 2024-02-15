@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destTransform: {fileID: 0}
+  _alphaTime: 1
+  _moveTime: 1
 --- !u!1 &4506464317844494692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4828,7 +4830,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2117583017
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0

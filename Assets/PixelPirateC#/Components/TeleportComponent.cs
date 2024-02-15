@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace PixelPirate.Components
 {
@@ -13,16 +14,35 @@ namespace PixelPirate.Components
 
         public void Teleport(GameObject target)
         {
-            //target.transform.position = _destTransform.position;
             StartCoroutine(AnimateTeleport(target));
         }
 
         private IEnumerator AnimateTeleport(GameObject target)
         {
             var sprite = target.GetComponent<SpriteRenderer>();
+            var input = target.GetComponent<PlayerInput>();
+            SetLockInput(input, true);
+            
+            yield return AlphaAnimation(sprite, 0);
+            target.SetActive(false);
 
-            yield return SetAlpha(sprite, 0);
+            yield return MoveAnimation(target);
+            
+            target.SetActive(true);
+            yield return AlphaAnimation(sprite, 1);
+            SetLockInput(input, false);
+        }
 
+        private void SetLockInput(PlayerInput input,bool isLocked)
+        {
+            if (input != null)
+            {
+                input.enabled = !isLocked;
+            }
+        }
+
+        private IEnumerator MoveAnimation(GameObject target)
+        {
             var moveTime = 0f;
             while (moveTime < _moveTime)
             {
@@ -32,11 +52,9 @@ namespace PixelPirate.Components
 
                 yield return null;
             }
-            
-            yield return SetAlpha(sprite, 1);
         }
 
-        private IEnumerator SetAlpha(SpriteRenderer sprite, float destAlpha)
+        private IEnumerator AlphaAnimation(SpriteRenderer sprite, float destAlpha)
         {
             var time = 0f;
             var spriteAlpha = sprite.color.a;

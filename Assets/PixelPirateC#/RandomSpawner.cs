@@ -11,47 +11,32 @@ namespace PixelCrew
         private float _sectorAngle = 60;
 
         [SerializeField] private float _sectorRotation;
-
-        [Header("Spawn params:")] [Space] [SerializeField]
-        private GameObject _particle;
-
+        
         [SerializeField] private float _waitTime = 0.1f;
         [SerializeField] private float _speed = 6;
-        [SerializeField] private float _itemPerBurst = 2;
-        [SerializeField] private float _numParticles = 200;
-
-        private void Start()
-        {
-            Restart();
-        }
-
+    
         private Coroutine _routine;
 
-        [ContextMenu("Restart")]
-        public void Restart()
+        public void StartDrop(GameObject[] items)
         {
             TryStopRoutine();
 
-            _routine = StartCoroutine(StartSpawn());
+            _routine = StartCoroutine(StartSpawn(items));
         }
 
-        private IEnumerator StartSpawn()
+        private IEnumerator StartSpawn(GameObject[] particles)
         {
-            for (var i = 0; i < _numParticles; i++)
+            
+            for (var i = 0; i < particles.Length; i++)
             {
-                for (var j = 0; j < _itemPerBurst; j++)
-                {
-                    Spawn();
-                }
-
+                Spawn(particles[i]); 
                 yield return new WaitForSeconds(_waitTime);
             }
         }
 
-        [ContextMenu("Spawn one")]
-        private void Spawn()
+        private void Spawn(GameObject particle)
         {
-            var instance = Instantiate(_particle, transform.position, Quaternion.identity);
+            var instance = Instantiate(particle, transform.position, Quaternion.identity);
             var rigidBody = instance.GetComponent<Rigidbody2D>();
 
             var randomAngle = Random.Range(0, _sectorAngle);

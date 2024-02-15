@@ -6,11 +6,14 @@ namespace PixelPirate.Components
     {
         [SerializeField] private Transform _target;
         [SerializeField] private GameObject _prefab;
+        
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
-            instantiate.transform.localScale = _target.lossyScale;
+            var instantne = Instantiate(_prefab, _target.position, Quaternion.identity);
+            var scale = _target.lossyScale;
+            instantne.transform.localScale = scale;
+            instantne.SetActive(true);
         }
     }
 }

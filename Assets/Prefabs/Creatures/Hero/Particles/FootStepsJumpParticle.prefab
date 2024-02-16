@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2862080218699712188}
   - component: {fileID: 5089608420450927517}
   m_Layer: 0
-  m_Name: FootStepsJump
+  m_Name: FootStepsJumpParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6652f172f5e7f314a8dbaf6a58b5b2f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

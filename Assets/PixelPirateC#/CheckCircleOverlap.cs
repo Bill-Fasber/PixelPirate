@@ -9,7 +9,7 @@ namespace PixelPirate
     {
         [SerializeField] private float _radius = 1f;
         
-        private Collider2D[] _interactionResult = new Collider2D[1];
+        private Collider2D[] _interactionResult = new Collider2D[3];
         
         public GameObject[] GetObjectsInRange()
         {

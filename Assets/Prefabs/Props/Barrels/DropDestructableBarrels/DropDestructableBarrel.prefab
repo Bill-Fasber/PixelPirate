@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 1429398347278641327}
   - component: {fileID: 1429398347278641324}
   - component: {fileID: 1429398347278641325}
-  - component: {fileID: 1429398347278641314}
   - component: {fileID: 2109316940435312831}
   m_Layer: 8
   m_Name: DropDestructableBarrel
@@ -226,6 +225,17 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2109316940435312831}
+        m_MethodName: SpawnAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1429398347278641324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +304,17 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 2109316940435312831}
+          m_MethodName: SpawnAll
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1429398347278641324}
           m_MethodName: DestroyObject
           m_Mode: 1
@@ -305,20 +326,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1429398347278641314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429398347278641315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b652a3dda510649a066aa5b1cdb259, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 6347160921900481232}
-  _prefab: {fileID: 8059111265153226974, guid: e37b49b760fdc654ba55a7ac7091e26a, type: 3}
 --- !u!114 &2109316940435312831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,10 +339,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawners:
-  - Id: DestructableShards
-    Component: {fileID: 1429398347278641314}
   - Id: Drop
     Component: {fileID: 714794587}
+  - Id: DestructableShards
+    Component: {fileID: 3418523904090135596}
 --- !u!1 &5846474612644110722
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6347160921900481232}
+  - component: {fileID: 3418523904090135596}
   m_Layer: 8
   m_Name: DestructableShardsPosition
   m_TagString: Untagged
@@ -366,3 +374,17 @@ Transform:
   m_Father: {fileID: 1429398346492927842}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3418523904090135596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846474612644110722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b652a3dda510649a066aa5b1cdb259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6347160921900481232}
+  _prefab: {fileID: 8059111265153226974, guid: e37b49b760fdc654ba55a7ac7091e26a, type: 3}

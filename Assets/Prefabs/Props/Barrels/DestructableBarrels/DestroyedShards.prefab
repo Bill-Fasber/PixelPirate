@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6712581921597867314}
   - component: {fileID: 6704008040069561752}
   - component: {fileID: 7349099119976956526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2055918482976021897}
   - component: {fileID: 2900879112162037633}
   - component: {fileID: 335313390959926920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,8 +287,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6526389371406189152}
-  m_Layer: 8
-  m_Name: DestructableShards
+  m_Layer: 10
+  m_Name: DestroyedShards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 5365540760525750345}
   - component: {fileID: 7111450142870685745}
   - component: {fileID: 7561528076670657253}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 1721532565777759006}
   - component: {fileID: 3041524847999568114}
   - component: {fileID: 4305208392094403482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

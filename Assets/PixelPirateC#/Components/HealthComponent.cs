@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace PixelPirate.Components
@@ -9,10 +10,12 @@ namespace PixelPirate.Components
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
+        [SerializeField] private HealthChangeEvent _onChange;
 
         public void ModifyHealth(int healthDelta)
         {
             _health += healthDelta;
+            _onChange?.Invoke(_health);
 
             if (healthDelta < 0)
             {
@@ -29,6 +32,15 @@ namespace PixelPirate.Components
                 _onDie?.Invoke();
             }
         }
+        
+        public void SetHealth(int health)
+        {
+            _health = health;
+        }
+        
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int>
+        { }
     }
 
 }

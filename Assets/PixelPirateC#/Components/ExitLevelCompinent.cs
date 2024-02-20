@@ -1,3 +1,4 @@
+using PixelPirateC_.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ namespace PixelPirate.Components
         
         public void Exit()
         {
+            var session = FindObjectOfType<GameSession>();
+            session.Save();
             SceneManager.LoadScene(_sceneName);
         }
     }

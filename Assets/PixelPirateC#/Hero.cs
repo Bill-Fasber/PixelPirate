@@ -1,5 +1,6 @@
 ﻿using PixelPirate.Components;
 using PixelPirate.Utils;
+using PixelPirateC_.Model;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -8,9 +9,7 @@ namespace PixelPirate
 {
     public class Hero : MonoBehaviour
     {
-        private bool _isArmed;
         private bool _flag = false;
-        private float _coins;
         private float _currentCoolDownTime;
         [SerializeField] private float _cooldownTime;
         [SerializeField] private float _speed;
@@ -47,14 +46,14 @@ namespace PixelPirate
         private static readonly int Hit = Animator.StringToHash("hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
 
-
+        private GameSession _session;
 
         private void Awake() 
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
         }
-
+        
         public bool IsFlag()
         {
             return _flag;
@@ -65,9 +64,22 @@ namespace PixelPirate
             _direaction = direction;
         }
 
+        
+
         private void Start()
         {
+            _session = FindObjectOfType<GameSession>();
+            var health = GetComponent<HealthComponent>();
+            
+            health.SetHealth(_session.Data.Hp);
+            UpdateHeroWepon();
+            
             _currentCoolDownTime = _cooldownTime;
+        }
+        
+        public void OnHealtChanged(int currentHealth)
+        {
+            _session.Data.Hp = currentHealth;
         }
 
         private void Update()
@@ -175,8 +187,8 @@ namespace PixelPirate
 
         public void AddCoins(int coins)
         {
-            _coins += coins;
-            Debug.Log($"{coins} coins added. total coins: {_coins}");
+            _session.Data.Coins += coins;
+            Debug.Log($"{coins} coins added. total coins: {_session.Data.Coins}");
         }
 
         public void TakeDamage()
@@ -230,7 +242,7 @@ namespace PixelPirate
 
         public void Attack()
         {
-            if (!_isArmed) return;
+            if (!_session.Data.IsArmed) return;
             
             _animator.SetTrigger(AttackKey);
         }
@@ -249,8 +261,13 @@ namespace PixelPirate
         
         public void ArmHero()
         {
-            _isArmed = true;
-            _animator.runtimeAnimatorController = _armed;
+            _session.Data.IsArmed = true;
+            UpdateHeroWepon();
+        }
+
+        private void UpdateHeroWepon()
+        {
+            _animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
         }
     }   
 }

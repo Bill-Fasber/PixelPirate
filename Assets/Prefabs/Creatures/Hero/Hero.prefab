@@ -410,7 +410,7 @@ MonoBehaviour:
   _cooldownTime: 1
   _speed: 4
   _jumpSpeed: 12
-  _damageJumpSpeed: 60
+  _damageJumpSpeed: 10
   _damage: 1
   _grountLayer:
     serializedVersion: 2

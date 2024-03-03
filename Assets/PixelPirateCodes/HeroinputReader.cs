@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelPirateCodes.Creatures;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace PixelPirateCodes
@@ -34,7 +35,6 @@ namespace PixelPirateCodes
             if (context.canceled)
             {
                 _hero.Attack();
-                
             }
         }
     }

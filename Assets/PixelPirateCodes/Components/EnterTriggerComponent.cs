@@ -9,7 +9,7 @@ namespace PixelPirateCodes.Components
 
         private void OnTriggerEnter2D(Collider2D other) 
         {
-            if(other.gameObject.CompareTag(_tag)) 
+            if(string.IsNullOrEmpty(_tag) || other.gameObject.CompareTag(_tag)) 
             {
                 _action?.Invoke(other.gameObject);
             }

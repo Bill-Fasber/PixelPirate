@@ -12,7 +12,7 @@ namespace PixelPirateCodes.Model
         {
             if (IsSessionExit())
             {
-                DestroyImmediate(gameObject);
+                Destroy(gameObject);
             }
             else
             { 

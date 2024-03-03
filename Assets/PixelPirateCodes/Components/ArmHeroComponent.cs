@@ -1,3 +1,4 @@
+using PixelPirateCodes.Creatures;
 using UnityEngine;
 
 namespace PixelPirateCodes.Components

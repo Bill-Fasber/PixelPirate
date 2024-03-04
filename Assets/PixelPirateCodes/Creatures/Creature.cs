@@ -17,10 +17,10 @@ namespace PixelPirateCodes.Creatures
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
         
-        protected Rigidbody2D _rigidbody;
-        protected Vector2 _direaction;
-        protected Animator _animator;
-        protected bool _isGrounded = true;
+        protected Rigidbody2D Rigidbody;
+        protected Vector2 Direaction;
+        protected Animator Animator;
+        protected bool IsGrounded;
         private bool _isJumping;
         
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
@@ -31,39 +31,39 @@ namespace PixelPirateCodes.Creatures
 
         protected virtual void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
+            Rigidbody = GetComponent<Rigidbody2D>();
+            Animator = GetComponent<Animator>();
         }
         
         public void SetDirection(Vector2 direction)
         {
-            _direaction = direction;
+            Direaction = direction;
         }
         
         protected virtual void Update()
         {
-            _isGrounded = _groundCheck.IsTouchingLayer;
+            IsGrounded = _groundCheck.IsTouchingLayer;
         }
         
         private void FixedUpdate() 
         {
-            var xVelocity = _direaction.x * _speed;
+            var xVelocity = Direaction.x * _speed;
             var yVelocity = CalculateYVelocity();
-            _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
+            Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
-            _animator.SetBool(IsGroundKey, _isGrounded);
-            _animator.SetFloat(VerticalVelocity, _rigidbody.velocity.y);
-            _animator.SetBool(IsRunning, _direaction.x != 0);
+            Animator.SetBool(IsGroundKey, IsGrounded);
+            Animator.SetFloat(VerticalVelocity, Rigidbody.velocity.y);
+            Animator.SetBool(IsRunning, Direaction.x != 0);
             
             UpdateSprinteDirection();
         }
         
         protected virtual float CalculateYVelocity()
         {
-            var yVelocity = _rigidbody.velocity.y;
-            var isJumpPressing = _direaction.y > 0;
+            var yVelocity = Rigidbody.velocity.y;
+            var isJumpPressing = Direaction.y > 0;
 
-            if (_isGrounded)
+            if (IsGrounded)
             {
                 _isJumping = false;
             }
@@ -72,11 +72,11 @@ namespace PixelPirateCodes.Creatures
             {
                 _isJumping = true;
                 
-                var isFalling = _rigidbody.velocity.y <= 0.001f;
+                var isFalling = Rigidbody.velocity.y <= 0.001f;
                 if (!isFalling) return yVelocity;
                 yVelocity = isFalling ? CalculateJumpVelocity(yVelocity): yVelocity;
             }
-            else if (_rigidbody.velocity.y > 0 && _isJumping)
+            else if (Rigidbody.velocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
@@ -87,7 +87,7 @@ namespace PixelPirateCodes.Creatures
         protected virtual float CalculateJumpVelocity(float yVelocity)
         {
 
-            if (_isGrounded)
+            if (IsGrounded)
             {
                 yVelocity += _jumpSpeed;
                 _particles.Spawn("Jump");
@@ -98,11 +98,11 @@ namespace PixelPirateCodes.Creatures
         
         private void UpdateSprinteDirection()
         {
-            if (_direaction.x > 0)
+            if (Direaction.x > 0)
             { 
                 transform.localScale = Vector2.one;
             }
-            else if (_direaction.x < 0)
+            else if (Direaction.x < 0)
             {
                 transform.localScale = new Vector2(-1, 1);
             }
@@ -111,27 +111,19 @@ namespace PixelPirateCodes.Creatures
         protected virtual void TakeDamage()
         {
             _isJumping = false;
-            _animator.SetTrigger(Hit); 
-            _direaction.y = 0f; 
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageVelocity);
+            Animator.SetTrigger(Hit); 
+            Direaction.y = 0f; 
+            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageVelocity);
         }
         
         public virtual void Attack()
         {
-            _animator.SetTrigger(AttackKey);
+            Animator.SetTrigger(AttackKey);
         }
         
         public virtual void OnAttackKey()
         {
-            var gos = _attackRange.GetObjectsInRange();
-            foreach (var go in gos)
-            {
-                var hp = go.GetComponent<HealthComponent>();
-                if (hp != null && go.CompareTag("Enemy"))
-                {
-                    hp.ModifyHealth(-_damage);
-                }
-            }
+            _attackRange.Check();
         }
     }
 }

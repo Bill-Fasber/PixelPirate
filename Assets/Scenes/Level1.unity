@@ -1937,6 +1937,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 980835619}
     m_Modifications:
+    - target: {fileID: 593048518716582617, guid: a986eb9895caa69449ebb8778ec55e8c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1123269294937827976, guid: a986eb9895caa69449ebb8778ec55e8c,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1946,6 +1951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985683894488298723, guid: a986eb9895caa69449ebb8778ec55e8c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2382646102036627067, guid: a986eb9895caa69449ebb8778ec55e8c,
         type: 3}
@@ -3548,7 +3558,7 @@ CompositeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005953296}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -7441,7 +7451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707687918}
   - component: {fileID: 1707687917}
-  m_Layer: 4
+  m_Layer: 8
   m_Name: BG Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

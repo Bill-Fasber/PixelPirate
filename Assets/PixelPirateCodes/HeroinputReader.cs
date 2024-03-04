@@ -13,14 +13,6 @@ namespace PixelPirateCodes
             var direction = context.ReadValue<Vector2>();
             _hero.SetDirection(direction);
         }
-
-        public void OnSaySomething(InputAction.CallbackContext context)
-        {
-            if (context.canceled)
-            {
-                _hero.SaySomething();
-            }
-        }
         
         public void OnInteract(InputAction.CallbackContext context)
         {

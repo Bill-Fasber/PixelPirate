@@ -39,7 +39,7 @@ namespace PixelPirateCodes.Creatures
         {
             _direaction = direction;
         }
-
+        
         protected virtual void Update()
         {
             _isGrounded = _groundCheck.IsTouchingLayer;
@@ -116,12 +116,12 @@ namespace PixelPirateCodes.Creatures
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageVelocity);
         }
         
-        protected virtual void Attack()
+        public virtual void Attack()
         {
             _animator.SetTrigger(AttackKey);
         }
         
-        public void OnAttackKey()
+        public virtual void OnAttackKey()
         {
             var gos = _attackRange.GetObjectsInRange();
             foreach (var go in gos)

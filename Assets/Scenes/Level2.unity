@@ -2929,6 +2929,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpPosition
       objectReference: {fileID: 0}
+    - target: {fileID: 7347289636408136758, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
+        type: 3}
+      propertyPath: m_Name
+      value: FootStepsPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347289636408432957, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.135
+      objectReference: {fileID: 0}
     - target: {fileID: 7347289636500024803, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
         type: 3}
       propertyPath: m_Name
@@ -2994,7 +3004,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7347289636408432959, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
 --- !u!114 &1037140777 stripped
 MonoBehaviour:

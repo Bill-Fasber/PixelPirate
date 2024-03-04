@@ -17,13 +17,15 @@ namespace PixelPirateCodes.Creatures
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
         
+        [Space] [Header("Particles")]
+        
         private readonly Collider2D[] _interactionResult = new Collider2D[1];
         private bool _allowDoubleJump;
         private bool _isOnWall;
 
         private GameSession _session;
         private float _defaultGravityScale;
-
+        
         protected override void Awake()
         {
             base.Awake();
@@ -129,8 +131,8 @@ namespace PixelPirateCodes.Creatures
                 }
             }
         }
-        
-        protected override void Attack()
+
+        public override void Attack()
         {
             if (!_session.Data.IsArmed) return;
             

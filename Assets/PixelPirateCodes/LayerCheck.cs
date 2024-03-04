@@ -4,10 +4,11 @@
 {
     public class LayerCheck : MonoBehaviour
     {
-        [SerializeField] private LayerMask _grountLayer;
+        [SerializeField] private LayerMask _layer;
+        [SerializeField] private bool _isTouchingLayer;
         private Collider2D _collider;
 
-        public bool IsTouchingLayer;
+        public bool IsTouchingLayer => _isTouchingLayer;
 
         private void Awake()
         {
@@ -16,12 +17,12 @@
 
         private void OnTriggerStay2D(Collider2D other)
         {
-            IsTouchingLayer = _collider.IsTouchingLayers(_grountLayer);
+            _isTouchingLayer = _collider.IsTouchingLayers(_layer);
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            IsTouchingLayer = _collider.IsTouchingLayers(_grountLayer);
+            _isTouchingLayer = _collider.IsTouchingLayers(_layer);
         }
     }
 }

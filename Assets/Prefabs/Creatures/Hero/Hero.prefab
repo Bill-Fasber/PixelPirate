@@ -98,8 +98,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1179597462635940108}
-  - component: {fileID: 3700468965707743569}
   - component: {fileID: 9064501933017396391}
+  - component: {fileID: 3700468965707743569}
   m_Layer: 0
   m_Name: WallCheck
   m_TagString: Untagged
@@ -121,22 +121,6 @@ Transform:
   m_Father: {fileID: 7347289636697991003}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3700468965707743569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6265606401089011678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e97ff66a04b7c4e81826383c93f185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grountLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  IsTouchingLayer: 0
 --- !u!58 &9064501933017396391
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +137,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &3700468965707743569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265606401089011678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e97ff66a04b7c4e81826383c93f185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _isTouchingLayer: 0
 --- !u!1 &7347289636267265097
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 7347289636267265096}
   - component: {fileID: 7347289636267265103}
   m_Layer: 0
-  m_Name: FootStepsJumpPosition
+  m_Name: JumpPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 7347289636408136757}
   - component: {fileID: 7347289636408136756}
   m_Layer: 0
-  m_Name: FootStepsRunPosition
+  m_Name: FootStepsPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7347289636408432952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.12, z: 0}
+  m_LocalPosition: {x: 0, y: -0.135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7347289636697991003}
@@ -290,7 +290,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.3
 --- !u!114 &7347289636408432959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,10 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e97ff66a04b7c4e81826383c93f185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grountLayer:
+  _layer:
     serializedVersion: 2
     m_Bits: 256
-  IsTouchingLayer: 1
+  _isTouchingLayer: 0
 --- !u!1 &7347289636500024803
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 7347289636500024802}
   - component: {fileID: 7347289636500024801}
   m_Layer: 0
-  m_Name: FootStepsFallPosition
+  m_Name: SlamDownPosition
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 7347289636697991005}
   - component: {fileID: 7347289636697991006}
   - component: {fileID: 7347289636697991007}
+  - component: {fileID: 9003925652737052638}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -472,28 +473,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b637abf976dcb49bd1924cdc3ae439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownTime: 1
   _speed: 4
   _jumpSpeed: 12
-  _damageJumpSpeed: 10
+  _damageVelocity: 0
   _damage: 1
-  _grountLayer:
+  _groundLayer:
     serializedVersion: 2
-    m_Bits: 256
-  _interactionRadius: 1
+    m_Bits: 0
+  _groundCheck: {fileID: 7347289636408432959}
+  _attackRange: {fileID: 245003684}
+  _particles: {fileID: 9003925652737052638}
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 512
   _wallCheck: {fileID: 3700468965707743569}
-  _groundCheckRadius: 0.35
-  _groundCheckPositionDelta: {x: 0, y: -0.12, z: 0}
+  _slamDownVelocity: 0
+  _interactionRadius: 1
   _armed: {fileID: 9100000, guid: 66ba7e4760075354e9989e0791fb68e2, type: 2}
   _disarmed: {fileID: 9100000, guid: 0b66bd99313426e4a8c042e404eefd41, type: 2}
-  _attackRange: {fileID: 245003684}
-  _footStepRunParticles: {fileID: 7347289636408136756}
-  _footStepJumpParticles: {fileID: 7347289636267265103}
-  _footStepFallParticles: {fileID: 7347289636500024801}
-  _attackParticles: {fileID: 190386593}
 --- !u!114 &7347289636697991004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,21 +593,6 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7347289636697991002}
-        m_MethodName: OnSaySomething
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f6077f0b-a8e5-4459-a51b-2efb337fd6cf
-    m_ActionName: Hero/SaySomething[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7347289636697991002}
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -699,3 +681,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.06}
   m_Size: {x: 0.684448, y: 0.8}
   m_Direction: 0
+--- !u!114 &9003925652737052638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347289636697990997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c30cbe239546c48b28ae767d24b3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawners:
+  - Id: Run
+    Component: {fileID: 7347289636408136756}
+  - Id: Jump
+    Component: {fileID: 7347289636267265103}
+  - Id: SlamDown
+    Component: {fileID: 7347289636500024801}

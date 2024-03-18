@@ -121,7 +121,7 @@ namespace PixelPirateCodes.Creatures
             Animator.SetTrigger(AttackKey);
         }
         
-        public virtual void OnAttackKey()
+        public virtual void OnDoAttack()
         {
             _attackRange.Check();
         }

@@ -6,10 +6,14 @@ namespace PixelPirateCodes
     {
         void OnTriggerEnter2D(Collider2D other)
         {
+            if(other.isTrigger) return;
+            
             other.gameObject.transform.SetParent(gameObject.transform);
         }
         void OnTriggerExit2D(Collider2D other)
         {
+            if(other.isTrigger) return;
+            
             other.gameObject.transform.SetParent(null);
         }
     }

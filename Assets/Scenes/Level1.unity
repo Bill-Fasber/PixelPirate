@@ -3921,7 +3921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140061232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.95418, y: 0.3803171, z: -10}
+  m_LocalPosition: {x: -33.95418, y: 0.38016117, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 80510759}
@@ -6101,7 +6101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636356571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.67472, y: -1.2947667, z: -8.1138115}
+  m_LocalPosition: {x: -38.67472, y: -1.2947667, z: -8.1138115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 497386765}
@@ -13399,7 +13399,7 @@ PrefabInstance:
     - target: {fileID: 7347289636697991003, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.98
+      value: -34.98
       objectReference: {fileID: 0}
     - target: {fileID: 7347289636697991003, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
         type: 3}
@@ -13446,6 +13446,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7347289636697991004, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1365622464}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
 --- !u!1001 &7779333961667777465
@@ -13549,30 +13554,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 980835619}
     m_Modifications:
-    - target: {fileID: 1856089336, guid: 81c1dd48184fa7f49ab3c00042ddd2ff, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856089336, guid: 81c1dd48184fa7f49ab3c00042ddd2ff, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 8186483359323156540}
-    - target: {fileID: 1856089336, guid: 81c1dd48184fa7f49ab3c00042ddd2ff, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 8186483359323156540}
-    - target: {fileID: 1856089336, guid: 81c1dd48184fa7f49ab3c00042ddd2ff, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856089336, guid: 81c1dd48184fa7f49ab3c00042ddd2ff, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetTimer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856089336, guid: 81c1dd48184fa7f49ab3c00042ddd2ff, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8186483359031745739, guid: 81c1dd48184fa7f49ab3c00042ddd2ff,
         type: 3}
       propertyPath: m_Name
@@ -13633,83 +13614,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8186483359323156539, guid: 81c1dd48184fa7f49ab3c00042ddd2ff,
+        type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 1503400169}
+    - target: {fileID: 8186483359323156540, guid: 81c1dd48184fa7f49ab3c00042ddd2ff,
+        type: 3}
+      propertyPath: _timers.Array.data[1].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 396145537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c1dd48184fa7f49ab3c00042ddd2ff, type: 3}
---- !u!1 &8186483359323156538 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8186483359031745739, guid: 81c1dd48184fa7f49ab3c00042ddd2ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 8186483359323156537}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8186483359323156539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186483359323156538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b0ae8289ec4bf09339f4d1c885c354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 1503400169}
-  _controller: {fileID: 50635508}
-  _delay: 2
---- !u!114 &8186483359323156540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186483359323156538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920d7e77e77048f19cb95aa4546e46d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timers:
-  - Delay: 0.5
-    OnTimesUp:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8186483359323156539}
-          m_MethodName: ShowTarget
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8186483359323156540}
-          m_MethodName: SetTimer
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Delay: 1
-    OnTimesUp:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 396145537}
-          m_MethodName: Switch
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!4 &8656905005370625243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1429398346492927842, guid: 74a5f262bff98b34ca0d3fc3035ce09d,

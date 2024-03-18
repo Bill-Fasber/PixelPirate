@@ -99,7 +99,7 @@ namespace PixelPirateCodes.Creatures
 
         protected override void TakeDamage()
         {
-            
+            base.TakeDamage();
         }
 
         internal void Interact()

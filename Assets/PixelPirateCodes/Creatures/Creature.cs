@@ -6,10 +6,10 @@ namespace PixelPirateCodes.Creatures
     public class Creature : MonoBehaviour
     {
         [Header("Params")]
+        [SerializeField] private bool _invertScale;
         [SerializeField] private float _speed;
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] private float _damageVelocity;
-        [SerializeField] private int _damage;
         [SerializeField] protected LayerMask _groundLayer;
 
         [Header("Checkers")]
@@ -98,17 +98,18 @@ namespace PixelPirateCodes.Creatures
         
         private void UpdateSprinteDirection()
         {
+            var multiplier = _invertScale ? -1 : 1;
             if (Direaction.x > 0)
             { 
-                transform.localScale = Vector2.one;
+                transform.localScale = new Vector3(multiplier, 1, 1);
             }
             else if (Direaction.x < 0)
             {
-                transform.localScale = new Vector2(-1, 1);
+                transform.localScale = new Vector3(-1 * multiplier, 1, 1);
             }
         }
         
-        protected virtual void TakeDamage()
+        public virtual void TakeDamage()
         {
             _isJumping = false;
             Animator.SetTrigger(Hit); 

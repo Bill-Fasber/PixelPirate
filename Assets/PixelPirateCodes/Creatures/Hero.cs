@@ -97,7 +97,7 @@ namespace PixelPirateCodes.Creatures
             Debug.Log($"{coins} coins added. total coins: {_session.Data.Coins}");
         }
 
-        protected override void TakeDamage()
+        public override void TakeDamage()
         {
             base.TakeDamage();
         }

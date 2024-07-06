@@ -17707,7 +17707,7 @@ MonoBehaviour:
   _data:
     Coins: 0
     Hp: 10
-    IsArmed: 0
+    IsArmed: 1
 --- !u!4 &749547961
 Transform:
   m_ObjectHideFlags: 0
@@ -18582,6 +18582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1560350648}
     m_Modifications:
+    - target: {fileID: 245003684, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
+      propertyPath: _mask.m_Bits
+      value: 12087
+      objectReference: {fileID: 0}
     - target: {fileID: 7347289636697990997, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
         type: 3}
       propertyPath: m_Name
@@ -18640,6 +18644,11 @@ PrefabInstance:
     - target: {fileID: 7347289636697991003, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347289636697991004, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -11,26 +11,29 @@ namespace PixelPirateCodes.Creatures
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
-        private Coroutine _current;
-        private GameObject _target;
+        [SerializeField] private float _missCooldown = 1f;
 
-        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
-        
+        private IEnumerator _current;
+        private GameObject _target;
+        private bool _isDead;
+
         private SpawnListComponent _particles;
         private Creature _creature;
         private Animator _animator;
-        private bool _isDead;
+        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
+        private Patrol _patrol;
 
         private void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
             _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
+            _patrol = GetComponent<Patrol>();
         }
 
         private void Start()
         {
-            StartState(Patrolling());
+            StartState(_patrol.DoPatrol());
         }
 
         public void OnHeroInVision(GameObject go)
@@ -64,6 +67,9 @@ namespace PixelPirateCodes.Creatures
                 
                 yield return null;
             }
+            
+            _particles.Spawn("Miss");
+            yield return new WaitForSeconds(_missCooldown);
         }
 
         private IEnumerator Attack()
@@ -84,17 +90,17 @@ namespace PixelPirateCodes.Creatures
             _creature.SetDirection(direction.normalized);
         }
 
-        private IEnumerator Patrolling()
-        {
-            yield return null;
-        }
-        
         private void StartState(IEnumerator coroutine)
         {
+            _creature.SetDirection(Vector2.zero);
+
             if (_current != null)
-                StopCoroutine(_current);
-            
-            _current = StartCoroutine(coroutine);
+            {
+                StopCoroutine(_current);   
+            }
+
+            _current = coroutine;
+            StartCoroutine(coroutine);
         }
 
         public void OnDie()

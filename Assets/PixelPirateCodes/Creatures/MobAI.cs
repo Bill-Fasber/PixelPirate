@@ -1,8 +1,10 @@
 using System.Collections;
+using PixelPirateCodes;
 using PixelPirateCodes.Components;
+using PixelPirateCodes.Creatures;
 using UnityEngine;
 
-namespace PixelPirateCodes.Creatures
+namespace Assets.PixelPirateCodes.Creatures
 {
     public class MobAI : MonoBehaviour
     {
@@ -22,6 +24,12 @@ namespace PixelPirateCodes.Creatures
         private Animator _animator;
         private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
         private Patrol _patrol;
+
+        public MobAI(LayerCheck canAttack, LayerCheck vision)
+        {
+            _canAttack = canAttack;
+            _vision = vision;
+        }
 
         private void Awake()
         {

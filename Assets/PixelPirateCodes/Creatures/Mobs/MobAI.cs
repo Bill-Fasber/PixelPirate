@@ -1,6 +1,7 @@
 using System.Collections;
 using PixelPirateCodes;
 using PixelPirateCodes.Components;
+using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Creatures;
 using UnityEngine;
 
@@ -8,8 +9,8 @@ namespace Assets.PixelPirateCodes.Creatures
 {
     public class MobAI : MonoBehaviour
     {
-        [SerializeField] private LayerCheck _vision;
-        [SerializeField] private LayerCheck _canAttack;
+        [SerializeField] private ColliderCheck _vision;
+        [SerializeField] private ColliderCheck _canAttack;
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
@@ -25,7 +26,7 @@ namespace Assets.PixelPirateCodes.Creatures
         private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
         private Patrol _patrol;
 
-        public MobAI(LayerCheck canAttack, LayerCheck vision)
+        public MobAI(ColliderCheck canAttack, ColliderCheck vision)
         {
             _canAttack = canAttack;
             _vision = vision;

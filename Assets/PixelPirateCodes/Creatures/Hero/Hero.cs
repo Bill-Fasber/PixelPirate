@@ -1,4 +1,5 @@
 ﻿using PixelPirateCodes.Components;
+using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Model;
 using PixelPirateCodes.Utils;
 using UnityEditor.Animations;
@@ -9,7 +10,7 @@ namespace PixelPirateCodes.Creatures
     public class Hero : Creature
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
-        [SerializeField] private LayerCheck _wallCheck;
+        [SerializeField] private ColliderCheck _wallCheck;
         
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _interactionRadius;

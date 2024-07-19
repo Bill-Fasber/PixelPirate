@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPirateCodes
+namespace PixelPirateCodes.Components.ColliderBased
 { 
     public class CheckCircleOverlap : MonoBehaviour
     {

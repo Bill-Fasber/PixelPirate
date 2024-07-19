@@ -1,4 +1,5 @@
 using PixelPirateCodes.Components;
+using PixelPirateCodes.Components.ColliderBased;
 using UnityEngine;
 
 namespace PixelPirateCodes.Creatures
@@ -13,7 +14,7 @@ namespace PixelPirateCodes.Creatures
         [SerializeField] protected LayerMask _groundLayer;
 
         [Header("Checkers")]
-        [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private ColliderCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
         

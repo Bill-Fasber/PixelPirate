@@ -1,5 +1,4 @@
 using System.Collections;
-using PixelPirateCodes;
 using PixelPirateCodes.Components;
 using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Creatures;
@@ -9,8 +8,8 @@ namespace Assets.PixelPirateCodes.Creatures
 {
     public class MobAI : MonoBehaviour
     {
-        [SerializeField] private ColliderCheck _vision;
-        [SerializeField] private ColliderCheck _canAttack;
+        [SerializeField] private LayerCheck _vision;
+        [SerializeField] private LayerCheck _canAttack;
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;

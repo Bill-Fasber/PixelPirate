@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelPirateCodes.Components.ColliderBased
+namespace PixelPirateCodes.Components
 {
     public class EnterTriggerComponent : MonoBehaviour
     {

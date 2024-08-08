@@ -1,11 +1,15 @@
 ﻿ using UnityEngine;
 
- namespace PixelPirateCodes.Components.ColliderBased
+ namespace PixelPirateCodes
 {
-    public class ColliderCheck : LayerCheck
+    public class LayerCheck : MonoBehaviour
     {
+        [SerializeField] private LayerMask _layer;
+        [SerializeField] private bool _isTouchingLayer;
         private Collider2D _collider;
-        
+
+        public bool IsTouchingLayer => _isTouchingLayer;
+
         private void Awake()
         {
             _collider = GetComponent<Collider2D>();

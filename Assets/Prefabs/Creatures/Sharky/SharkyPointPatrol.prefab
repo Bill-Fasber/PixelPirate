@@ -101,9 +101,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 245003683}
-  - component: {fileID: 5164165048153204087}
   - component: {fileID: 4167568417516838070}
-  - component: {fileID: 1663656538}
+  - component: {fileID: 5164165048153204087}
   m_Layer: 13
   m_Name: AttackRange
   m_TagString: Untagged
@@ -125,6 +124,19 @@ Transform:
   m_Father: {fileID: 7347289636697991003}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4167568417516838070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245003682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dab79b9089ce84a823578627141da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: -1
 --- !u!58 &5164165048153204087
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,50 +153,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!114 &4167568417516838070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245003682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8dab79b9089ce84a823578627141da5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hpDelta: -1
---- !u!114 &1663656538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245003682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e56a7f0e9392e4d80b992b43d4d8c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 1
-  _mask:
-    serializedVersion: 2
-    m_Bits: 4096
-  _tags: []
-  _onOverlap:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4167568417516838070}
-        m_MethodName: Apply
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1510181142
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +163,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1510181143}
   - component: {fileID: 1510181144}
-  - component: {fileID: 8914473847058271973}
   m_Layer: 13
   m_Name: Vision
   m_TagString: Untagged
@@ -243,22 +210,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 2}
   m_EdgeRadius: 0
---- !u!114 &8914473847058271973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510181142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14d19207c14a0741b352315722bd91f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 4096
-  _isTouchingLayer: 0
 --- !u!1 &2669145011743054428
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +598,6 @@ GameObject:
   - component: {fileID: 7347289636697991007}
   - component: {fileID: 9003925652737052638}
   - component: {fileID: 5164165048153204083}
-  - component: {fileID: 1265361653643255519}
   m_Layer: 13
   m_Name: SharkyPointPatrol
   m_TagString: Enemy
@@ -750,7 +700,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _groundCheck: {fileID: 2054537768}
-  _attackRange: {fileID: 1663656538}
+  _attackRange: {fileID: 0}
   _particles: {fileID: 9003925652737052638}
 --- !u!95 &7347289636697991005
 Animator:
@@ -845,23 +795,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _treshold: 1
---- !u!114 &1265361653643255519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347289636697990997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245f131379e95af4e9f7aa347de09e77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vision: {fileID: 8914473847058271973}
-  _canAttack: {fileID: 0}
-  _alarmDelay: 1
-  _attackCooldown: 10
-  _missCooldown: 10
 --- !u!1 &7420569408110675719
 GameObject:
   m_ObjectHideFlags: 0

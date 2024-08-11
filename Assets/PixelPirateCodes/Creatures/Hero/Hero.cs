@@ -16,10 +16,11 @@ namespace PixelPirateCodes.Creatures
 
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
-
         
         [Space] [Header("Particles")]
         
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
+
         private bool _allowDoubleJump;
         private bool _isOnWall;
 
@@ -136,6 +137,16 @@ namespace PixelPirateCodes.Creatures
         private void UpdateHeroWepon()
         {
             Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
+        }
+
+        public void OnDoThrow()
+        {
+            
+        }
+        
+        public void Throw()
+        {
+            Animator.SetTrigger(ThrowKey);
         }
     }   
 }

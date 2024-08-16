@@ -1,4 +1,4 @@
-using PixelPirateCodes.Creatures;
+using PixelPirateCodes.Creatures.Hero;
 using UnityEngine;
 
 namespace PixelPirateCodes.Components

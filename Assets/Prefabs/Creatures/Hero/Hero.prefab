@@ -262,6 +262,51 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   _isTouchingLayer: 0
+--- !u!1 &6296970401413768818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6990387692364060606}
+  - component: {fileID: 6871773537965712}
+  m_Layer: 12
+  m_Name: ThrowSwordSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6990387692364060606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296970401413768818}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.364, y: -0.038, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7347289636697991003}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6871773537965712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296970401413768818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b652a3dda510649a066aa5b1cdb259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6990387692364060606}
+  _prefab: {fileID: 1138070497729516006, guid: 526f78cee8375344faae80c9efd111e9, type: 3}
 --- !u!1 &7347289636267265097
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7347289636500024803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.06, z: -6.814536}
+  m_LocalPosition: {x: -0.01, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7347289636697991003}
@@ -505,6 +550,7 @@ Transform:
   - {fileID: 190386592}
   - {fileID: 1179597462635940108}
   - {fileID: 6876364180190914685}
+  - {fileID: 6990387692364060606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -814,3 +860,5 @@ MonoBehaviour:
     Component: {fileID: 7347289636500024801}
   - Id: Attack
     Component: {fileID: 190386593}
+  - Id: Throw
+    Component: {fileID: 6871773537965712}

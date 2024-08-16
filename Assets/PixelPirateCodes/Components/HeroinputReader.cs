@@ -1,4 +1,5 @@
 ﻿using PixelPirateCodes.Creatures;
+using PixelPirateCodes.Creatures.Hero;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

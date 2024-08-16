@@ -4,7 +4,7 @@ using PixelPirateCodes.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
 
-namespace PixelPirateCodes.Creatures
+namespace PixelPirateCodes.Creatures.Hero
 {
     public class Hero : Creature
     {
@@ -141,7 +141,7 @@ namespace PixelPirateCodes.Creatures
 
         public void OnDoThrow()
         {
-            
+            _particles.Spawn("Throw");
         }
         
         public void Throw()

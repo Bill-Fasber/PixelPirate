@@ -14,6 +14,7 @@ namespace PixelPirateCodes.Creatures.Hero
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _interactionRadius;
 
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
         
@@ -26,7 +27,7 @@ namespace PixelPirateCodes.Creatures.Hero
 
         private GameSession _session;
         private float _defaultGravityScale;
-        
+
         protected override void Awake()
         {
             base.Awake();
@@ -51,7 +52,7 @@ namespace PixelPirateCodes.Creatures.Hero
         {
             base.Update();
             
-            if (_wallCheck.IsTouchingLayer && Direaction.x == transform.localScale.x)
+            if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
             {
                 _isOnWall = true;
                 Rigidbody.gravityScale = 0;
@@ -65,7 +66,7 @@ namespace PixelPirateCodes.Creatures.Hero
         
         protected override float CalculateYVelocity()
         {
-            var isJumpPressing = Direaction.y > 0;
+            var isJumpPressing = Direction.y > 0;
 
             if (IsGrounded || _isOnWall)
             {
@@ -96,11 +97,6 @@ namespace PixelPirateCodes.Creatures.Hero
         {
             _session.Data.Coins += coins;
             Debug.Log($"{coins} coins added. total coins: {_session.Data.Coins}");
-        }
-
-        public override void TakeDamage()
-        {
-            base.TakeDamage();
         }
 
         internal void Interact()
@@ -146,7 +142,11 @@ namespace PixelPirateCodes.Creatures.Hero
         
         public void Throw()
         {
-            Animator.SetTrigger(ThrowKey);
+            if (_throwCooldown.IsReady)
+            {
+                Animator.SetTrigger(ThrowKey);
+                _throwCooldown.Reset();
+            }
         }
     }   
 }

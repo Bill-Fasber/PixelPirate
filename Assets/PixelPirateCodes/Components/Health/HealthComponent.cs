@@ -14,6 +14,7 @@ namespace PixelPirateCodes.Components
 
         public void ModifyHealth(int healthDelta)
         {
+            if (_health <= 0) return;
             _health += healthDelta;
             _onChange?.Invoke(_health);
 

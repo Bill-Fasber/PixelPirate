@@ -17415,6 +17415,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: DropDestructableBarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 1429398347278641320, guid: 74a5f262bff98b34ca0d3fc3035ce09d,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429398347278641320, guid: 74a5f262bff98b34ca0d3fc3035ce09d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429398347278641320, guid: 74a5f262bff98b34ca0d3fc3035ce09d,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -369822997
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74a5f262bff98b34ca0d3fc3035ce09d, type: 3}
 --- !u!4 &515982703 stripped

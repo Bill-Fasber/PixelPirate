@@ -1,4 +1,5 @@
-﻿using PixelPirateCodes.Components;
+﻿using System.Collections;
+using PixelPirateCodes.Components;
 using PixelPirateCodes.Model;
 using PixelPirateCodes.Utils;
 using UnityEditor.Animations;
@@ -12,18 +13,22 @@ namespace PixelPirateCodes.Creatures.Hero
         [SerializeField] private ColliderCheck _wallCheck;
         
         [SerializeField] private float _slamDownVelocity;
-        [SerializeField] private float _interactionRadius;
 
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
-        
-        [Space] [Header("Particles")]
+
+        [Space] [Header("Super throw")] [SerializeField]
+        private Cooldown _superThrowCooldown;
+
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
         
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
+        private bool _superThrow;
 
         private GameSession _session;
         private float _defaultGravityScale;
@@ -98,7 +103,7 @@ namespace PixelPirateCodes.Creatures.Hero
             _session.Data.Coins += coins;
             Debug.Log($"{coins} coins added. total coins: {_session.Data.Coins}");
         }
-
+        
         internal void Interact()
         {
             _interactionCheck.Check();
@@ -137,16 +142,47 @@ namespace PixelPirateCodes.Creatures.Hero
 
         public void OnDoThrow()
         {
+            if (_superThrow)
+            {
+                var numThrows = Mathf.Min(_superThrowParticles, _session.Data.Sword - 1);
+                StartCoroutine(DoSuperThrow(numThrows));
+            }
+            else
+            {
+                ThrowAndRemoveFromInventory();
+            }
+
+            _superThrow = false;
+        }
+
+        private IEnumerator DoSuperThrow(int numThrows)
+        {
+            for (int i = 0; i < numThrows; i++)
+            {
+                ThrowAndRemoveFromInventory();
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
+        }
+
+        private void ThrowAndRemoveFromInventory()
+        {
             _particles.Spawn("Throw");
+            _session.Data.Sword -= 1;
         }
         
-        public void Throw()
+        public void StartThrowing()
         {
-            if (_throwCooldown.IsReady)
-            {
-                Animator.SetTrigger(ThrowKey);
-                _throwCooldown.Reset();
-            }
+            _superThrowCooldown.Reset();
+        }
+
+        public void PerformThrowing()
+        {
+            if (!_throwCooldown.IsReady || _session.Data.Sword <= 1) return;
+
+            if (_superThrowCooldown.IsReady) _superThrow = true;
+            
+            Animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
         }
     }   
 }

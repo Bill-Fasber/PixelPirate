@@ -9,6 +9,7 @@ namespace PixelPirateCodes.Model
         public int Coins;
         public int Hp;
         public bool IsArmed;
+        public int Sword;
 
         public PlayerData Clone()
         {

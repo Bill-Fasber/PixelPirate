@@ -1,4 +1,5 @@
-using PixelPirateCodes.Components;
+using PixelPirateCodes.Components.ColliderBased;
+using PixelPirateCodes.Components.GoBased;
 using UnityEngine;
 
 namespace PixelPirateCodes.Creatures

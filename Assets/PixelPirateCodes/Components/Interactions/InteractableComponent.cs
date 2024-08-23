@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPirateCodes.Components
+namespace PixelPirateCodes.Components.Interactions
 {
     public class InteractableComponent : MonoBehaviour
     {

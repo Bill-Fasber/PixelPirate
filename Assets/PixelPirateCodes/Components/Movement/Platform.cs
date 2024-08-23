@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelPirateCodes
+namespace PixelPirateCodes.Components
 {
     public class Platform : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelPirateCodes.Components
+namespace PixelPirateCodes.Components.GoBased
 {
     public class DestroyObjectComponent : MonoBehaviour
     {

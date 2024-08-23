@@ -1,9 +1,8 @@
-using System;
 using PixelPirateCodes.Creatures.Hero;
 using PixelPirateCodes.Model;
 using UnityEngine;
 
-namespace PixelPirateCodes.Components
+namespace PixelPirateCodes.Components.Colliectables
 {
     public class ArmHeroComponent : MonoBehaviour
     {

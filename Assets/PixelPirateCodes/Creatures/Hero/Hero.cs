@@ -1,5 +1,6 @@
 ﻿using System.Collections;
-using PixelPirateCodes.Components;
+using PixelPirateCodes.Components.ColliderBased;
+using PixelPirateCodes.Components.Health;
 using PixelPirateCodes.Model;
 using PixelPirateCodes.Utils;
 using UnityEditor.Animations;

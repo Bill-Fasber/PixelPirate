@@ -1,7 +1,6 @@
-﻿ using PixelPirateCodes.Components.ColliderBased;
- using UnityEngine;
+﻿using UnityEngine;
 
- namespace PixelPirateCodes
+namespace PixelPirateCodes.Components.ColliderBased
 {
     public class ColliderCheck : LayerCheck
     {

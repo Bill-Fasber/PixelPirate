@@ -2,7 +2,7 @@ using PixelPirateCodes.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelPirateCodes.Components
+namespace PixelPirateCodes.Components.LevelManegement
 {
     public class ExitLevelCompinent : MonoBehaviour
     {

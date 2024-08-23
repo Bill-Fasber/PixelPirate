@@ -1,5 +1,7 @@
 using System.Collections;
-using PixelPirateCodes.Components;
+using PixelPirateCodes.Components.ColliderBased;
+using PixelPirateCodes.Components.GoBased;
+using PixelPirateCodes.Creatures.Mobs.Patrolling;
 using UnityEngine;
 
 namespace PixelPirateCodes.Creatures.Mobs

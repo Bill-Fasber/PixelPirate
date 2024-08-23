@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPirateCodes.Components
+namespace PixelPirateCodes.Components.Health
 {
     public class HealthComponent : MonoBehaviour
     {

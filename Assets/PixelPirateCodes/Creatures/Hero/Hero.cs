@@ -26,6 +26,7 @@ namespace PixelPirateCodes.Creatures.Hero
         [SerializeField] private float _superThrowDelay;
         
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -57,8 +58,9 @@ namespace PixelPirateCodes.Creatures.Hero
         protected override void Update()
         {
             base.Update();
-            
-            if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
+
+            var moveToSaneDirection = Direction.x * transform.lossyScale.x > 0;
+            if (_wallCheck.IsTouchingLayer && moveToSaneDirection)
             {
                 _isOnWall = true;
                 Rigidbody.gravityScale = 0;
@@ -68,6 +70,8 @@ namespace PixelPirateCodes.Creatures.Hero
                 _isOnWall = false;
                 Rigidbody.gravityScale = _defaultGravityScale;
             }
+            
+            Animator.SetBool(IsOnWallKey, _isOnWall);
         }
         
         protected override float CalculateYVelocity()
@@ -89,7 +93,7 @@ namespace PixelPirateCodes.Creatures.Hero
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
                 _particles.Spawn("Jump");
                 _allowDoubleJump = false;

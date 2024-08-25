@@ -1,9 +1,7 @@
-﻿using PixelPirateCodes.Creatures;
-using PixelPirateCodes.Creatures.Hero;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PixelPirateCodes
+namespace PixelPirateCodes.Creatures.Hero
 {
     public class HeroinputReader : MonoBehaviour
     {

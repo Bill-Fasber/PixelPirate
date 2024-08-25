@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-namespace PixelPirateCodes
+namespace PixelPirateCodes.Utils
 {
     public class CheatController : MonoBehaviour
     {

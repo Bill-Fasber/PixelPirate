@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5974799668283550137}
   - component: {fileID: 5974799668283550141}
   - component: {fileID: -3096821091317160096}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Scoin
   m_Icon: {fileID: 0}

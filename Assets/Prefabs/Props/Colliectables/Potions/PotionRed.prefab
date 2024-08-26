@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2904558481840061440}
   - component: {fileID: 2904558481840061442}
   - component: {fileID: 8628537257351011246}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: PotionRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

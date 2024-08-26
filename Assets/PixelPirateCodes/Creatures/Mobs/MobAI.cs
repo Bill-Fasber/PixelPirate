@@ -8,8 +8,8 @@ namespace PixelPirateCodes.Creatures.Mobs
 {
     public class MobAI : MonoBehaviour
     {
-        [SerializeField] private LayerCheck _vision;
-        [SerializeField] private LayerCheck _canAttack;
+        [SerializeField] private ColliderCheck _vision;
+        [SerializeField] private ColliderCheck _canAttack;
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
@@ -17,13 +17,12 @@ namespace PixelPirateCodes.Creatures.Mobs
 
         private IEnumerator _current;
         private GameObject _target;
-        
-        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
+        private bool _isDead;
 
         private SpawnListComponent _particles;
         private Creature _creature;
-        private Animator _animator; 
-        private bool _isDead;
+        private Animator _animator;
+        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
         private Patrol _patrol;
 
         public MobAI(ColliderCheck canAttack, ColliderCheck vision)

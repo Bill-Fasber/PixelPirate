@@ -642,14 +642,11 @@ MonoBehaviour:
   _interactionCheck: {fileID: 8913852566256415459}
   _wallCheck: {fileID: 3700468965707743569}
   _slamDownVelocity: 0
+  _interactionRadius: 1
   _throwCooldown:
-    _value: 1
+    _value: 0
   _armed: {fileID: 9100000, guid: 66ba7e4760075354e9989e0791fb68e2, type: 2}
   _disarmed: {fileID: 9100000, guid: 0b66bd99313426e4a8c042e404eefd41, type: 2}
-  _superThrowCooldown:
-    _value: 1
-  _superThrowParticles: 3
-  _superThrowDelay: 0.2
 --- !u!114 &7347289636697991004
 MonoBehaviour:
   m_ObjectHideFlags: 0

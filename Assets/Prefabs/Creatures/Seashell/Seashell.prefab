@@ -271,12 +271,13 @@ GameObject:
   m_Component:
   - component: {fileID: 759069010817599235}
   - component: {fileID: 759069010817599237}
+  - component: {fileID: 632895403}
   - component: {fileID: 759069010817599236}
   - component: {fileID: 6562242614052557891}
   - component: {fileID: 1893727025879710709}
   - component: {fileID: 2190208875470809637}
   - component: {fileID: 1319150148558001149}
-  - component: {fileID: 632895403}
+  - component: {fileID: 300302970931421181}
   m_Layer: 13
   m_Name: Seashell
   m_TagString: Enemy
@@ -351,6 +352,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &632895403
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759069010817599234}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 5
 --- !u!60 &759069010817599236
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -405,7 +427,7 @@ Animator:
   m_GameObject: {fileID: 759069010817599234}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 744f2c47339349243bcc96dfc5de3539, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -467,6 +489,17 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 300302970931421181}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1319150148558001149}
         m_MethodName: DestroyObject
         m_Mode: 1
@@ -494,24 +527,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 759069010817599234}
---- !u!50 &632895403
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &300302970931421181
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759069010817599234}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b652a3dda510649a066aa5b1cdb259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 759069010817599235}
+  _prefab: {fileID: 609842637502764083, guid: ee42cf78e3532204f8e1e314eee32e36, type: 3}

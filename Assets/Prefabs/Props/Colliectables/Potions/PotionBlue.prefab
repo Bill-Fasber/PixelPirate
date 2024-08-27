@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2956687827611784962}
   - component: {fileID: 2956687827611784960}
   - component: {fileID: 7308284162608308172}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PotionBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}

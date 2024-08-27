@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1075779440182514511}
   - component: {fileID: -2810582852057760885}
   - component: {fileID: -5523760821967977121}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PearlProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
+  _invertX: 1
 --- !u!114 &-1075779440182514511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ MonoBehaviour:
   _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 6401
+    m_Bits: 6400
   _action:
     m_PersistentCalls:
       m_Calls:

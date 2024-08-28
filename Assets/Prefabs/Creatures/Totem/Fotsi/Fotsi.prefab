@@ -62,7 +62,6 @@ GameObject:
   - component: {fileID: 3980752358125789098}
   - component: {fileID: 4360365768434427429}
   - component: {fileID: 5458018021281945770}
-  - component: {fileID: 8616793741382094053}
   m_Layer: 0
   m_Name: Fotsi
   m_TagString: Untagged
@@ -270,26 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 5648977667663612667}
---- !u!114 &8616793741382094053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5648977667663612667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5259144c7293e3449cb1d5482b9b348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vision: {fileID: 0}
-  _meleeCooldown:
-    _value: 0
-  _meleeAttack: {fileID: 0}
-  _meleeCanAttack: {fileID: 0}
-  _rangeCooldown:
-    _value: 0
-  _rangeAttack: {fileID: 0}
 --- !u!1 &6052310761432504271
 GameObject:
   m_ObjectHideFlags: 0

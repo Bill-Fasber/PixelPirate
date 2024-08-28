@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 8389082548712009842}
   - component: {fileID: 3938367857285919441}
   - component: {fileID: 4377077658352983285}
-  - component: {fileID: 8319458494803885635}
+  - component: {fileID: 6346866346614691025}
   - component: {fileID: -1075779440182514511}
   - component: {fileID: -2810582852057760885}
   - component: {fileID: -5523760821967977121}
+  - component: {fileID: 8552837286794763333}
   m_Layer: 14
-  m_Name: PearlProjectile
+  m_Name: WoodSpikeSinusoidalProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -192772801
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 193bf2132500db541b97d5db6006e868, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b49571fac0db96b43b3baf7424b7ae23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +125,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8319458494803885635
+--- !u!114 &6346866346614691025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,11 +134,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5601436587787431737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3844c45aa5a844f4f84c5e7232fab53b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5eaa9f3bd77f67d47aa9703791dd2dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.2
+  _speed: 2
   _invertX: 1
+  _frequency: 20
+  _amplitude: 0.2
 --- !u!114 &-1075779440182514511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +163,17 @@ MonoBehaviour:
       - m_Target: {fileID: -2810582852057760885}
         m_MethodName: Apply
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8552837286794763333}
+        m_MethodName: Spawn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -205,3 +219,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 5601436587787431737}
+--- !u!114 &8552837286794763333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601436587787431737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b652a3dda510649a066aa5b1cdb259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1480331007752711896}
+  _prefab: {fileID: 4088664052807855107, guid: 8c02466ac66013c4bb57688b878b660a, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4508581529035113258}
   - component: {fileID: 6979111016120779068}
   - component: {fileID: 3485684857112852762}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.430361, y: 0.5}
+  m_Offset: {x: -2.069524, y: 0.047493458}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.860722, y: 2}
+  m_Size: {x: 6.139048, y: 0.6983366}
   m_EdgeRadius: 0
 --- !u!114 &6979111016120779068
 MonoBehaviour:
@@ -120,11 +120,11 @@ GameObject:
   - component: {fileID: 7847788401659230785}
   - component: {fileID: 4605108535764257354}
   - component: {fileID: 1000887399663101958}
-  - component: {fileID: 529012903678576886}
   - component: {fileID: 5639222520247852951}
-  m_Layer: 0
+  - component: {fileID: 529012903678576886}
+  m_Layer: 16
   m_Name: Badie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,7 +208,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09423515, y: -0.15620327}
+  m_Offset: {x: 0.09423515, y: -0.17030191}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -219,7 +219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62554795, y: 0.62822914}
+  m_Size: {x: 0.62554795, y: 0.6564264}
   m_EdgeRadius: 0
 --- !u!50 &6811224322061829090
 Rigidbody2D:
@@ -241,7 +241,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 5
 --- !u!95 &7847788401659230785
 Animator:
   serializedVersion: 3
@@ -292,29 +292,49 @@ MonoBehaviour:
   _health: 3
   _onDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7847788401659230785}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: hit
+          m_BoolArgument: 0
+        m_CallState: 2
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
   _onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5639222520247852951}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 529012903678576886}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &529012903678576886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6191627458307305538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393344c5c1866114db646c390134ba6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 6191627458307305538}
 --- !u!114 &5639222520247852951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +348,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 6191627458307305537}
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 2598025222938622237, guid: 6e09771fd8f059440bc65fe0f4065fd0, type: 3}
+--- !u!114 &529012903678576886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6191627458307305538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393344c5c1866114db646c390134ba6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 6191627458307305538}
 --- !u!1 &7891647099966837588
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814703580537500493}
   - component: {fileID: 4646487872549557810}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: WoodSpikeThrowPosition
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}

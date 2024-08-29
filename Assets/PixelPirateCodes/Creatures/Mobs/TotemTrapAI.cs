@@ -5,15 +5,10 @@ using UnityEngine;
 
 namespace PixelPirateCodes.Creatures.Mobs
 {
-    public class ShootingTrapAI : MonoBehaviour
+    public class TotemTrapAI : MonoBehaviour
     {
-        [SerializeField] private ColliderCheck _vision;
+        [SerializeField] public ColliderCheck _vision;
 
-        [Header("Melee")]
-        [SerializeField] private Cooldown _meleeCooldown;
-        [SerializeField] private CheckCircleOverlap _meleeAttack;
-        [SerializeField] private LayerCheck _meleeCanAttack;
-        
         [Header("Range")]
         [SerializeField] private Cooldown _rangeCooldown;
         [SerializeField] private SpawnComponent _rangeAttack;
@@ -33,35 +28,17 @@ namespace PixelPirateCodes.Creatures.Mobs
         {
             if (_vision.IsTouchingLayer)
             {
-                if (_meleeCanAttack.IsTouchingLayer)
-                {
-                    if (_meleeCooldown.IsReady)
-                        MeleeAttack();
-                    return;
-                }
-
                 if (_rangeCooldown.IsReady)
                     RangeAttack();
             }
         }
 
-        private void RangeAttack()
+        public void RangeAttack()
         {
             _rangeCooldown.Reset();
             _animator.SetTrigger(Range);
         }
 
-        private void MeleeAttack()
-        {
-            _meleeCooldown.Reset();
-            _animator.SetTrigger(Melee);
-        }
-
-        private void OnMeleeAttack()
-        {
-            _meleeAttack.Check();
-        }
-        
         private void OnRangeAttack()
         {
             _rangeAttack.Spawn();

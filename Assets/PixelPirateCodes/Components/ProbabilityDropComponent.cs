@@ -30,9 +30,11 @@ namespace PixelPirateCodes.Components
             while (itemCount < _count)
             {
                 var random = UnityEngine.Random.value * total;
+                var current = 0f;
                 foreach (var dropData in sortedDrop)
                 {
-                    if (dropData.Probability >= random)
+                    current += dropData.Probability;
+                    if (current >= random)
                     {
                         itemsToDrop[itemCount] = dropData.Drop;
                         itemCount++;
@@ -51,10 +53,15 @@ namespace PixelPirateCodes.Components
             [Range(0f, 100f)] public float Probability;
         }
 
-        [Serializable]
-        public class DropEvent : UnityEvent<GameObject[]>
+        public void SetCount(int count)
         {
-            
+            _count = count;
         }
+    }
+    
+    [Serializable]
+    public class DropEvent : UnityEvent<GameObject[]>
+    {
+            
     }
 }

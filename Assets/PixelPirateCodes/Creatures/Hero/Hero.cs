@@ -1,10 +1,12 @@
-﻿using PixelPirateCodes.Components;
+﻿using System.Collections;
+using PixelPirateCodes.Components.ColliderBased;
+using PixelPirateCodes.Components.Health;
 using PixelPirateCodes.Model;
 using PixelPirateCodes.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
 
-namespace PixelPirateCodes.Creatures
+namespace PixelPirateCodes.Creatures.Hero
 {
     public class Hero : Creature
     {
@@ -12,21 +14,27 @@ namespace PixelPirateCodes.Creatures
         [SerializeField] private ColliderCheck _wallCheck;
         
         [SerializeField] private float _slamDownVelocity;
-        [SerializeField] private float _interactionRadius;
 
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
-        
-        [Space] [Header("Particles")]
+
+        [Space] [Header("Super throw")] [SerializeField]
+        private Cooldown _superThrowCooldown;
+
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
         
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
+        private bool _superThrow;
 
         private GameSession _session;
         private float _defaultGravityScale;
-        
+
         protected override void Awake()
         {
             base.Awake();
@@ -50,8 +58,9 @@ namespace PixelPirateCodes.Creatures
         protected override void Update()
         {
             base.Update();
-            
-            if (_wallCheck.IsTouchingLayer && Direaction.x == transform.localScale.x)
+
+            var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
+            if (_wallCheck.IsTouchingLayer && moveToSameDirection)
             {
                 _isOnWall = true;
                 Rigidbody.gravityScale = 0;
@@ -61,11 +70,13 @@ namespace PixelPirateCodes.Creatures
                 _isOnWall = false;
                 Rigidbody.gravityScale = _defaultGravityScale;
             }
+            
+            Animator.SetBool(IsOnWall, _isOnWall);
         }
         
         protected override float CalculateYVelocity()
         {
-            var isJumpPressing = Direaction.y > 0;
+            var isJumpPressing = Direction.y > 0;
 
             if (IsGrounded || _isOnWall)
             {
@@ -82,7 +93,7 @@ namespace PixelPirateCodes.Creatures
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
                 _particles.Spawn("Jump");
                 _allowDoubleJump = false;
@@ -97,12 +108,7 @@ namespace PixelPirateCodes.Creatures
             _session.Data.Coins += coins;
             Debug.Log($"{coins} coins added. total coins: {_session.Data.Coins}");
         }
-
-        public override void TakeDamage()
-        {
-            base.TakeDamage();
-        }
-
+        
         internal void Interact()
         {
             _interactionCheck.Check();
@@ -141,12 +147,47 @@ namespace PixelPirateCodes.Creatures
 
         public void OnDoThrow()
         {
-            
+            if (_superThrow)
+            {
+                var numThrows = Mathf.Min(_superThrowParticles, _session.Data.Sword - 1);
+                StartCoroutine(DoSuperThrow(numThrows));
+            }
+            else
+            {
+                ThrowAndRemoveFromInventory();
+            }
+
+            _superThrow = false;
+        }
+
+        private IEnumerator DoSuperThrow(int numThrows)
+        {
+            for (int i = 0; i < numThrows; i++)
+            {
+                ThrowAndRemoveFromInventory();
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
+        }
+
+        private void ThrowAndRemoveFromInventory()
+        {
+            _particles.Spawn("Throw");
+            _session.Data.Sword -= 1;
         }
         
-        public void Throw()
+        public void StartThrowing()
         {
+            _superThrowCooldown.Reset();
+        }
+
+        public void PerformThrowing()
+        {
+            if (!_throwCooldown.IsReady || _session.Data.Sword <= 1) return;
+
+            if (_superThrowCooldown.IsReady) _superThrow = true;
+            
             Animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
         }
     }   
 }

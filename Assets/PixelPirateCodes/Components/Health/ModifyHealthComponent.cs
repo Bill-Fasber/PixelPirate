@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelPirateCodes.Components
+namespace PixelPirateCodes.Components.Health
 {
     public class ModifyHealthComponent : MonoBehaviour
     {

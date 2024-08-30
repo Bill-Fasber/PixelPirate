@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace PixelPirateCodes.Creatures
+namespace PixelPirateCodes.Creatures.Mobs.Patrolling
 {
     public abstract class Patrol : MonoBehaviour
 

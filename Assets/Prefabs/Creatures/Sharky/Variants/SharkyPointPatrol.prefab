@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919a832d4914abbabdd18d94c2bbe0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _points: []
+  _points:
+  - {fileID: 0}
+  - {fileID: 0}
   _treshold: 1
 --- !u!1001 &8008065172937248197
 PrefabInstance:
@@ -24,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 7347289636697990997, guid: 3f3f4f2d68aa34540ad2b1cf861cfa74,
         type: 3}
       propertyPath: m_Name
-      value: Sharky
+      value: SharkyPointPatrol
       objectReference: {fileID: 0}
     - target: {fileID: 7347289636697991003, guid: 3f3f4f2d68aa34540ad2b1cf861cfa74,
         type: 3}

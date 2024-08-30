@@ -1,4 +1,5 @@
-using PixelPirateCodes.Components;
+using PixelPirateCodes.Components.ColliderBased;
+using PixelPirateCodes.Components.GoBased;
 using UnityEngine;
 
 namespace PixelPirateCodes.Creatures
@@ -18,7 +19,7 @@ namespace PixelPirateCodes.Creatures
         [SerializeField] protected SpawnListComponent _particles;
         
         protected Rigidbody2D Rigidbody;
-        protected Vector2 Direaction;
+        protected Vector2 Direction;
         protected Animator Animator;
         protected bool IsGrounded;
         private bool _isJumping;
@@ -37,7 +38,7 @@ namespace PixelPirateCodes.Creatures
         
         public void SetDirection(Vector2 direction)
         {
-            Direaction = direction;
+            Direction = direction;
         }
         
         protected virtual void Update()
@@ -47,21 +48,21 @@ namespace PixelPirateCodes.Creatures
         
         private void FixedUpdate() 
         {
-            var xVelocity = Direaction.x * _speed;
+            var xVelocity = Direction.x * _speed;
             var yVelocity = CalculateYVelocity();
             Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
             Animator.SetBool(IsGroundKey, IsGrounded);
             Animator.SetFloat(VerticalVelocity, Rigidbody.velocity.y);
-            Animator.SetBool(IsRunning, Direaction.x != 0);
+            Animator.SetBool(IsRunning, Direction.x != 0);
             
-            UpdateSprinteDirection();
+            UpdateSpriteDirection(Direction);
         }
         
         protected virtual float CalculateYVelocity()
         {
             var yVelocity = Rigidbody.velocity.y;
-            var isJumpPressing = Direaction.y > 0;
+            var isJumpPressing = Direction.y > 0;
 
             if (IsGrounded)
             {
@@ -96,14 +97,14 @@ namespace PixelPirateCodes.Creatures
             return yVelocity;
         }
         
-        private void UpdateSprinteDirection()
+        public void UpdateSpriteDirection(Vector2 direction)
         {
             var multiplier = _invertScale ? -1 : 1;
-            if (Direaction.x > 0)
+            if (Direction.x > 0)
             { 
                 transform.localScale = new Vector3(multiplier, 1, 1);
             }
-            else if (Direaction.x < 0)
+            else if (Direction.x < 0)
             {
                 transform.localScale = new Vector3(-1 * multiplier, 1, 1);
             }
@@ -113,7 +114,7 @@ namespace PixelPirateCodes.Creatures
         {
             _isJumping = false;
             Animator.SetTrigger(Hit); 
-            Direaction.y = 0f; 
+            Direction.y = 0f; 
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageVelocity);
         }
         

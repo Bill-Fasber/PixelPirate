@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 245003683}
   - component: {fileID: 245003684}
   - component: {fileID: 4167568417516838070}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   _radius: 0.2
   _mask:
     serializedVersion: 2
-    m_Bits: 12087
+    m_Bits: 77623
   _tags:
   - Enemy
   _onOverlap:
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6876364180190914685}
   - component: {fileID: 8913852566256415459}
   - component: {fileID: 6786929329422017535}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 1179597462635940108}
   - component: {fileID: 9064501933017396391}
   - component: {fileID: 3700468965707743569}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 7347289636408432957}
   - component: {fileID: 7347289636408432958}
   - component: {fileID: 7347289636408432959}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,13 +643,13 @@ MonoBehaviour:
   _wallCheck: {fileID: 3700468965707743569}
   _slamDownVelocity: 0
   _throwCooldown:
-    _value: 0
+    _value: 1
   _armed: {fileID: 9100000, guid: 66ba7e4760075354e9989e0791fb68e2, type: 2}
   _disarmed: {fileID: 9100000, guid: 0b66bd99313426e4a8c042e404eefd41, type: 2}
   _superThrowCooldown:
-    _value: 0
-  _superThrowParticles: 0
-  _superThrowDelay: 0
+    _value: 1
+  _superThrowParticles: 3
+  _superThrowDelay: 0.2
 --- !u!114 &7347289636697991004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,7 +798,7 @@ Animator:
   m_GameObject: {fileID: 7347289636697990997}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 66ba7e4760075354e9989e0791fb68e2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0b66bd99313426e4a8c042e404eefd41, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

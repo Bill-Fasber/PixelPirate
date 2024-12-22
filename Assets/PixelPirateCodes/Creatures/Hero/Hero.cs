@@ -34,7 +34,11 @@ namespace PixelPirateCodes.Creatures.Hero
 
         private GameSession _session;
         private float _defaultGravityScale;
+        
+        private int CoinsCount => _session.Data.Inventory.Count("Coin");
 
+        private int SwordCount => _session.Data.Inventory.Count("Sword");
+        
         protected override void Awake()
         {
             base.Awake();
@@ -102,13 +106,12 @@ namespace PixelPirateCodes.Creatures.Hero
 
             return base.CalculateJumpVelocity(yVelocity);
         }
-         
-        public void AddCoins(int coins)
+
+        public void AddInInventory(string id, int value)
         {
-            _session.Data.Coins += coins;
-            Debug.Log($"{coins} coins added. total coins: {_session.Data.Coins}");
+            
         }
-        
+
         internal void Interact()
         {
             _interactionCheck.Check();
@@ -128,21 +131,14 @@ namespace PixelPirateCodes.Creatures.Hero
 
         public override void Attack()
         {
-            if (!_session.Data.IsArmed) return;
+            if (SwordCount <= 0) return;
             
             base.Attack();
         }
-        
-        
-        public void ArmHero()
-        {
-            _session.Data.IsArmed = true;
-            UpdateHeroWepon();
-        }
-
+       
         private void UpdateHeroWepon()
         {
-            Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
+            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
         }
 
         public void OnDoThrow()

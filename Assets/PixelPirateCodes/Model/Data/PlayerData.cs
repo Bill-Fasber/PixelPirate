@@ -1,16 +1,17 @@
 using System;
 using UnityEngine;
 
-namespace PixelPirateCodes.Model
+namespace PixelPirateCodes.Model.Data
 {
     [Serializable]
     public class PlayerData
     {
-        public int Coins;
+        [SerializeField] private InventoryData _inventory;
         public int Hp;
-        public bool IsArmed;
         public int Sword;
 
+        public InventoryData Inventory => _inventory;
+        
         public PlayerData Clone()
         {
             var json = JsonUtility.ToJson(this);

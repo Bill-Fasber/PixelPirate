@@ -37,7 +37,7 @@ namespace PixelPirateCodes.Creatures.Hero
         
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
 
-        private int SwordCount => _session.Data.Inventory.Count("Sword");
+        private int SwordsCount => _session.Data.Inventory.Count("Sword");
         
         protected override void Awake()
         {
@@ -49,9 +49,21 @@ namespace PixelPirateCodes.Creatures.Hero
         {
             _session = FindObjectOfType<GameSession>();
             var health = GetComponent<HealthComponent>();
+            _session.Data.Inventory.OnChanged += OnInventoryChanged;
             
             health.SetHealth(_session.Data.Hp);
             UpdateHeroWepon();
+        }
+
+        private void OnDestroy()
+        {
+            _session.Data.Inventory.OnChanged -= OnInventoryChanged;
+        }
+
+        private void OnInventoryChanged(string id, int value)
+        {
+            if (id == "Sword")
+                UpdateHeroWepon();
         }
         
         public void OnHealtChanged(int currentHealth)
@@ -109,7 +121,7 @@ namespace PixelPirateCodes.Creatures.Hero
 
         public void AddInInventory(string id, int value)
         {
-            
+            _session.Data.Inventory.Add(id, value);
         }
 
         internal void Interact()
@@ -128,24 +140,24 @@ namespace PixelPirateCodes.Creatures.Hero
                 }
             }
         }
-
+        
         public override void Attack()
         {
-            if (SwordCount <= 0) return;
+            if (SwordsCount <= 0) return;
             
             base.Attack();
         }
        
         private void UpdateHeroWepon()
         {
-            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
+            Animator.runtimeAnimatorController = SwordsCount > 0 ? _armed : _disarmed;
         }
 
         public void OnDoThrow()
         {
             if (_superThrow)
             {
-                var numThrows = Mathf.Min(_superThrowParticles, _session.Data.Sword - 1);
+                var numThrows = Mathf.Min(_superThrowParticles, SwordsCount - 1);
                 StartCoroutine(DoSuperThrow(numThrows));
             }
             else
@@ -168,7 +180,7 @@ namespace PixelPirateCodes.Creatures.Hero
         private void ThrowAndRemoveFromInventory()
         {
             _particles.Spawn("Throw");
-            _session.Data.Sword -= 1;
+            _session.Data.Inventory.Remove("Sword",1);
         }
         
         public void StartThrowing()
@@ -178,7 +190,7 @@ namespace PixelPirateCodes.Creatures.Hero
 
         public void PerformThrowing()
         {
-            if (!_throwCooldown.IsReady || _session.Data.Sword <= 1) return;
+            if (!_throwCooldown.IsReady || SwordsCount <= 1) return;
 
             if (_superThrowCooldown.IsReady) _superThrow = true;
             

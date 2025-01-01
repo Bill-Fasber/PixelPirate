@@ -87,4 +87,7 @@
       <textMaps />
     </LinkMapSettings>
   </component>
+  <component name="com.jetbrains.rider.android.RiderAndroidMiscFileCreationComponent">
+    <option name="ENSURE_MISC_FILE_EXISTS" value="true" />
+  </component>
 </project>

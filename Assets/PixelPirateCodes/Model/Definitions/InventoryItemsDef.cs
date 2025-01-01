@@ -18,6 +18,10 @@ namespace PixelPirateCodes.Model.Definitions
 
             return default;
         }
+
+#if UNITY_EDITOR
+        public ItemDef[] ItemsForEditor => _items;
+#endif
     }
 
     [Serializable]

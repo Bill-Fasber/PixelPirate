@@ -7,8 +7,8 @@ namespace PixelPirateCodes.Model.Data
     public class PlayerData
     {
         [SerializeField] private InventoryData _inventory;
+        
         public int Hp;
-        public int Sword;
 
         public InventoryData Inventory => _inventory;
         

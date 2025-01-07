@@ -17,7 +17,7 @@ namespace PixelPirateCodes.Model.Definitions.Editor
             }
 
             var index = Mathf.Max(ids.IndexOf(property.stringValue), 0);
-            EditorGUI.Popup(position, property.displayName, index, ids.ToArray());
+            index = EditorGUI.Popup(position, property.displayName, index, ids.ToArray());
             property.stringValue = ids[index];
         }
     }

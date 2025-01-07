@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using PixelPirateCodes.Model.Definitions;
 using UnityEngine;
 
@@ -17,7 +16,7 @@ namespace PixelPirateCodes.Model.Data
         
         public void Add(string id, int value)
         {
-            if(value > 0) return;
+            if(value <= 0) return;
 
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid) return;

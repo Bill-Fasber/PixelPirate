@@ -41,5 +41,11 @@ namespace PixelPirateCodes.Creatures.Hero
                 _hero.PerformThrowing();
             }
         }
+
+        public void OnUse(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                _hero.UsePotion();
+        }
     }
 }

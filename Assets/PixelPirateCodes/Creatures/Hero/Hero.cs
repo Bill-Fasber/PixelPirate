@@ -33,6 +33,7 @@ namespace PixelPirateCodes.Creatures.Hero
         private bool _superThrow;
 
         private GameSession _session;
+        private HealthComponent _health;
         private float _defaultGravityScale;
         
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
@@ -48,10 +49,10 @@ namespace PixelPirateCodes.Creatures.Hero
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            var health = GetComponent<HealthComponent>();
+            _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
             
-            health.SetHealth(_session.Data.Hp);
+            _health.SetHealth(_session.Data.Hp);
             UpdateHeroWepon();
         }
 
@@ -197,6 +198,15 @@ namespace PixelPirateCodes.Creatures.Hero
             Animator.SetTrigger(ThrowKey);
             _throwCooldown.Reset();
         }
+
+        public void UsePotion()
+        {
+            var potionCount = _session.Data.Inventory.Count("HeathPotion");
+            if (potionCount > 0)
+            {
+                _health.ModifyHealth(2);
+                _session.Data.Inventory.Remove("HeathPotion",1);
+            }
+        }
     }   
 }
-

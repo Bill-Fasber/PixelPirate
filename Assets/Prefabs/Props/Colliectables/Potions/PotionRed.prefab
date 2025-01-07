@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2904558481840061443}
   - component: {fileID: 2904558481840061440}
   - component: {fileID: 2904558481840061442}
-  - component: {fileID: 8628537257351011246}
+  - component: {fileID: 516504951688578180}
   m_Layer: 14
   m_Name: PotionRed
   m_TagString: Untagged
@@ -184,17 +184,6 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8628537257351011246}
-        m_MethodName: Apply
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2904558481840061469}
         m_MethodName: set_enabled
         m_Mode: 6
@@ -204,6 +193,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 516504951688578180}
+        m_MethodName: Add
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Potion Selection
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2904558481840061440}
@@ -217,7 +217,7 @@ MonoBehaviour:
           m_StringArgument: Potion Selection
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8628537257351011246
+--- !u!114 &516504951688578180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +226,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2904558481840061446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8dab79b9089ce84a823578627141da5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b1a195550a74163a92a683b2e9c6198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hpDelta: 3
+  _id: HeathPotion
+  _count: 1

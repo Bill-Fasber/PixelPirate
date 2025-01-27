@@ -1,3 +1,4 @@
+using PixelPirateCodes.Components.Audio;
 using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Components.GoBased;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace PixelPirateCodes.Creatures
         protected Rigidbody2D Rigidbody;
         protected Vector2 Direction;
         protected Animator Animator;
+        protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
         private bool _isJumping;
         
@@ -34,6 +36,7 @@ namespace PixelPirateCodes.Creatures
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
+            Sounds = GetComponent<PlaySoundsComponent>();
         }
         
         public void SetDirection(Vector2 direction)
@@ -91,10 +94,16 @@ namespace PixelPirateCodes.Creatures
             if (IsGrounded)
             {
                 yVelocity += _jumpSpeed;
-                _particles.Spawn("Jump");
+                DoJumpVfx();
             }
 
             return yVelocity;
+        }
+
+        protected void DoJumpVfx()
+        {
+            _particles.Spawn("Jump");
+            Sounds.Play("Jump");
         }
         
         public void UpdateSpriteDirection(Vector2 direction)
@@ -121,6 +130,7 @@ namespace PixelPirateCodes.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
+            Sounds.Play("Melee");
         }
         
         public virtual void OnDoAttack()

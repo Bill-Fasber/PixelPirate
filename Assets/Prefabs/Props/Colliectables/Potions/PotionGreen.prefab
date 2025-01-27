@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2956687827611784964
+--- !u!1 &2937968339452029874
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,27 +8,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2956687827611784963}
-  - component: {fileID: 2956687827611784990}
-  - component: {fileID: 2956687827611784991}
-  - component: {fileID: 2956687827611784961}
-  - component: {fileID: 2956687827611784962}
-  - component: {fileID: 2956687827611784960}
-  - component: {fileID: 7308284162608308172}
+  - component: {fileID: 2937968339452029877}
+  - component: {fileID: 2937968339452029864}
+  - component: {fileID: 2937968339452029865}
+  - component: {fileID: 2937968339452029879}
+  - component: {fileID: 2937968339452029876}
+  - component: {fileID: 2937968339452029878}
+  - component: {fileID: 8761733194647179462}
+  - component: {fileID: 7715516260115750904}
   m_Layer: 14
-  m_Name: PotionBlue
+  m_Name: PotionGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2956687827611784963
+--- !u!4 &2937968339452029877
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956687827611784964}
+  m_GameObject: {fileID: 2937968339452029874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,13 +37,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2956687827611784990
+--- !u!212 &2937968339452029864
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956687827611784964}
+  m_GameObject: {fileID: 2937968339452029874}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -369822997
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5a729845780886746b416277f2a02b94, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 777d1addfe15f4f4a87876af14b25656, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,42 +87,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2956687827611784991
+--- !u!58 &2937968339452029865
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956687827611784964}
+  m_GameObject: {fileID: 2937968339452029874}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0022220612, y: -0.060977474}
+  m_Offset: {x: -0.00077962875, y: -0.0013267994}
   serializedVersion: 2
-  m_Radius: 0.20365135
---- !u!114 &2956687827611784961
+  m_Radius: 0.31656003
+--- !u!114 &2937968339452029879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956687827611784964}
+  m_GameObject: {fileID: 2937968339452029874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393344c5c1866114db646c390134ba6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 2956687827611784964}
---- !u!114 &2956687827611784962
+  _objectToDestroy: {fileID: 2937968339452029874}
+--- !u!114 &2937968339452029876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956687827611784964}
+  m_GameObject: {fileID: 2937968339452029874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274439610dcb94a42812b4fa9fd16237, type: 3}
@@ -132,13 +133,13 @@ MonoBehaviour:
   - _name: Potion Twisting
     _loop: 1
     sprites:
-    - {fileID: 21300000, guid: 5a729845780886746b416277f2a02b94, type: 3}
-    - {fileID: 21300000, guid: 0c154819cf2f0cf419ae9d8d7c276362, type: 3}
-    - {fileID: 21300000, guid: e85fd67648a5a094c9c96160ec00ebbd, type: 3}
-    - {fileID: 21300000, guid: 29fb750087e39804191dde0ab9cf83c6, type: 3}
-    - {fileID: 21300000, guid: d03237fd8a31cfd4784811c718d57123, type: 3}
-    - {fileID: 21300000, guid: b0a9a0eb4f02dd24aaba90caabab2d41, type: 3}
-    - {fileID: 21300000, guid: eaf26f1e77c1b9346bdc13126663d683, type: 3}
+    - {fileID: 21300000, guid: 777d1addfe15f4f4a87876af14b25656, type: 3}
+    - {fileID: 21300000, guid: c67727a17d110fb4799b83cf49f31a6f, type: 3}
+    - {fileID: 21300000, guid: 3516311af77194247a4dc74f648497ed, type: 3}
+    - {fileID: 21300000, guid: 5d191612da504e148b31006d4b4db593, type: 3}
+    - {fileID: 21300000, guid: c9424e8bed5734e44b340b60bdc3fb7e, type: 3}
+    - {fileID: 21300000, guid: 1a0e84dfe42eca44d8bb807b486417f9, type: 3}
+    - {fileID: 21300000, guid: 8ad037150326797418118d862e102502, type: 3}
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
@@ -154,7 +155,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2956687827611784961}
+        - m_Target: {fileID: 2937968339452029879}
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -165,13 +166,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &2956687827611784960
+--- !u!114 &2937968339452029878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956687827611784964}
+  m_GameObject: {fileID: 2937968339452029874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ebdc333ebb40344d8d42323443f5248, type: 3}
@@ -184,7 +185,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7308284162608308172}
+      - m_Target: {fileID: 8761733194647179462}
         m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
@@ -195,7 +196,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2956687827611784991}
+      - m_Target: {fileID: 2937968339452029865}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -206,7 +207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2956687827611784962}
+      - m_Target: {fileID: 2937968339452029876}
         m_MethodName: SetClip
         m_Mode: 5
         m_Arguments:
@@ -217,16 +218,124 @@ MonoBehaviour:
           m_StringArgument: Potion Selection
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7308284162608308172
+      - m_Target: {fileID: 7715516260115750904}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8761733194647179462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956687827611784964}
+  m_GameObject: {fileID: 2937968339452029874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8dab79b9089ce84a823578627141da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hpDelta: 1
+  _hpDelta: 5
+--- !u!82 &7715516260115750904
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937968339452029874}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6872925c80cb5fb43aa6ce6d93f8463c,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6628a1fbae56dea43a3ac2d62e691855, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

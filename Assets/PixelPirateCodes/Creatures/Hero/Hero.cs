@@ -205,6 +205,7 @@ namespace PixelPirateCodes.Creatures.Hero
             var potionCount = _session.Data.Inventory.Count("HeathPotion");
             if (potionCount > 0)
             {
+                Sounds.Play("health-up");
                 _health.ModifyHealth(2);
                 _session.Data.Inventory.Remove("HeathPotion",1);
             }

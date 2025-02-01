@@ -1,5 +1,6 @@
-using PixelPirateCodes.Creatures.Hero;
+using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Model.Definitions;
+using PixelPirateCodes.Utils;
 using UnityEngine;
 
 namespace PixelPirateCodes.Components.Colliectables
@@ -11,9 +12,8 @@ namespace PixelPirateCodes.Components.Colliectables
 
         public void Add(GameObject go)
         {
-            var hero = go.GetComponent<Hero>();
-            if(hero != null)
-                hero.AddInInventory(_id, _count);
+            var hero = go.GetInterface<ICanAddInventory>();
+            hero?.AddInInventory(_id, _count);
         }
     }
 }

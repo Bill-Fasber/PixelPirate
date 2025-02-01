@@ -2,13 +2,14 @@
 using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Components.Health;
 using PixelPirateCodes.Model;
+using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelPirateCodes.Creatures.Hero
 {
-    public class Hero : Creature
+    public class Hero : Creature, ICanAddInventory
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private ColliderCheck _wallCheck;

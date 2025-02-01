@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6277099571175159791}
   - component: {fileID: 9006924315978771805}
   m_Layer: 0
-  m_Name: Drop
+  m_Name: DropMob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,12 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb4381c870c496cb4a8818f1da7e7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 10
+  _count: 1
   _drop:
-  - Drop: {fileID: 5974799668283550136, guid: bc228afc9262b714b9ee280a3ba9db5f, type: 3}
-    Probability: 80
-  - Drop: {fileID: 4177794724880293233, guid: ffd1a4b256c65264cbfea23eb060d234, type: 3}
-    Probability: 20
+  - Drop: {fileID: 759069010817599234, guid: 320e99e89b195b043b8c7549e95e84e0, type: 3}
+    Probability: 25
+  - Drop: {fileID: 701266042971905782, guid: bdd8097343710444abd69881757f28b8, type: 3}
+    Probability: 25
   _onDropCalculated:
     m_PersistentCalls:
       m_Calls:

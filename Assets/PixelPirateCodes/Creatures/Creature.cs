@@ -122,7 +122,8 @@ namespace PixelPirateCodes.Creatures
         public virtual void TakeDamage()
         {
             _isJumping = false;
-            Animator.SetTrigger(Hit); 
+            Animator.SetTrigger(Hit);
+            Sounds.Play("Hurt");
             Direction.y = 0f; 
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageVelocity);
         }

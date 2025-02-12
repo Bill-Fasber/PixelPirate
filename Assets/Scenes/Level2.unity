@@ -31529,40 +31529,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1560350648}
     m_Modifications:
-    - target: {fileID: 1820109090, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
-      propertyPath: _sounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1820109090, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
-      propertyPath: _sounds.Array.data[4]._id
-      value: health-up
-      objectReference: {fileID: 0}
-    - target: {fileID: 1820109090, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
-      propertyPath: _sounds.Array.data[4]._clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 49f7d42f14ae23a459ba7de687bb7066, type: 3}
-    - target: {fileID: 735569181606532940, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 735569181606532940, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 6872925c80cb5fb43aa6ce6d93f8463c,
-        type: 2}
-    - target: {fileID: 4436976070666630726, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4436976070666630726, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: c990274c2bbdfe44191132f28888a07c,
-        type: 2}
     - target: {fileID: 7347289636697990997, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
         type: 3}
       propertyPath: m_Name
@@ -31622,6 +31588,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347289636697991004, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
+        type: 3}
+      propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347289636697991004, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1239872530}
+    - target: {fileID: 7347289636697991004, guid: 5ab294f44dadb0741bedc4cbf46c1b8b,
+        type: 3}
+      propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab294f44dadb0741bedc4cbf46c1b8b, type: 3}
@@ -32417,27 +32398,27 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: NaN
-      e01: 0
-      e02: 1.05e-43
-      e03: 0
-      e10: NaN
-      e11: 0
-      e12: NaN
-      e13: 0
-      e20: 1.05e-43
-      e21: 0
-      e22: 0
-      e23: -6.8978327e-18
-      e30: 1.8e-43
-      e31: NaN
-      e32: 0
-      e33: 7.72e-43
+      e00: 8.831381e-21
+      e01: -3.19014e-40
+      e02: -0.012675256
+      e03: -0.012675256
+      e10: 4.26e-43
+      e11: 4.26e-43
+      e12: 6e-44
+      e13: 6e-44
+      e20: 0.00010105281
+      e21: -3.18779e-40
+      e22: -4.8289833
+      e23: -3.18779e-40
+      e30: 4.5904e-41
+      e31: 4.26e-43
+      e32: 4.23e-43
+      e33: 4.26e-43
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: -7.7833843, g: -7.7833843, b: -7.7833843, a: -7.7833843}
   - m_RefCount: 0
-    m_Data: {r: 5.8590393, g: 5.8590393, b: 5.8590393, a: 5.8590393}
+    m_Data: {r: -3.18353e-40, g: -3.18353e-40, b: -3.18353e-40, a: -3.18353e-40}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}

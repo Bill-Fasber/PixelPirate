@@ -1,4 +1,3 @@
-﻿using PixelPirateCodes.Components.Audio;
 using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Components.GoBased;
 using PixelPirateCodes.Utils;
@@ -10,28 +9,21 @@ namespace PixelPirateCodes.Creatures.Mobs
     {
         [SerializeField] private ColliderCheck _vision;
 
-        [Header("Melee")]
-        [SerializeField] private Cooldown _meleeCooldown;
+        [Header("Melee")] [SerializeField] private Cooldown _meleeCooldown;
         [SerializeField] private CheckCircleOverlap _meleeAttack;
-        [SerializeField] private LayerCheck _meleeCanAttack;
-        
-        [Header("Range")]
-        [SerializeField] private Cooldown _rangeCooldown;
+        [SerializeField] private ColliderCheck _meleeCanAttack;
+
+        [Header("Range")] [SerializeField] private Cooldown _rangeCooldown;
         [SerializeField] private SpawnComponent _rangeAttack;
-        
-        protected PlaySoundsComponent Sounds;
-        
+
         private static readonly int Melee = Animator.StringToHash("melee");
         private static readonly int Range = Animator.StringToHash("range");
 
-        
         private Animator _animator;
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            
-            Sounds = GetComponent<PlaySoundsComponent>();
         }
 
         private void Update()
@@ -52,24 +44,22 @@ namespace PixelPirateCodes.Creatures.Mobs
 
         private void RangeAttack()
         {
-            Sounds.Play("shoot");
             _rangeCooldown.Reset();
             _animator.SetTrigger(Range);
         }
 
         private void MeleeAttack()
         {
-            Sounds.Play("melee");
             _meleeCooldown.Reset();
             _animator.SetTrigger(Melee);
         }
 
-        private void OnMeleeAttack()
+        public void OnMeleeAttack()
         {
             _meleeAttack.Check();
         }
-        
-        private void OnRangeAttack()
+
+        public void OnRangeAttack()
         {
             _rangeAttack.Spawn();
         }

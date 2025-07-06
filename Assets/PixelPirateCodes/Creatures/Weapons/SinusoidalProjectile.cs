@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace PixelPirateCodes.Creatures.Weapons
 {
@@ -8,6 +8,7 @@ namespace PixelPirateCodes.Creatures.Weapons
         [SerializeField] private float _amplitude = 1f;
         private float _originalY;
         private float _time;
+
         protected override void Start()
         {
             base.Start();

@@ -10,11 +10,14 @@ namespace PixelPirateCodes.Components.Health
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
-        [SerializeField] private HealthChangeEvent _onChange;
+        [SerializeField] public HealthChangeEvent _onChange;
+
+        public int Health => _health;
 
         public void ModifyHealth(int healthDelta)
         {
             if (_health <= 0) return;
+
             _health += healthDelta;
             _onChange?.Invoke(_health);
 
@@ -33,7 +36,15 @@ namespace PixelPirateCodes.Components.Health
                 _onDie?.Invoke();
             }
         }
-        
+
+#if UNITY_EDITOR
+        [ContextMenu("Update Health")]
+        private void UpdateHealth()
+        {
+            _onChange?.Invoke(_health);
+        }
+#endif
+
         public void SetHealth(int health)
         {
             _health = health;
@@ -46,7 +57,7 @@ namespace PixelPirateCodes.Components.Health
 
         [Serializable]
         public class HealthChangeEvent : UnityEvent<int>
-        { }
+        {
+        }
     }
-
 }

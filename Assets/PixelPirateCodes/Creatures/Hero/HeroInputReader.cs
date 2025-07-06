@@ -12,19 +12,23 @@ namespace PixelPirateCodes.Creatures.Hero
             var direction = context.ReadValue<Vector2>();
             _hero.SetDirection(direction);
         }
-        
+
         public void OnInteract(InputAction.CallbackContext context)
         {
             if (context.performed)
+            {
                 _hero.Interact();
+            }
         }
-
+        
         public void OnAttack(InputAction.CallbackContext context)
         {
             if (context.performed)
+            {
                 _hero.Attack();
+            }
         }
-        
+
         public void OnThrow(InputAction.CallbackContext context)
         {
             if (context.started)
@@ -38,11 +42,10 @@ namespace PixelPirateCodes.Creatures.Hero
             }
         }
 
-        public void OnUse(InputAction.CallbackContext context)
+        public void OnNextItem(InputAction.CallbackContext context)
         {
             if (context.performed)
-                _hero.UsePotion();
+                _hero.NextItem();
         }
-        
     }
 }

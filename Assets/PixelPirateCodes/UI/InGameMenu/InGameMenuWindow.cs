@@ -8,7 +8,6 @@ namespace PixelPirateCodes.UI.InGameMenu
     public class InGameMenuWindow : AnimatedWindow
     {
         private float _defaultTimeScale;
-
         protected override void Start()
         {
             base.Start();
@@ -17,7 +16,7 @@ namespace PixelPirateCodes.UI.InGameMenu
             Time.timeScale = 0;
         }
 
-        public void OnShowSettings()
+        public void OnShowSetting()
         {
             WindowUtils.CreateWindow("UI/SettingsWindow");
         }

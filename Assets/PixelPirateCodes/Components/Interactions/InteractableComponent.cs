@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace PixelPirateCodes.Components.Interactions
@@ -7,7 +7,7 @@ namespace PixelPirateCodes.Components.Interactions
     {
         [SerializeField] private UnityEvent _action;
 
-        public void Interact ()
+        public void Interact()
         {
             _action?.Invoke();
         }

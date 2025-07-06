@@ -8,13 +8,13 @@ namespace PixelPirateCodes.Utils
     {
         [SerializeField] private float _value;
 
-        private float _timeUp;
-        
+        private float _timesUp;
+
         public void Reset()
         {
-            _timeUp = Time.time + _value;
+            _timesUp = Time.time + _value;
         }
 
-        public bool IsReady => _timeUp < Time.time;
+        public bool IsReady => _timesUp <= Time.time;
     }
 }

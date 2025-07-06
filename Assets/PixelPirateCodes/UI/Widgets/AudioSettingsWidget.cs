@@ -13,7 +13,7 @@ namespace PixelPirateCodes.UI.Widgets
         private FloatPersistentProperty _model;
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
-        
+
         private void Start()
         {
             _trash.Retain(_slider.onValueChanged.Subscribe(OnSliderValueChanged));
@@ -23,7 +23,7 @@ namespace PixelPirateCodes.UI.Widgets
         {
             _model = model;
             _trash.Retain(model.Subscribe(OnValueChanged));
-            OnValueChanged(model.Value,model.Value);
+            OnValueChanged(model.Value, model.Value);
         }
 
         private void OnSliderValueChanged(float value)
@@ -35,7 +35,7 @@ namespace PixelPirateCodes.UI.Widgets
         {
             var textValue = Mathf.Round(newValue * 100);
             _value.text = textValue.ToString();
-            
+
             _slider.normalizedValue = newValue;
         }
 

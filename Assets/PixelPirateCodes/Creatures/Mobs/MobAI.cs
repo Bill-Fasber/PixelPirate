@@ -13,23 +13,17 @@ namespace PixelPirateCodes.Creatures.Mobs
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
-        [SerializeField] private float _missCooldown = 1f;
-
+        [SerializeField] private float _missHeroCooldown = 0.5f;
         private IEnumerator _current;
         private GameObject _target;
-        private bool _isDead;
+
+        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
         private SpawnListComponent _particles;
         private Creature _creature;
         private Animator _animator;
-        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
+        private bool _isDead;
         private Patrol _patrol;
-
-        public MobAI(ColliderCheck canAttack, ColliderCheck vision)
-        {
-            _canAttack = canAttack;
-            _vision = vision;
-        }
 
         private void Awake()
         {
@@ -46,8 +40,8 @@ namespace PixelPirateCodes.Creatures.Mobs
 
         public void OnHeroInVision(GameObject go)
         {
-            if(_isDead) return;
-            
+            if (_isDead) return;
+
             _target = go;
             StartState(AgroToHero());
         }
@@ -57,7 +51,7 @@ namespace PixelPirateCodes.Creatures.Mobs
             LookAtHero();
             _particles.Spawn("Exclamation");
             yield return new WaitForSeconds(_alarmDelay);
-            
+
             StartState(GoToHero());
         }
 
@@ -78,16 +72,16 @@ namespace PixelPirateCodes.Creatures.Mobs
                 }
                 else
                 {
-                    SetDirectionToTarget(); 
+                    SetDirectionToTarget();
                 }
-                
+
                 yield return null;
             }
 
             _creature.SetDirection(Vector2.zero);
-            _particles.Spawn("Miss");
-            yield return new WaitForSeconds(_missCooldown);
-            
+            _particles.Spawn("MissHero");
+            yield return new WaitForSeconds(_missHeroCooldown);
+
             StartState(_patrol.DoPatrol());
         }
 
@@ -98,8 +92,8 @@ namespace PixelPirateCodes.Creatures.Mobs
                 _creature.Attack();
                 yield return new WaitForSeconds(_attackCooldown);
             }
-            
-            StartState(GoToHero() );
+
+            StartState(GoToHero());
         }
 
         private void SetDirectionToTarget()
@@ -120,9 +114,7 @@ namespace PixelPirateCodes.Creatures.Mobs
             _creature.SetDirection(Vector2.zero);
 
             if (_current != null)
-            {
-                StopCoroutine(_current);   
-            }
+                StopCoroutine(_current);
 
             _current = coroutine;
             StartCoroutine(coroutine);
@@ -131,8 +123,8 @@ namespace PixelPirateCodes.Creatures.Mobs
         public void OnDie()
         {
             _isDead = true;
-            _animator.SetBool(IsDeadKey,true);
-            
+            _animator.SetBool(IsDeadKey, true);
+
             _creature.SetDirection(Vector2.zero);
             if (_current != null)
                 StopCoroutine(_current);

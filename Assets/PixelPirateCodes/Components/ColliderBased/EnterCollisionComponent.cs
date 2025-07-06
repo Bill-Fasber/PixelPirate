@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +11,7 @@ namespace PixelPirateCodes.Components.ColliderBased
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (string.IsNullOrEmpty(_tag) || other.gameObject.CompareTag(_tag))
+            if (other.gameObject.CompareTag(_tag))
             {
                 _action?.Invoke(other.gameObject);
             }

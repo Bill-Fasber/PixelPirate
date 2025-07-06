@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using PixelPirateCodes.Utils;
 using UnityEditor;
@@ -6,15 +6,15 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace PixelPirateCodes.Components.ColliderBased
-{ 
+{
     public class CheckCircleOverlap : MonoBehaviour
     {
         [SerializeField] private float _radius = 1f;
         [SerializeField] private LayerMask _mask;
         [SerializeField] private string[] _tags;
         [SerializeField] private OnOverlapEvent _onOverlap;
-        private Collider2D[] _interactionResult = new Collider2D[10];
-        
+        private readonly Collider2D[] _interactionResult = new Collider2D[10];
+
         private void OnDrawGizmosSelected()
         {
             Handles.color = HandlesUtils.TransparentRed;
@@ -25,25 +25,24 @@ namespace PixelPirateCodes.Components.ColliderBased
         {
             var size = Physics2D.OverlapCircleNonAlloc(
                 transform.position,
-                _radius, 
+                _radius,
                 _interactionResult,
                 _mask);
-            
+
             for (var i = 0; i < size; i++)
             {
                 var overlapResult = _interactionResult[i];
                 var isInTags = _tags.Any(tag => overlapResult.CompareTag(tag));
                 if (isInTags)
                 {
-                    _onOverlap?.Invoke(overlapResult.gameObject);    
+                    _onOverlap?.Invoke(overlapResult.gameObject);
                 }
             }
         }
-        
+
         [Serializable]
         public class OnOverlapEvent : UnityEvent<GameObject>
         {
-            
         }
     }
 }

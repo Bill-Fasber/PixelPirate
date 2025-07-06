@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace PixelPirateCodes.Components.Interactions
 {
@@ -11,14 +11,13 @@ namespace PixelPirateCodes.Components.Interactions
         public void Switch()
         {
             _state = !_state;
-            _animator.SetBool(_animationKey, _state); 
+            _animator.SetBool(_animationKey, _state);
         }
 
         [ContextMenu("Switch")]
         public void SwitchIt()
         {
-            Switch(); 
+            Switch();
         }
     }
 }
-

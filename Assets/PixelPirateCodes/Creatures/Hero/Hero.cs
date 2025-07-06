@@ -1,31 +1,35 @@
 ﻿using System.Collections;
+using PixelPirateCodes.Components;
 using PixelPirateCodes.Components.ColliderBased;
+using PixelPirateCodes.Components.GoBased;
 using PixelPirateCodes.Components.Health;
 using PixelPirateCodes.Model;
 using PixelPirateCodes.Model.Data;
+using PixelPirateCodes.Model.Definitions;
 using PixelPirateCodes.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelPirateCodes.Creatures.Hero
 {
-    public class Hero : Creature, ICanAddInventory
+    public class Hero : Creature, ICanAddInInventory
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private ColliderCheck _wallCheck;
-        
-        [SerializeField] private float _slamDownVelocity;
 
+        [SerializeField] private float _slamDownVelocity;
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
 
-        [Space] [Header("Super throw")] [SerializeField]
+        [Header("Super throw")] [SerializeField]
         private Cooldown _superThrowCooldown;
 
         [SerializeField] private int _superThrowParticles;
         [SerializeField] private float _superThrowDelay;
-        
+        [SerializeField] private ProbabilityDropComponent _hitDrop;
+        [SerializeField] private SpawnComponent _throwSpawner;
+
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
@@ -36,14 +40,29 @@ namespace PixelPirateCodes.Creatures.Hero
         private GameSession _session;
         private HealthComponent _health;
         private float _defaultGravityScale;
-        
-        private int CoinsCount => _session.Data.Inventory.Count("Coin");
 
-        private int SwordsCount => _session.Data.Inventory.Count("Sword");
-        
+        private const string SwordId = "Sword";
+        private int CoinsCount => _session.Data.Inventory.Count("Coin");
+        private int SwordCount => _session.Data.Inventory.Count(SwordId);
+
+        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+
+        private bool CanThrow
+        {
+            get
+            {
+                if (SelectedItemId == SwordId)
+                    return SwordCount > 1;
+
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
+                return def.HasTag(ItemTag.Throwable);
+            }
+        }
+
         protected override void Awake()
         {
             base.Awake();
+
             _defaultGravityScale = Rigidbody.gravityScale;
         }
 
@@ -52,9 +71,9 @@ namespace PixelPirateCodes.Creatures.Hero
             _session = FindObjectOfType<GameSession>();
             _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
-            
+
             _health.SetHealth(_session.Data.Hp.Value);
-            UpdateHeroWepon();
+            UpdateHeroWeapon();
         }
 
         private void OnDestroy()
@@ -64,11 +83,11 @@ namespace PixelPirateCodes.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == "Sword")
-                UpdateHeroWepon();
+            if (id == SwordId)
+                UpdateHeroWeapon();
         }
-        
-        public void OnHealtChanged(int currentHealth)
+
+        public void OnHealthChanged(int currentHealth)
         {
             _session.Data.Hp.Value = currentHealth;
         }
@@ -88,10 +107,10 @@ namespace PixelPirateCodes.Creatures.Hero
                 _isOnWall = false;
                 Rigidbody.gravityScale = _defaultGravityScale;
             }
-            
+
             Animator.SetBool(IsOnWall, _isOnWall);
         }
-        
+
         protected override float CalculateYVelocity()
         {
             var isJumpPressing = Direction.y > 0;
@@ -105,7 +124,7 @@ namespace PixelPirateCodes.Creatures.Hero
             {
                 return 0f;
             }
-            
+
             return base.CalculateYVelocity();
         }
 
@@ -126,7 +145,25 @@ namespace PixelPirateCodes.Creatures.Hero
             _session.Data.Inventory.Add(id, value);
         }
 
-        internal void Interact()
+        public override void TakeDamage()
+        {
+            base.TakeDamage();
+            if (CoinsCount > 0)
+            {
+                SpawnCoins();
+            }
+        }
+
+        private void SpawnCoins()
+        {
+            var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
+            _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
+
+            _hitDrop.SetCount(numCoinsToDispose);
+            _hitDrop.CalculateDrop();
+        }
+
+        public void Interact()
         {
             _interactionCheck.Check();
         }
@@ -138,28 +175,31 @@ namespace PixelPirateCodes.Creatures.Hero
                 var contact = other.contacts[0];
                 if (contact.relativeVelocity.y >= _slamDownVelocity)
                 {
-                    _particles.Spawn("SlamDowm");
+                    _particles.Spawn("SlamDown");
                 }
             }
         }
-        
+
         public override void Attack()
         {
-            if (SwordsCount <= 0) return;
-            
+            if (SwordCount <= 0) return;
+
             base.Attack();
         }
-       
-        private void UpdateHeroWepon()
+
+        private void UpdateHeroWeapon()
         {
-            Animator.runtimeAnimatorController = SwordsCount > 0 ? _armed : _disarmed;
+            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
         }
 
         public void OnDoThrow()
         {
             if (_superThrow)
             {
-                var numThrows = Mathf.Min(_superThrowParticles, SwordsCount - 1);
+                var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
+                var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount;
+
+                var numThrows = Mathf.Min(_superThrowParticles, possibleCount);
                 StartCoroutine(DoSuperThrow(numThrows));
             }
             else
@@ -182,10 +222,15 @@ namespace PixelPirateCodes.Creatures.Hero
         private void ThrowAndRemoveFromInventory()
         {
             Sounds.Play("Range");
-            _particles.Spawn("Throw");
-            _session.Data.Inventory.Remove("Sword",1);
+
+            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+            _throwSpawner.SetPrefab(throwableDef.Projectile);
+            _throwSpawner.Spawn();
+
+            _session.Data.Inventory.Remove(throwableId, 1);
         }
-        
+
         public void StartThrowing()
         {
             _superThrowCooldown.Reset();
@@ -193,24 +238,17 @@ namespace PixelPirateCodes.Creatures.Hero
 
         public void PerformThrowing()
         {
-            if (!_throwCooldown.IsReady || SwordsCount <= 1) return;
+            if (!_throwCooldown.IsReady || !CanThrow) return;
 
             if (_superThrowCooldown.IsReady) _superThrow = true;
-            
+
             Animator.SetTrigger(ThrowKey);
             _throwCooldown.Reset();
         }
 
-        public void UsePotion()
+        public void NextItem()
         {
-            var potionCount = _session.Data.Inventory.Count("HeathPotion");
-            if (potionCount > 0)
-            {
-                Sounds.Play("health-up");
-                _health.ModifyHealth(2);
-                _session.Data.Inventory.Remove("HeathPotion",1);
-            }
+            _session.QuickInventory.SetNextItem();
         }
-
-    }   
+    }
 }

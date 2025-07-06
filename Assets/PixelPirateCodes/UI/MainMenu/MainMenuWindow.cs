@@ -8,6 +8,7 @@ namespace PixelPirateCodes.UI.MainMenu
     public class MainMenuWindow : AnimatedWindow
     {
         private Action _closeAction;
+
         public void OnShowSettings()
         {
             WindowUtils.CreateWindow("UI/SettingsWindow");
@@ -21,13 +22,13 @@ namespace PixelPirateCodes.UI.MainMenu
 
         public void OnExit()
         {
-            _closeAction = () => 
-            { 
+            _closeAction = () =>
+            {
                 Application.Quit();
 
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
-#endif 
+#endif
             };
             Close();
         }

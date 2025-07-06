@@ -15,15 +15,15 @@ namespace PixelPirateCodes.Components.GoBased
                 spawnData.Component.Spawn();
             }
         }
-        
+
         public void Spawn(string id)
         {
             var spawner = _spawners.FirstOrDefault(element => element.Id == id);
             spawner?.Component.Spawn();
         }
-        
+
         [Serializable]
-        private class SpawnData
+        public class SpawnData
         {
             public string Id;
             public SpawnComponent Component;

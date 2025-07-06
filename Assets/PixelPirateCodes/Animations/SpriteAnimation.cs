@@ -7,14 +7,13 @@ namespace PixelPirateCodes.Animations
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteAnimation : MonoBehaviour
     {
-        [SerializeField] [Range(1, 60)] private int _frameRate = 10;
+        [SerializeField] [Range(1, 30)] private int _frameRate = 10;
         [SerializeField] private UnityEvent<string> _onComplete;
-        [SerializeField] private Clip[] _clips;
-
+        [SerializeField] private AnimationClip[] _clips;
 
         private SpriteRenderer _renderer;
 
-        private float _secondsPerFrame;
+        private float _secPerFrame;
         private float _nextFrameTime;
         private int _currentFrame;
         private bool _isPlaying = true;
@@ -24,7 +23,7 @@ namespace PixelPirateCodes.Animations
         private void Start()
         {
             _renderer = GetComponent<SpriteRenderer>();
-            _secondsPerFrame = 1f / _frameRate;
+            _secPerFrame = 1f / _frameRate;
 
             StartAnimation();
         }
@@ -41,7 +40,7 @@ namespace PixelPirateCodes.Animations
 
         public void SetClip(string clipName)
         {
-            for (int i = 0; i < _clips.Length; i++)
+            for (var i = 0; i < _clips.Length; i++)
             {
                 if (_clips[i].Name == clipName)
                 {
@@ -51,8 +50,7 @@ namespace PixelPirateCodes.Animations
                 }
             }
 
-            enabled = _isPlaying;
-            _isPlaying = false;
+            enabled = _isPlaying = false;
         }
 
         private void StartAnimation()
@@ -81,12 +79,12 @@ namespace PixelPirateCodes.Animations
                 else
                 {
                     enabled = _isPlaying = clip.AllowNextClip;
-                    clip.ONComplete?.Invoke();
+                    clip.OnComplete?.Invoke();
                     _onComplete?.Invoke(clip.Name);
                     if (clip.AllowNextClip)
                     {
                         _currentFrame = 0;
-                        _currentClip = (int)Mathf.Repeat(_currentClip + 1, _clips.Length);
+                        _currentClip = (int) Mathf.Repeat(_currentClip + 1, _clips.Length);
                     }
                 }
 
@@ -94,31 +92,25 @@ namespace PixelPirateCodes.Animations
             }
 
             _renderer.sprite = clip.Sprites[_currentFrame];
-            _nextFrameTime += _secondsPerFrame;
+
+            _nextFrameTime += _secPerFrame;
             _currentFrame++;
         }
-
-
-
     }
 
     [Serializable]
-    class Clip
+    public class AnimationClip
     {
         [SerializeField] private string _name;
+        [SerializeField] private Sprite[] _sprites;
         [SerializeField] private bool _loop;
-        [SerializeField] private Sprite[] sprites;
         [SerializeField] private bool _allowNextClip;
         [SerializeField] private UnityEvent _onComplete;
 
         public string Name => _name;
-
+        public Sprite[] Sprites => _sprites;
         public bool Loop => _loop;
-
-        public Sprite[] Sprites => sprites;
-
         public bool AllowNextClip => _allowNextClip;
-
-        public UnityEvent ONComplete => _onComplete;
+        public UnityEvent OnComplete => _onComplete;
     }
 }

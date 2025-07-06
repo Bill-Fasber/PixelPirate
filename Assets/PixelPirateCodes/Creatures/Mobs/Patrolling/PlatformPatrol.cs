@@ -10,7 +10,7 @@ namespace PixelPirateCodes.Creatures.Mobs.Patrolling
         [SerializeField] private LayerCheck _obstacleCheck;
         [SerializeField] private Creature _creature;
         [SerializeField] private int _direction;
-        
+
         public override IEnumerator DoPatrol()
         {
             while (enabled)
@@ -24,7 +24,7 @@ namespace PixelPirateCodes.Creatures.Mobs.Patrolling
                     _direction = -_direction;
                     _creature.SetDirection(new Vector2(_direction, 0));
                 }
-                
+
                 yield return null;
             }
         }

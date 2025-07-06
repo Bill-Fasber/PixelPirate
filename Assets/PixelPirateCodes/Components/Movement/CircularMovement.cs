@@ -39,7 +39,7 @@ namespace PixelPirateCodes.Components.Movement
                 enabled = false;
                 Destroy(gameObject, 1f);
             }
-            
+
             _time += Time.deltaTime;
         }
 
@@ -48,7 +48,7 @@ namespace PixelPirateCodes.Components.Movement
             var step = 2 * Mathf.PI / _bodies.Length;
 
             Vector2 containerPosition = transform.position;
-            for (int i = 0; i < _bodies.Length; i++)
+            for (var i = 0; i < _bodies.Length; i++)
             {
                 var angle = step * i;
                 var pos = new Vector2(

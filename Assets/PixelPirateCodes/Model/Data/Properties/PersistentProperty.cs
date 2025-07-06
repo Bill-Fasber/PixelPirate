@@ -5,7 +5,7 @@ namespace PixelPirateCodes.Model.Data.Properties
     public abstract class PersistentProperty<TPropertyType> : ObservableProperty<TPropertyType>
     {
         protected TPropertyType _stored;
-        
+
         private TPropertyType _defaultValue;
 
         public PersistentProperty(TPropertyType defaultValue)
@@ -19,12 +19,12 @@ namespace PixelPirateCodes.Model.Data.Properties
             set
             {
                 var isEquals = _stored.Equals(value);
-                if(isEquals) return;
+                if (isEquals) return;
 
-                var oldValue = _value;
+                var oldValue = _stored;
                 Write(value);
                 _stored = _value = value;
-                
+
                 InvokeChangedEvent(value, oldValue);
             }
         }
@@ -33,7 +33,7 @@ namespace PixelPirateCodes.Model.Data.Properties
         {
             _stored = _value = Read(_defaultValue);
         }
-        
+
         protected abstract void Write(TPropertyType value);
         protected abstract TPropertyType Read(TPropertyType defaultValue);
 

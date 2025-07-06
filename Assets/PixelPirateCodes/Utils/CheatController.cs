@@ -21,7 +21,6 @@ namespace PixelPirateCodes.Utils
         private void OnDestroy()
         {
             Keyboard.current.onTextInput -= OnTextInput;
-
         }
 
         private void OnTextInput(char inputChar)
@@ -38,7 +37,7 @@ namespace PixelPirateCodes.Utils
                 if (_currentInput.Contains(cheatItem.Name))
                 {
                     cheatItem.Action.Invoke();
-                    _currentInput = string.Empty; 
+                    _currentInput = string.Empty;
                 }
             }
         }
@@ -54,12 +53,13 @@ namespace PixelPirateCodes.Utils
                 _inputTime -= Time.deltaTime;
             }
         }
+    
+        [Serializable]
+        public class CheatItem
+        {
+            public string Name;
+            public UnityEvent Action;
+        }
     }
-
-    [Serializable]
-    public class CheatItem
-    {
-        public string Name;
-        public UnityEvent Action;
-    }   
 }
+

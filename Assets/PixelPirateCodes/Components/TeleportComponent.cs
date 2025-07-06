@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,18 +20,18 @@ namespace PixelPirateCodes.Components
             var sprite = target.GetComponent<SpriteRenderer>();
             var input = target.GetComponent<PlayerInput>();
             SetLockInput(input, true);
-            
+
             yield return AlphaAnimation(sprite, 0);
             target.SetActive(false);
 
             yield return MoveAnimation(target);
-            
+
             target.SetActive(true);
             yield return AlphaAnimation(sprite, 1);
             SetLockInput(input, false);
         }
 
-        private void SetLockInput(PlayerInput input,bool isLocked)
+        private void SetLockInput(PlayerInput input, bool isLocked)
         {
             if (input != null)
             {
@@ -64,7 +64,7 @@ namespace PixelPirateCodes.Components
                 var color = sprite.color;
                 color.a = tmpAlpha;
                 sprite.color = color;
-                
+
                 yield return null;
             }
         }

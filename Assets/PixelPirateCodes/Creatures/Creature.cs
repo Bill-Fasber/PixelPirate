@@ -1,3 +1,4 @@
+using PixelPirateCodes.Components;
 using PixelPirateCodes.Components.Audio;
 using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Components.GoBased;
@@ -7,25 +8,23 @@ namespace PixelPirateCodes.Creatures
 {
     public class Creature : MonoBehaviour
     {
-        [Header("Params")]
-        [SerializeField] private bool _invertScale;
+        [Header("Params")] [SerializeField] private bool _invertScale;
         [SerializeField] private float _speed;
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] private float _damageVelocity;
-        [SerializeField] protected LayerMask _groundLayer;
 
-        [Header("Checkers")]
+        [Header("Checkers")] [SerializeField] protected LayerMask _groundLayer;
         [SerializeField] private ColliderCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
-        
+
         protected Rigidbody2D Rigidbody;
         protected Vector2 Direction;
         protected Animator Animator;
         protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
         private bool _isJumping;
-        
+
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunning = Animator.StringToHash("is-running");
         private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
@@ -38,30 +37,35 @@ namespace PixelPirateCodes.Creatures
             Animator = GetComponent<Animator>();
             Sounds = GetComponent<PlaySoundsComponent>();
         }
-        
+
         public void SetDirection(Vector2 direction)
         {
             Direction = direction;
         }
-        
+
         protected virtual void Update()
         {
             IsGrounded = _groundCheck.IsTouchingLayer;
         }
-        
-        private void FixedUpdate() 
+
+        private void FixedUpdate()
         {
-            var xVelocity = Direction.x * _speed;
+            var xVelocity = CalculateXVelocity();
             var yVelocity = CalculateYVelocity();
             Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
             Animator.SetBool(IsGroundKey, IsGrounded);
-            Animator.SetFloat(VerticalVelocity, Rigidbody.velocity.y);
             Animator.SetBool(IsRunning, Direction.x != 0);
-            
+            Animator.SetFloat(VerticalVelocity, Rigidbody.velocity.y);
+
             UpdateSpriteDirection(Direction);
         }
-        
+
+        protected virtual float CalculateXVelocity()
+        {
+            return Direction.x * _speed;
+        }
+
         protected virtual float CalculateYVelocity()
         {
             var yVelocity = Rigidbody.velocity.y;
@@ -71,14 +75,13 @@ namespace PixelPirateCodes.Creatures
             {
                 _isJumping = false;
             }
-            
+
             if (isJumpPressing)
             {
                 _isJumping = true;
-                
+
                 var isFalling = Rigidbody.velocity.y <= 0.001f;
-                if (!isFalling) return yVelocity;
-                yVelocity = isFalling ? CalculateJumpVelocity(yVelocity): yVelocity;
+                yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
             }
             else if (Rigidbody.velocity.y > 0 && _isJumping)
             {
@@ -90,10 +93,9 @@ namespace PixelPirateCodes.Creatures
 
         protected virtual float CalculateJumpVelocity(float yVelocity)
         {
-
             if (IsGrounded)
             {
-                yVelocity += _jumpSpeed;
+                yVelocity = _jumpSpeed;
                 DoJumpVfx();
             }
 
@@ -105,38 +107,37 @@ namespace PixelPirateCodes.Creatures
             _particles.Spawn("Jump");
             Sounds.Play("Jump");
         }
-        
+
         public void UpdateSpriteDirection(Vector2 direction)
         {
             var multiplier = _invertScale ? -1 : 1;
-            if (Direction.x > 0)
-            { 
+            if (direction.x > 0)
+            {
                 transform.localScale = new Vector3(multiplier, 1, 1);
             }
-            else if (Direction.x < 0)
+            else if (direction.x < 0)
             {
                 transform.localScale = new Vector3(-1 * multiplier, 1, 1);
             }
         }
-        
+
         public virtual void TakeDamage()
         {
             _isJumping = false;
             Animator.SetTrigger(Hit);
-            Sounds.Play("Hurt");
-            Direction.y = 0f; 
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageVelocity);
         }
-        
+
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
             Sounds.Play("Melee");
         }
-        
-        public virtual void OnDoAttack()
+
+        public void OnDoAttack()
         {
             _attackRange.Check();
+            _particles.Spawn("Slash");
         }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Model.Data.Properties;
-using PixelPirateCodes.Utils.Disposables;
 using UnityEngine;
 
 namespace PixelPirateCodes.Components.Audio
@@ -12,14 +11,13 @@ namespace PixelPirateCodes.Components.Audio
         [SerializeField] private SoundSetting _mode;
         private AudioSource _source;
         private FloatPersistentProperty _model;
-        
-        private readonly CompositeDisposable _trash = new CompositeDisposable();
-        
+
         private void Start()
         {
             _source = GetComponent<AudioSource>();
+
             _model = FindProperty();
-            _trash.Retain(_model.Subscribe(OnSoundSettingChanged));
+            _model.OnChanged += OnSoundSettingChanged;
             OnSoundSettingChanged(_model.Value, _model.Value);
         }
 
@@ -43,7 +41,7 @@ namespace PixelPirateCodes.Components.Audio
 
         private void OnDestroy()
         {
-            _trash.Dispose();
+            _model.OnChanged -= OnSoundSettingChanged;
         }
     }
 }

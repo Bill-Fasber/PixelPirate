@@ -1,4 +1,4 @@
-﻿using PixelPirateCodes.Model.Data.Properties;
+using PixelPirateCodes.Model.Data.Properties;
 using UnityEngine;
 
 namespace PixelPirateCodes.Model.Data

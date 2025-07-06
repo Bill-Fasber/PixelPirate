@@ -12,10 +12,10 @@ namespace PixelPirateCodes.Components.GoBased
         private float _sectorAngle = 60;
 
         [SerializeField] private float _sectorRotation;
-        
+
         [SerializeField] private float _waitTime = 0.1f;
         [SerializeField] private float _speed = 6;
-    
+
         private Coroutine _routine;
 
         public void StartDrop(GameObject[] items)
@@ -35,10 +35,9 @@ namespace PixelPirateCodes.Components.GoBased
 
         private IEnumerator StartSpawn(GameObject[] particles)
         {
-            
             for (var i = 0; i < particles.Length; i++)
             {
-                Spawn(particles[i]); 
+                Spawn(particles[i]);
                 yield return new WaitForSeconds(_waitTime);
             }
         }

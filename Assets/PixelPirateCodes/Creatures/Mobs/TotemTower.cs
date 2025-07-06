@@ -8,25 +8,25 @@ namespace PixelPirateCodes.Creatures.Mobs
 {
     public class TotemTower : MonoBehaviour
     {
-        [SerializeField] private List<TotemTrapAI> _traps;
+        [SerializeField] private List<ShootingTrapAI> _traps;
         [SerializeField] private Cooldown _cooldown;
 
         private int _currentTrap;
 
         private void Start()
         {
-            foreach (var totemTrapAI in _traps)
+            foreach (var shootingTrapAI in _traps)
             {
-                totemTrapAI.enabled = false;
-                var hp = totemTrapAI.GetComponent<HealthComponent>();
-                hp._onDie.AddListener(() => OnTrapDie(totemTrapAI));
+                shootingTrapAI.enabled = false;
+                var hp = shootingTrapAI.GetComponent<HealthComponent>();
+                hp._onDie.AddListener(() => OnTrapDead(shootingTrapAI));
             }
         }
 
-        private void OnTrapDie(TotemTrapAI totemTrapAI)
+        private void OnTrapDead(ShootingTrapAI shootingTrapAI)
         {
-            var index = _traps.IndexOf(totemTrapAI);
-            _traps.Remove(totemTrapAI);
+            var index = _traps.IndexOf(shootingTrapAI);
+            _traps.Remove(shootingTrapAI);
             if (index < _currentTrap)
             {
                 _currentTrap--;
@@ -40,13 +40,13 @@ namespace PixelPirateCodes.Creatures.Mobs
                 enabled = false;
                 Destroy(gameObject, 1f);
             }
-            
+
             var hasAnyTarget = _traps.Any(x => x._vision.IsTouchingLayer);
             if (hasAnyTarget)
             {
                 if (_cooldown.IsReady)
                 {
-                    _traps[_currentTrap].RangeAttack();
+                    _traps[_currentTrap].Shoot();
                     _cooldown.Reset();
                     _currentTrap = (int) Mathf.Repeat(_currentTrap + 1, _traps.Count);
                 }

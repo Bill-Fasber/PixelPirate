@@ -6,7 +6,6 @@ namespace PixelPirateCodes.Components.Health
     {
         [SerializeField] private int _hpDelta;
 
-
         public void Apply(GameObject target)
         {
             var healthComponent = target.GetComponent<HealthComponent>();
@@ -17,4 +16,3 @@ namespace PixelPirateCodes.Components.Health
         }
     }
 }
-

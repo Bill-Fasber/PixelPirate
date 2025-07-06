@@ -20,12 +20,13 @@ namespace PixelPirateCodes.Components
             }
         }
 
+        [ContextMenu("CalculateDrop")]
         public void CalculateDrop()
         {
             var itemsToDrop = new GameObject[_count];
             var itemCount = 0;
-            var total = _drop.Sum( dropData => dropData.Probability);
-            var sortedDrop = _drop.OrderBy(dropData => dropData.Probability);
+            var total = _drop.Sum(dropData => dropData.Probability);
+            var sortedDrop = _drop.OrderBy(dropData => dropData.Probability).ToArray();
 
             while (itemCount < _count)
             {
@@ -42,10 +43,11 @@ namespace PixelPirateCodes.Components
                     }
                 }
             }
-            
+
             _onDropCalculated?.Invoke(itemsToDrop);
         }
-        
+
+
         [Serializable]
         public class DropData
         {
@@ -58,10 +60,9 @@ namespace PixelPirateCodes.Components
             _count = count;
         }
     }
-    
+
     [Serializable]
     public class DropEvent : UnityEvent<GameObject[]>
     {
-            
     }
 }

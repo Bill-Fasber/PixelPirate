@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace PixelPirateCodes.Creatures.Hero
 {
-    public class HeroinputReader : MonoBehaviour
+    public class HeroInputReader : MonoBehaviour
     {
         [SerializeField] private Hero _hero;
 
@@ -16,17 +16,13 @@ namespace PixelPirateCodes.Creatures.Hero
         public void OnInteract(InputAction.CallbackContext context)
         {
             if (context.performed)
-            {
                 _hero.Interact();
-            }
         }
 
         public void OnAttack(InputAction.CallbackContext context)
         {
             if (context.performed)
-            {
                 _hero.Attack();
-            }
         }
         
         public void OnThrow(InputAction.CallbackContext context)
@@ -47,5 +43,6 @@ namespace PixelPirateCodes.Creatures.Hero
             if (context.performed)
                 _hero.UsePotion();
         }
+        
     }
 }

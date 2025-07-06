@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelPirateCodes.Utils;
+using UnityEngine;
 
 namespace PixelPirateCodes.Components.GoBased
 {
@@ -10,10 +11,11 @@ namespace PixelPirateCodes.Components.GoBased
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var instantne = Instantiate(_prefab, _target.position, Quaternion.identity);
+            var instance = SpawnUtils.Spawn(_prefab, _target.position);
+            
             var scale = _target.lossyScale;
-            instantne.transform.localScale = scale;
-            instantne.SetActive(true);
+            instance.transform.localScale = scale;
+            instance.SetActive(true);
         }
     }
 }

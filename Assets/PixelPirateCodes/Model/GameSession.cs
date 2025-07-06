@@ -1,5 +1,6 @@
 using PixelPirateCodes.Model.Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelPirateCodes.Model
 {
@@ -11,6 +12,8 @@ namespace PixelPirateCodes.Model
 
         private void Awake()
         {
+            LoadHud();
+            
             if (IsSessionExit())
             {
                 Destroy(gameObject);
@@ -20,6 +23,11 @@ namespace PixelPirateCodes.Model
                  Save();
                 DontDestroyOnLoad(this);
             }
+        }
+
+        public void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         private bool IsSessionExit()

@@ -53,7 +53,7 @@ namespace PixelPirateCodes.Creatures.Hero
             _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
             
-            _health.SetHealth(_session.Data.Hp);
+            _health.SetHealth(_session.Data.Hp.Value);
             UpdateHeroWepon();
         }
 
@@ -70,7 +70,7 @@ namespace PixelPirateCodes.Creatures.Hero
         
         public void OnHealtChanged(int currentHealth)
         {
-            _session.Data.Hp = currentHealth;
+            _session.Data.Hp.Value = currentHealth;
         }
 
         protected override void Update()
@@ -211,5 +211,6 @@ namespace PixelPirateCodes.Creatures.Hero
                 _session.Data.Inventory.Remove("HeathPotion",1);
             }
         }
+
     }   
 }

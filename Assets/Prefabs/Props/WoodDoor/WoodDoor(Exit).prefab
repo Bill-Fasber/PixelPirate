@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5584996200571281664}
   - component: {fileID: 3348912790977340247}
   - component: {fileID: 5385047778065594711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WoodDoor(Exit)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1938489909
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6b2deb4533aaace4e8ff2dd838d51224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c41dbc91b105c4784cb293419c53f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: 
+  _sceneName: Level2
 --- !u!114 &5385047778065594711
 MonoBehaviour:
   m_ObjectHideFlags: 0

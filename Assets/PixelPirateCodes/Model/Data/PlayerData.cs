@@ -1,4 +1,5 @@
 using System;
+using PixelPirateCodes.Model.Data.Properties;
 using UnityEngine;
 
 namespace PixelPirateCodes.Model.Data
@@ -8,7 +9,7 @@ namespace PixelPirateCodes.Model.Data
     {
         [SerializeField] private InventoryData _inventory;
         
-        public int Hp;
+        public IntProperty Hp = new IntProperty();
 
         public InventoryData Inventory => _inventory;
         

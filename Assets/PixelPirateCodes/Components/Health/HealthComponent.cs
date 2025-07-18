@@ -11,9 +11,14 @@ namespace PixelPirateCodes.Components.Health
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] public HealthChangeEvent _onChange;
+<<<<<<< HEAD
 
         public int Health => _health;
+=======
+>>>>>>> c14b2051b1fccf81e70de703d6ce980bd4297d09
 
+        public int Health => _health;
+        
         public void ModifyHealth(int healthDelta)
         {
             if (_health <= 0) return;

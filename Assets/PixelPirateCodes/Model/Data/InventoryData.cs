@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PixelPirateCodes.Model.Definitions;
+using PixelPirateCodes.Model.Definitions.Repositories.Items;
 using UnityEngine;
 
 namespace PixelPirateCodes.Model.Data

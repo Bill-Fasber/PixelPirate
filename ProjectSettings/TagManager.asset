@@ -9,6 +9,7 @@ TagManager:
   - CutSceneAnimator
   - Interactable
   - SfxAudioSource
+  - MainUICanvas
   layers:
   - Default
   - TransparentFX

@@ -563,7 +563,7 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: PearlProjectile
+      - Id: Coin
         Value: 30
       - Id: Key
         Value: 1

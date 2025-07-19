@@ -63,9 +63,14 @@ namespace PixelPirateCodes.Creatures
 
         protected virtual float CalculateXVelocity()
         {
-            return Direction.x * _speed;
+            return Direction.x * CalculateSpeed();
         }
 
+        protected virtual float CalculateSpeed()
+        {
+            return _speed;
+        }
+        
         protected virtual float CalculateYVelocity()
         {
             var yVelocity = Rigidbody.velocity.y;

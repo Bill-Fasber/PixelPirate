@@ -1980,8 +1980,10 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 10
-      - Id: Coin
-        Value: 100
+      - Id: SmallHealthPotion
+        Value: 1
+      - Id: LargeHealthPotion
+        Value: 1
     Hp:
       _value: 5
 --- !u!4 &619375323

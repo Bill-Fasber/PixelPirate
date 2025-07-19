@@ -6,6 +6,8 @@ using PixelPirateCodes.Components.Health;
 using PixelPirateCodes.Model;
 using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Model.Definitions;
+using PixelPirateCodes.Model.Definitions.Repositories;
+using PixelPirateCodes.Model.Definitions.Repositories.Items;
 using PixelPirateCodes.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -236,7 +238,50 @@ namespace PixelPirateCodes.Creatures.Hero
             _superThrowCooldown.Reset();
         }
 
-        public void PerformThrowing()
+        public void UseInventory()
+        {
+            if (IsSelectedItem(ItemTag.Throwable))
+                PerformThrowing();
+            else if (IsSelectedItem(ItemTag.Potion))
+                UsePotion();
+        }
+
+        private void UsePotion()
+        {
+            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+
+            switch (potion.Effect)
+            {
+                case Effect.AddHp:
+                    _session.Data.Hp.Value += (int) potion.Value;
+                    break;
+                case Effect.SpeedUp:
+                    _speedUpCooldown.Value = _speedUpCooldown.TimeLasts + potion.Time;
+                    _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
+                    _speedUpCooldown.Reset();
+                    break;
+            }
+            
+            _session.Data.Inventory.Remove(potion.Id, 1);
+        }
+
+        private readonly Cooldown _speedUpCooldown = new Cooldown();
+        private float _additionalSpeed;
+
+        protected override float CalculateSpeed()
+        {
+            if (_speedUpCooldown.IsReady)
+                _additionalSpeed = 0f;
+            
+            return base.CalculateSpeed() + _additionalSpeed;
+        }
+
+        private bool IsSelectedItem(ItemTag tag)
+        {
+            return _session.QuickInventory.SelectedDef.HasTag(tag);
+        }
+
+        private void PerformThrowing()
         {
             if (!_throwCooldown.IsReady || !CanThrow) return;
 

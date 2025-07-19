@@ -1,6 +1,7 @@
 using PixelPirateCodes.Model;
 using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Model.Definitions;
+using PixelPirateCodes.Model.Definitions.Repositories.Items;
 using PixelPirateCodes.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;

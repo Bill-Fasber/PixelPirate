@@ -1,6 +1,7 @@
 using PixelPirateCodes.Utils;
 using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Model.Definitions;
+using PixelPirateCodes.Model.Definitions.Repositories.Items;
 using UnityEngine;
 
 namespace PixelPirateCodes.Components.Collectables

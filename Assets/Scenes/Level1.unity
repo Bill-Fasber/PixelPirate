@@ -183,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5385287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.831853, y: 5.300954, z: -7.9600983}
+  m_LocalPosition: {x: -8.151853, y: -2.649047, z: -7.9600983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 12823466}
@@ -565,7 +565,7 @@ MonoBehaviour:
       _inventory:
       - Id: Coin
         Value: 30
-      - Id: Key
+      - Id: Sword
         Value: 1
     Hp:
       _value: 10
@@ -723,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124267945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.52, y: -0.64999986, z: -10}
+  m_LocalPosition: {x: -5.84, y: -8.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1242231042}
@@ -2887,6 +2887,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48ec74bd7ed9442ee80fb69eaa600360, type: 3}
+--- !u!1 &330955237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 334190752523899003, guid: 3e6fe8073928f4aada860865743cb447,
+    type: 3}
+  m_PrefabInstance: {fileID: 1595480869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &330955238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330955237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b54ba8654441828ca96b26389d3803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - _valued: You need a key
+      _icon: {fileID: 0}
+      _side: 0
+    - _valued: Find one at upper floor
+      _icon: {fileID: 0}
+      _side: 1
+    _type: 0
+  _external: {fileID: 0}
 --- !u!114 &348185331 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2685840217709099190, guid: 9bb3688a4df7148b39fea14fdb5cb764,
@@ -7774,6 +7803,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &645150678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2624087489012144662, guid: 78a88547b074d44a7a9271cc8f17b41e,
+    type: 3}
+  m_PrefabInstance: {fileID: 658716406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &645150679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645150678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40cd9e78e78d45638f5c77b4e8ce29ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    DialogText: Use Helm?
+    Options:
+    - Text: 1. Yes
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 645150684}
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: interact
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 645150680}
+            m_MethodName: Set
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Text: 2. No
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!114 &645150680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 543763047971157616, guid: 78a88547b074d44a7a9271cc8f17b41e,
+    type: 3}
+  m_PrefabInstance: {fileID: 658716406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645150678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c98e8d64b014c4b962e8aadf4f195fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &645150684 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2812057296245378418, guid: 78a88547b074d44a7a9271cc8f17b41e,
+    type: 3}
+  m_PrefabInstance: {fileID: 658716406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &654272294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7918,6 +8016,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Helm (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154608313350580570, guid: 78a88547b074d44a7a9271cc8f17b41e,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154608313350580570, guid: 78a88547b074d44a7a9271cc8f17b41e,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154608313350580570, guid: 78a88547b074d44a7a9271cc8f17b41e,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 645150679}
+    - target: {fileID: 4154608313350580570, guid: 78a88547b074d44a7a9271cc8f17b41e,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154608313350580570, guid: 78a88547b074d44a7a9271cc8f17b41e,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154608313350580570, guid: 78a88547b074d44a7a9271cc8f17b41e,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78a88547b074d44a7a9271cc8f17b41e, type: 3}
@@ -15045,12 +15173,12 @@ PrefabInstance:
     - target: {fileID: 7595805516646929359, guid: e7a3cecf88e6845cd9e8bb2f29adee1d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.52
+      value: -5.84
       objectReference: {fileID: 0}
     - target: {fileID: 7595805516646929359, guid: e7a3cecf88e6845cd9e8bb2f29adee1d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.65
+      value: -8.6
       objectReference: {fileID: 0}
     - target: {fileID: 7595805516646929359, guid: e7a3cecf88e6845cd9e8bb2f29adee1d,
         type: 3}
@@ -15113,6 +15241,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 290041049}
     m_Modifications:
+    - target: {fileID: 271459981, guid: 3e6fe8073928f4aada860865743cb447, type: 3}
+      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 271459981, guid: 3e6fe8073928f4aada860865743cb447, type: 3}
+      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 271459981, guid: 3e6fe8073928f4aada860865743cb447, type: 3}
+      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 330955238}
+    - target: {fileID: 271459981, guid: 3e6fe8073928f4aada860865743cb447, type: 3}
+      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 271459981, guid: 3e6fe8073928f4aada860865743cb447, type: 3}
+      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 271459981, guid: 3e6fe8073928f4aada860865743cb447, type: 3}
+      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 334190752523898982, guid: 3e6fe8073928f4aada860865743cb447,
         type: 3}
       propertyPath: m_RootOrder

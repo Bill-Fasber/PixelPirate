@@ -1,4 +1,3 @@
-using PixelPirateCodes.Components;
 using PixelPirateCodes.Components.Audio;
 using PixelPirateCodes.Components.ColliderBased;
 using PixelPirateCodes.Components.GoBased;

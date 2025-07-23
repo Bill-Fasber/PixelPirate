@@ -10,6 +10,8 @@ TagManager:
   - Interactable
   - SfxAudioSource
   - MainUICanvas
+  - SimpleDialog
+  - PersonalizedDialog
   layers:
   - Default
   - TransparentFX

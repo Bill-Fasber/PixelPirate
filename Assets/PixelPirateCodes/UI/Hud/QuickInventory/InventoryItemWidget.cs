@@ -2,13 +2,14 @@ using PixelPirateCodes.Model;
 using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Model.Definitions;
 using PixelPirateCodes.Model.Definitions.Repositories.Items;
+using PixelPirateCodes.UI.Widgets;
 using PixelPirateCodes.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace PixelPirateCodes.UI.Hud.QuickInventory
 {
-    public class InventoryItemWidget : MonoBehaviour
+    public class InventoryItemWidget : MonoBehaviour, IItemRenderer<InventoryItemData>
     {
         [SerializeField] private Image _icon;
         [SerializeField] private GameObject _selection;
@@ -21,7 +22,8 @@ namespace PixelPirateCodes.UI.Hud.QuickInventory
         private void Start()
         {
             var session = FindObjectOfType<GameSession>();
-            session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged);
+            var index = session.QuickInventory.SelectedIndex;
+            _trash.Retain(index.SubscribeAndInvoke(OnIndexChanged));
         }
 
         private void OnIndexChanged(int newValue, int _)
@@ -35,6 +37,11 @@ namespace PixelPirateCodes.UI.Hud.QuickInventory
             var def = DefsFacade.I.Items.Get(item.Id);
             _icon.sprite = def.Icon;
             _value.text = def.HasTag(ItemTag.Stackable) ? item.Value.ToString() : string.Empty;
+        }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
         }
     }
 }

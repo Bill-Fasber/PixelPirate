@@ -1,4 +1,3 @@
-using System;
 using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Utils.Disposables;
 using UnityEngine;
@@ -34,6 +33,7 @@ namespace PixelPirateCodes.Model
         private void InitModels()
         {
             QuickInventory = new QuickInventoryModel(_data);
+            _trash.Retain(QuickInventory);
         }
 
         private void LoadHud()

@@ -2,7 +2,7 @@ using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.UI.Widgets;
 using UnityEngine;
 
-namespace PixelPirateCodes.UI.Settings
+namespace PixelPirateCodes.UI.Windows.Settings
 {
     public class SettingsWindow : AnimatedWindow
     {

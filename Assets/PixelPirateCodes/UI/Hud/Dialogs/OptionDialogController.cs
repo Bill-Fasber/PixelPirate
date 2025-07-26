@@ -14,11 +14,11 @@ namespace PixelPirateCodes.UI.Hud.Dialogs
         [SerializeField] private Transform _optionsContainer;
         [SerializeField] private OptionItemWidget _prefab;
 
-        private DataGroup<OptionData, OptionItemWidget> _dataData;
+        private DataGroup<OptionData, OptionItemWidget> _dataGroup;
 
         private void Start()
         {
-            _dataData = new DataGroup<OptionData, OptionItemWidget>(_prefab, _optionsContainer);
+            _dataGroup = new DataGroup<OptionData, OptionItemWidget>(_prefab, _optionsContainer);
         }
 
         public void OnOptionsSelected(OptionData selectedOption)
@@ -32,7 +32,7 @@ namespace PixelPirateCodes.UI.Hud.Dialogs
             _content.SetActive(true);
             _contentText.text = data.DialogText;
             
-            _dataData.SetData(data.Options);
+            _dataGroup.SetData(data.Options);
         }
     }
 

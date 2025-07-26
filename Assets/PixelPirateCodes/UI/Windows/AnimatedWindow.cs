@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PixelPirateCodes.UI
+namespace PixelPirateCodes.UI.Windows
 {
     public class AnimatedWindow : MonoBehaviour
     {

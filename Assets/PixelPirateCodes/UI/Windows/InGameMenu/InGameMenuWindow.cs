@@ -3,7 +3,7 @@ using PixelPirateCodes.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelPirateCodes.UI.InGameMenu
+namespace PixelPirateCodes.UI.Windows.InGameMenu
 {
     public class InGameMenuWindow : AnimatedWindow
     {

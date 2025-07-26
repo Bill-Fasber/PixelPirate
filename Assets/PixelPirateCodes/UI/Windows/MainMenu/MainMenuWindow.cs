@@ -3,7 +3,7 @@ using PixelPirateCodes.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelPirateCodes.UI.MainMenu
+namespace PixelPirateCodes.UI.Windows.MainMenu
 {
     public class MainMenuWindow : AnimatedWindow
     {
@@ -18,6 +18,11 @@ namespace PixelPirateCodes.UI.MainMenu
         {
             _closeAction = () => { SceneManager.LoadScene("Level1"); };
             Close();
+        }
+
+        public void OnLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
         }
 
         public void OnExit()

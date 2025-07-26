@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f875c7f37cc4ba183bf2ddb543fd681, type: 3}
+  m_Name: es
+  m_EditorClassIdentifier: 
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTrVuAEe11-ncwG9lcyOJJ23S2Cdg2jm0SxUQ0N026d9KLcTFTPEIxIhTXEatOo-0lT6Ihs9_TXVZD5/pub?gid=40089781&single=true&output=tsv
+  _localeItems:
+  - Key: menu_title_main
+    Value: "Men\xFA principal\r"
+  - Key: menu_title_options
+    Value: "Opciones\r"
+  - Key: menu_title_pause
+    Value: "Pausa\r"
+  - Key: menu_title_locales
+    Value: "Idiomas\r"
+  - Key: label_music
+    Value: "M\xFAsica:\r"
+  - Key: button_restart
+    Value: "reiniciar\r"
+  - Key: button_start
+    Value: "comienzo\r"
+  - Key: button_options
+    Value: "opciones\r"
+  - Key: button_exit
+    Value: "salir del juego\r"
+  - Key: button_back
+    Value: "atr\xE1s\r"
+  - Key: button_locales
+    Value: "idiomas\r"
+  - Key: selected_language
+    Value: 'Idioma seleccionado: {0}'

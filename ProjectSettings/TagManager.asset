@@ -9,7 +9,6 @@ TagManager:
   - CutSceneAnimator
   - Interactable
   - SfxAudioSource
-  - MainUICanvas
   - SimpleDialog
   - PersonalizedDialog
   layers:

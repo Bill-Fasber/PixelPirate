@@ -3,7 +3,7 @@ using PixelPirateCodes.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelPirateCodes.UI.InGameMenu
+namespace PixelPirateCodes.UI.Windows.InGameMenu
 {
     public class InGameMenuWindow : AnimatedWindow
     {
@@ -19,6 +19,11 @@ namespace PixelPirateCodes.UI.InGameMenu
         public void OnShowSetting()
         {
             WindowUtils.CreateWindow("UI/SettingsWindow");
+        }
+        
+        public void OnLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
         }
 
         public void OnExit()

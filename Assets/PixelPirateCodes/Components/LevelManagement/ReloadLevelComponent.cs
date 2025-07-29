@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelPirateCodes.Components.LevelManegement
+namespace PixelPirateCodes.Components.LevelManagement
 {
     public class ReloadLevelComponent : MonoBehaviour
     {

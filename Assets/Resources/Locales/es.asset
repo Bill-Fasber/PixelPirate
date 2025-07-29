@@ -36,5 +36,7 @@ MonoBehaviour:
     Value: "atr\xE1s\r"
   - Key: button_locales
     Value: "idiomas\r"
+  - Key: button_continue
+    Value: "Contin\xFAe..\r"
   - Key: selected_language
     Value: 'Idioma seleccionado: {0}'

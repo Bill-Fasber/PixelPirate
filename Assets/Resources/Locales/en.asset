@@ -36,5 +36,7 @@ MonoBehaviour:
     Value: "back\r"
   - Key: button_locales
     Value: "languages\r"
+  - Key: button_continue
+    Value: "Continue..\r"
   - Key: selected_language
     Value: Selected language is {0}

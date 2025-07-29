@@ -36,5 +36,7 @@ MonoBehaviour:
     Value: "\u043D\u0430\u0437\u0430\u0434\r"
   - Key: button_locales
     Value: "\u044F\u0437\u044B\u043A\r"
+  - Key: button_continue
+    Value: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C..\r"
   - Key: selected_language
     Value: "\u0412\u044B\u0431\u0440\u0430\u043D \u044F\u0437\u044B\u043A: {0}"

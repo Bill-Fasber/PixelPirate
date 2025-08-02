@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PixelPirateCodes.Components.LevelManagement;
 using PixelPirateCodes.Model.Data;
+using PixelPirateCodes.Model.Models;
 using PixelPirateCodes.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,8 @@ namespace PixelPirateCodes.Model
         
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         public QuickInventoryModel QuickInventory { get; private set; }
+        
+        public PerksModel PerksModel { get; private set; }
 
         private readonly List<string> _checkpoints = new List<string>();
 
@@ -63,6 +66,9 @@ namespace PixelPirateCodes.Model
         {
             QuickInventory = new QuickInventoryModel(_data);
             _trash.Retain(QuickInventory);
+
+            PerksModel = new PerksModel(_data);
+            _trash.Retain(PerksModel);
         }
 
         private void LoadHud()
@@ -89,9 +95,10 @@ namespace PixelPirateCodes.Model
 
         public void LoadLastSave()
         {
+            _data = _save.Clone();
+            
             _trash.Dispose();
             InitModels();
-            _data = _save.Clone();
         }
 
         public bool IsChecked(string id)
@@ -115,15 +122,15 @@ namespace PixelPirateCodes.Model
 
         private readonly List<string> _removedItems = new List<string>();
 
-        public bool RestoreState(string Id)
+        public bool RestoreState(string id)
         {
-            return _removedItems.Contains(Id);
+            return _removedItems.Contains(id);
         }
 
-        public void StoreState(string Id)
+        public void StoreState(string id)
         {
-            if (!_removedItems.Contains(Id))
-                _removedItems.Add(Id);
+            if (!_removedItems.Contains(id))
+                _removedItems.Add(id);
         }
     }
 }

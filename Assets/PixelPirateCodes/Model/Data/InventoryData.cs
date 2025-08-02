@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PixelPirateCodes.Model.Definitions;
+using PixelPirateCodes.Model.Definitions.Repositories;
 using PixelPirateCodes.Model.Definitions.Repositories.Items;
 using UnityEngine;
 
@@ -136,6 +137,26 @@ namespace PixelPirateCodes.Model.Data
             }
 
             return count;
+        }
+
+        public bool IsEnough(params ItemWithCount[] items)
+        {
+            var joined = new Dictionary<string, int>();
+            foreach (var item in items)
+            {
+                if (joined.ContainsKey(item.ItemId))
+                    joined[item.ItemId] += item.Count;
+                else
+                    joined.Add(item.ItemId, item.Count);
+            }
+            
+            foreach (var kvp in joined)
+            {
+                var count = Count(kvp.Key);
+                if (count < kvp.Value) return false;
+            }
+
+            return true;
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PixelPirateCodes.Model.Definitions.Repositories.Items
 {
-    [CreateAssetMenu(menuName = "Defs/Items", fileName = "Items")]
+    [CreateAssetMenu(menuName = "Defs/Repository/Items", fileName = "Items")]
     public class ItemsRepository : DefRepository<ItemDef>
     {
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelPirateCodes.Model.Definitions.Repositories
@@ -19,5 +20,7 @@ namespace PixelPirateCodes.Model.Definitions.Repositories
 
             return default;
         }
+
+        public TDefType[] All => new List<TDefType>(_collection).ToArray();
     }
 }

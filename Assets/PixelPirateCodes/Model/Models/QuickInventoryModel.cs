@@ -1,11 +1,12 @@
 using System;
+using PixelPirateCodes.Model.Data;
 using PixelPirateCodes.Model.Data.Properties;
 using PixelPirateCodes.Model.Definitions;
 using PixelPirateCodes.Model.Definitions.Repositories.Items;
 using PixelPirateCodes.Utils.Disposables;
 using UnityEngine;
 
-namespace PixelPirateCodes.Model.Data
+namespace PixelPirateCodes.Model.Models
 {
     public class QuickInventoryModel : IDisposable
     {

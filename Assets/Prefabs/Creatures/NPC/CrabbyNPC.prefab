@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 1739684828}
+  _state: {fileID: 0}
 --- !u!1 &2444563712505070277
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,9 +147,7 @@ GameObject:
   - component: {fileID: 2444563712505070275}
   - component: {fileID: 2444563712505070273}
   - component: {fileID: 2570225887612741338}
-  - component: {fileID: 7093815601229276498}
-  - component: {fileID: 962449977827642091}
-  - component: {fileID: 1313474084}
+  - component: {fileID: 925747544}
   m_Layer: 9
   m_Name: CrabbyNPC
   m_TagString: Interactable
@@ -283,7 +282,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7093815601229276498}
+      - m_Target: {fileID: 925747544}
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -294,7 +293,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7093815601229276498
+--- !u!114 &925747544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,47 +302,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2444563712505070277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b54ba8654441828ca96b26389d3803, type: 3}
+  m_Script: {fileID: 11500000, guid: b2c2a74cb25f4c759e930d50bea9c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mode: 0
-  _bound:
-    _sentences:
-    - _valued: I can teach you!
-      _icon: {fileID: 21300000, guid: e9b8afe66cd007149bbf1269e2cfcb88, type: 3}
-      _side: 1
-    - _valued: Good!
-      _icon: {fileID: 21300000, guid: 09c8b10e3f9487d4f90af223f4d8465b, type: 3}
-      _side: 0
-    - _valued: Let`s go!
-      _icon: {fileID: 21300000, guid: e9b8afe66cd007149bbf1269e2cfcb88, type: 3}
-      _side: 1
-    _type: 1
-  _external: {fileID: 0}
---- !u!114 &962449977827642091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2444563712505070277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c980449a15740c893dc06553dc4478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 2444563712505070277}
---- !u!114 &1313474084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2444563712505070277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78725a5557b64c9f9f087b12234378ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 2444563712505070276}
-  _prefab: {fileID: 1739684828}
+  _path: UI/MangePerksWindow

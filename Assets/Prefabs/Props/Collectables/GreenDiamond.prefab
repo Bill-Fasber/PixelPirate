@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6450926519079336308, guid: 48ec74bd7ed9442ee80fb69eaa600360,
         type: 3}
       propertyPath: _id
-      value: GreenDiamond
+      value: GreenGem
       objectReference: {fileID: 0}
     - target: {fileID: 6549185831545672224, guid: 48ec74bd7ed9442ee80fb69eaa600360,
         type: 3}

@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 334190752523898980}
   - component: {fileID: 334190752523898981}
   - component: {fileID: 334190752523899002}
-  - component: {fileID: 271459979}
-  - component: {fileID: 271459981}
   m_Layer: 9
   m_Name: WoodenDoor(Exit)
   m_TagString: Interactable
@@ -54,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,18 +116,7 @@ MonoBehaviour:
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 271459979}
-          m_MethodName: Exit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!58 &334190752523898981
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,60 +148,6 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 271459981}
-        m_MethodName: Check
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &271459979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334190752523899003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a30329d05b7248b7b2bcbd1c5543d84d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneName: Level2
---- !u!114 &271459981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334190752523899003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 114147a9b70f4fd899a8c2e7cb58fb70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _required:
-  - Id: Key
-    Value: 1
-  _removeAfterUse: 1
-  _onSuccess:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 334190752523898981}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 334190752523898980}
         m_MethodName: SetClip
         m_Mode: 5
@@ -226,6 +159,3 @@ MonoBehaviour:
           m_StringArgument: open
           m_BoolArgument: 0
         m_CallState: 2
-  _onFail:
-    m_PersistentCalls:
-      m_Calls: []

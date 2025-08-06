@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destTransform: {fileID: 0}
+  _alphaTime: 1
+  _moveTime: 1
 --- !u!1 &8842797833931193237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,7 +4801,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4818,7 +4820,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 518770257
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0

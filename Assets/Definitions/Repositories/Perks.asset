@@ -9,19 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 095c9ce25fe5442facc8713babf2b59d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1220119be5e845e29cb54b2ddd520e58, type: 3}
   m_Name: Perks
   m_EditorClassIdentifier: 
   _collection:
   - _id: double-jump
-    _icon: {fileID: 21300000, guid: f7838165026233449955fbb1093d01af, type: 3}
+    _icon: {fileID: 21300000, guid: e724acb77312c46d090e8c71f05a1fef, type: 3}
     _info: This is Double jump!
     _price:
-      _itemId: GreenDiamond
+      _itemId: GreenGem
       _count: 2
+    _cooldown: 5
   - _id: super-throw
-    _icon: {fileID: 21300000, guid: 845d704c0ea23304984e5835e985c30d, type: 3}
+    _icon: {fileID: 21300000, guid: c44e040974b0b4e1d9215f8214c58c14, type: 3}
     _info: This is Super Throw!
     _price:
-      _itemId: GreenDiamond
+      _itemId: GreenGem
       _count: 10
+    _cooldown: 5
+  - _id: shield
+    _icon: {fileID: 21300000, guid: d1562eec4c08945c5a7bda1bed3ba9f2, type: 3}
+    _info: shield-info
+    _price:
+      _itemId: GreenGem
+      _count: 10
+    _cooldown: 5

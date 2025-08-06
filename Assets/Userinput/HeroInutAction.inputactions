@@ -44,6 +44,30 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "DropDown",
+                    "type": "Button",
+                    "id": "08755ec6-62a9-4e54-baee-954831776712",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "UsePerk",
+                    "type": "Button",
+                    "id": "92caea29-ee9c-4619-9794-3d5ff669db34",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "UseFlashlight",
+                    "type": "Button",
+                    "id": "1fcc6109-7a5b-4f03-b8df-b21f7fc59c64",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -104,8 +128,30 @@
                 },
                 {
                     "name": "",
+                    "id": "db7ad583-0865-435f-9d32-09277ad570cc",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(min=0.4)",
+                    "groups": "",
+                    "action": "movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "30c0b62d-f6a0-48a3-917e-9ea4ceb7fe2a",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f194362-5609-4386-ad54-aee1590f0f73",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -126,6 +172,17 @@
                 },
                 {
                     "name": "",
+                    "id": "76f8327e-08f9-4ce2-9b29-73d8c9966e52",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bcbacb10-5167-4edf-adca-9f31e6f968f3",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
@@ -137,12 +194,78 @@
                 },
                 {
                     "name": "",
+                    "id": "5da09242-ab73-47ac-bea7-03930191aab3",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "77271a72-89ae-49f8-b976-f040447b5e30",
-                    "path": "<Keyboard>/q",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "NextItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "c8af75e5-33db-4560-a978-0c84ba5a8550",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropDown",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "760a6f19-6c89-4a33-836a-7c9613412cb6",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "e8f64911-7334-45cb-bc82-a1dc135a55b8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e355a380-a644-43fa-a56b-63a023984d28",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsePerk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ead57ce4-5b88-407d-909e-b1dd4e67a692",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseFlashlight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

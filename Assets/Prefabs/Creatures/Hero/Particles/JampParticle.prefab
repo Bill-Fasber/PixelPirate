@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 78161957638601869}
   - component: {fileID: 78161957638601871}
   - component: {fileID: 78161957638601868}
-  - component: {fileID: 2333004555743805328}
+  - component: {fileID: 1750437956337452839}
   m_Layer: 0
   m_Name: JampParticle
   m_TagString: Untagged
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 518770257
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 4716773049418320119, guid: a099dfd8702f24c1192e6b31aa83c106,
     type: 3}
@@ -111,8 +111,8 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2333004555743805328}
-          m_MethodName: DestroyObject
+        - m_Target: {fileID: 1750437956337452839}
+          m_MethodName: Release
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -122,7 +122,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &2333004555743805328
+--- !u!114 &1750437956337452839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 78161957638601866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c980449a15740c893dc06553dc4478, type: 3}
+  m_Script: {fileID: 11500000, guid: 886e311c3db549ecb1c9a9bafdc0f82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 78161957638601866}
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 78161957638601868}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: run
+          m_BoolArgument: 0
+        m_CallState: 2

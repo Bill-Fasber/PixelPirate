@@ -9,34 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f875c7f37cc4ba183bf2ddb543fd681, type: 3}
+  m_Script: {fileID: 11500000, guid: 04feb2a86c474ceca8d7978ac06ab306, type: 3}
   m_Name: ru
   m_EditorClassIdentifier: 
-  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTrVuAEe11-ncwG9lcyOJJ23S2Cdg2jm0SxUQ0N026d9KLcTFTPEIxIhTXEatOo-0lT6Ihs9_TXVZD5/pub?gid=535103472&single=true&output=tsv
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQN5nVsGODsv2C_X6uXW_V5HvtAogb3qUkSndElm3QVL68A_JlU7DaENpJ21ts9njiI9J5TuW0lL5y8/pub?gid=1431137232&single=true&output=tsv
   _localeItems:
-  - Key: menu_title_main
-    Value: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E\r"
-  - Key: menu_title_options
-    Value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438\r"
-  - Key: menu_title_pause
-    Value: "\u041F\u0430\u0443\u0437\u0430\r"
-  - Key: menu_title_locales
-    Value: "\u042F\u0437\u044B\u043A\r"
-  - Key: label_music
-    Value: "\u041C\u0443\u0437\u044B\u043A\u0430:\r"
-  - Key: button_restart
-    Value: "\u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u043A\r"
+  - Key: menu_title
+    Value: "\u043C\u0435\u043D\u044E\r"
   - Key: button_start
     Value: "\u043D\u0430\u0447\u0430\u0442\u044C\r"
-  - Key: button_options
+  - Key: button_option
     Value: "\u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438\r"
   - Key: button_exit
     Value: "\u0432\u044B\u0445\u043E\u0434\r"
+  - Key: selected_language
+    Value: "\u0412\u044B\u0431\u0440\u0430\u043D \u044F\u0437\u044B\u043A: {0}\r"
   - Key: button_back
     Value: "\u043D\u0430\u0437\u0430\u0434\r"
   - Key: button_locales
-    Value: "\u044F\u0437\u044B\u043A\r"
-  - Key: button_continue
-    Value: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C..\r"
-  - Key: selected_language
-    Value: "\u0412\u044B\u0431\u0440\u0430\u043D \u044F\u0437\u044B\u043A: {0}"
+    Value: "\u044F\u0437\u044B\u043A"

@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147,7 +147,8 @@ GameObject:
   - component: {fileID: 2444563712505070275}
   - component: {fileID: 2444563712505070273}
   - component: {fileID: 2570225887612741338}
-  - component: {fileID: 925747544}
+  - component: {fileID: 1176946409}
+  - component: {fileID: 1572074834783876349}
   m_Layer: 9
   m_Name: CrabbyNPC
   m_TagString: Interactable
@@ -188,7 +189,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,7 +209,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -786620889
   m_SortingLayer: 6
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1237259564474456676, guid: 27f3c4c2d6ff8450c9e2bb69d8663492,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -282,7 +283,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 925747544}
+      - m_Target: {fileID: 1572074834783876349}
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -293,7 +294,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &925747544
+--- !u!114 &1176946409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,7 +303,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 2444563712505070277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c2a74cb25f4c759e930d50bea9c36e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a170c46f53248ec9e6a01e7273ee06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _path: UI/MangePerksWindow
+  _path: UI/ManagePerksWindow
+--- !u!114 &1572074834783876349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444563712505070277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b54ba8654441828ca96b26389d3803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - _valued: I can teach you!
+      _icon: {fileID: 21300000, guid: 45793854721a84eada5614a89b1b1e29, type: 3}
+      _side: 1
+    - _valued: Good!
+      _icon: {fileID: 21300000, guid: 3a60a2548828f4c78b82c10389a7fec5, type: 3}
+      _side: 0
+    - _valued: Let's go!
+      _icon: {fileID: 21300000, guid: 45793854721a84eada5614a89b1b1e29, type: 3}
+      _side: 1
+    _type: 1
+  _external: {fileID: 0}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []

@@ -218,7 +218,10 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!1 &1967592295434940711
 GameObject:
@@ -370,6 +373,9 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: 9191a098d07244499852a1389f2556db, type: 3}
 =======
 >>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1987454929724334424
 GameObject:
@@ -1092,11 +1098,17 @@ RectTransform:
   - {fileID: 1987454929945916678}
   - {fileID: 1987454929944104283}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   - {fileID: 6707311531759540561}
 =======
 >>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   - {fileID: 1987454930623021863}
   m_Father: {fileID: 1987454930335412640}
@@ -1606,7 +1618,10 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: EXIT
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!1 &2521701194403899428
 GameObject:
@@ -1796,4 +1811,7 @@ MonoBehaviour:
   _capitalize: 1
 =======
 >>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

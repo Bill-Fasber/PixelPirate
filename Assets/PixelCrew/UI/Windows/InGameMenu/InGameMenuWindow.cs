@@ -22,7 +22,10 @@ namespace PixelCrew.UI.Windows.InGameMenu
             WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
         
         public void OnShowLocalization()
@@ -31,6 +34,9 @@ namespace PixelCrew.UI.Windows.InGameMenu
         }
 =======
 >>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         public void OnExit()

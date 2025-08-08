@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: es
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQN5nVsGODsv2C_X6uXW_V5HvtAogb3qUkSndElm3QVL68A_JlU7DaENpJ21ts9njiI9J5TuW0lL5y8/pub?gid=685653422&single=true&output=tsv
   _localeItems:
   - Key: menu_title
@@ -21,6 +22,12 @@ MonoBehaviour:
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQN5nVsGODsv2C_X6uXW_V5HvtAogb3qUkSndElm3QVL68A_JlU7DaENpJ21ts9njiI9J5TuW0lL5y8/pub?gid=0&single=true&output=tsv
   _localeItems:
   - Key: menu_title
+=======
+<<<<<<< HEAD
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQN5nVsGODsv2C_X6uXW_V5HvtAogb3qUkSndElm3QVL68A_JlU7DaENpJ21ts9njiI9J5TuW0lL5y8/pub?gid=0&single=true&output=tsv
+  _localeItems:
+  - Key: menu_title
+>>>>>>> Stashed changes
     Value: "menu\r"
   - Key: button_start
     Value: "start\r"
@@ -70,6 +77,9 @@ MonoBehaviour:
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQN5nVsGODsv2C_X6uXW_V5HvtAogb3qUkSndElm3QVL68A_JlU7DaENpJ21ts9njiI9J5TuW0lL5y8/pub?gid=685653422&single=true&output=tsv
   _localeItems:
   - Key: menu_title
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     Value: "men\xFA\r"
   - Key: button_start
@@ -85,6 +95,10 @@ MonoBehaviour:
   - Key: button_locales
     Value: languages
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+>>>>>>> Stashed changes
 =======
 >>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
 >>>>>>> Stashed changes

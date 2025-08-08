@@ -41,7 +41,10 @@ MonoBehaviour:
   - Key: Critical Damage
     Value: "Critical Damage\r"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   - Key: super-throw-info
     Value: This is Super Throw!
@@ -49,6 +52,9 @@ MonoBehaviour:
     Value: This is Double jump!
 =======
 >>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   - Key: shield-info
     Value: "Use shield for self protection\r"

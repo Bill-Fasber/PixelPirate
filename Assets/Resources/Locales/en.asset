@@ -40,6 +40,16 @@ MonoBehaviour:
     Value: "some-icon/resource/1\r"
   - Key: Critical Damage
     Value: "Critical Damage\r"
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  - Key: super-throw-info
+    Value: This is Super Throw!
+  - Key: double-jump-info
+    Value: This is Double jump!
+=======
+>>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+>>>>>>> Stashed changes
   - Key: shield-info
     Value: "Use shield for self protection\r"
   - Key: crabby-teacher-sentence-0

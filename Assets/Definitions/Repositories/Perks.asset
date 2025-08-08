@@ -15,14 +15,28 @@ MonoBehaviour:
   _collection:
   - _id: double-jump
     _icon: {fileID: 21300000, guid: e724acb77312c46d090e8c71f05a1fef, type: 3}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    _info: double-jump-info
+=======
+>>>>>>> Stashed changes
     _info: This is Double jump!
+>>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
     _price:
       _itemId: GreenGem
       _count: 2
     _cooldown: 5
   - _id: super-throw
     _icon: {fileID: 21300000, guid: c44e040974b0b4e1d9215f8214c58c14, type: 3}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    _info: super-throw-info
+=======
+>>>>>>> Stashed changes
     _info: This is Super Throw!
+>>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
     _price:
       _itemId: GreenGem
       _count: 10

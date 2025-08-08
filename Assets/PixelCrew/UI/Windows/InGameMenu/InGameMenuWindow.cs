@@ -21,6 +21,17 @@ namespace PixelCrew.UI.Windows.InGameMenu
         {
             WindowUtils.CreateWindow("UI/SettingsWindow");
         }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        
+        public void OnShowLocalization()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
+        }
+=======
+>>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+>>>>>>> Stashed changes
 
         public void OnExit()
         {

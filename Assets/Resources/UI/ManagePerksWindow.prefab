@@ -3712,12 +3712,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 662657f7d1e0c4917872e53b3482467c, type: 3}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 --- !u!224 &2874063924634486075 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2661581890288517660, guid: 662657f7d1e0c4917872e53b3482467c,
     type: 3}
   m_PrefabInstance: {fileID: 219954319873017639}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+>>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+>>>>>>> Stashed changes
 --- !u!114 &7363368200663181912 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7287562056364436863, guid: 662657f7d1e0c4917872e53b3482467c,
@@ -3730,3 +3739,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adc29054b024caead81deb676c9049b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+--- !u!224 &2874063924634486075 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2661581890288517660, guid: 662657f7d1e0c4917872e53b3482467c,
+    type: 3}
+  m_PrefabInstance: {fileID: 219954319873017639}
+  m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
+>>>>>>> Stashed changes

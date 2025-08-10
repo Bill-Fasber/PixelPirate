@@ -1,10 +1,11 @@
 using System;
+using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
 
-namespace PixelCrew.Model.Data
+namespace PixelCrew.Model.Models
 {
     public class PerksModel : IDisposable
     {
@@ -36,7 +37,9 @@ namespace PixelCrew.Model.Data
         public string Used => _data.Perks.Used.Value;
         public bool IsSuperThrowSupported => _data.Perks.Used.Value == "super-throw" && Cooldown.IsReady;
         public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump" && Cooldown.IsReady;
+        public bool IsWallJumpSupported => _data.Perks.Used.Value == "wall-jump" && Cooldown.IsReady;
         public bool IsShieldSupported => _data.Perks.Used.Value == "shield" && Cooldown.IsReady;
+        public bool IsDashSupported => _data.Perks.Used.Value == "dash" && Cooldown.IsReady;
 
         public void Unlock(string id)
         {

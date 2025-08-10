@@ -120,7 +120,7 @@ namespace PixelCrew.Creatures.Hero
             base.Update();
 
             var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
-            if (_wallCheck.IsTouchingLayer && moveToSameDirection)
+            if (_wallCheck.IsTouchingLayer && moveToSameDirection && _session.PerksModel.IsWallJumpSupported)
             {
                 _isOnWall = true;
                 Rigidbody.gravityScale = 0;

@@ -12,22 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04feb2a86c474ceca8d7978ac06ab306, type: 3}
   m_Name: en
   m_EditorClassIdentifier: 
-  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQN5nVsGODsv2C_X6uXW_V5HvtAogb3qUkSndElm3QVL68A_JlU7DaENpJ21ts9njiI9J5TuW0lL5y8/pub?gid=0&single=true&output=tsv
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTrVuAEe11-ncwG9lcyOJJ23S2Cdg2jm0SxUQ0N026d9KLcTFTPEIxIhTXEatOo-0lT6Ihs9_TXVZD5/pub?gid=0&single=true&output=tsv
   _localeItems:
-  - Key: menu_title
-    Value: "menu\r"
+  - Key: menu_title_main
+    Value: "Main menu\r"
+  - Key: menu_title_options
+    Value: "Options\r"
+  - Key: menu_title_pause
+    Value: "Pause\r"
+  - Key: menu_title_locales
+    Value: "Languages\r"
+  - Key: label_music
+    Value: "Music:\r"
+  - Key: button_restart
+    Value: "restart\r"
   - Key: button_start
     Value: "start\r"
-  - Key: button_option
+  - Key: button_options
     Value: "options\r"
   - Key: button_exit
     Value: "exit\r"
-  - Key: selected_language
-    Value: "Selected language is {0}\r"
   - Key: button_back
     Value: "back\r"
   - Key: button_locales
     Value: "languages\r"
+  - Key: button_continue
+    Value: "Continue..\r"
+  - Key: button_buy
+    Value: "buy\r"
+  - Key: button_use
+    Value: "use\r"
+  - Key: selected_language
+    Value: "Selected language is {0}\r"
   - Key: Health
     Value: "Health\r"
   - Key: Speed
@@ -40,24 +56,6 @@ MonoBehaviour:
     Value: "some-icon/resource/1\r"
   - Key: Critical Damage
     Value: "Critical Damage\r"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-<<<<<<< HEAD
-  - Key: super-throw-info
-    Value: This is Super Throw!
-  - Key: double-jump-info
-    Value: This is Double jump!
-=======
->>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-  - Key: shield-info
-    Value: "Use shield for self protection\r"
   - Key: crabby-teacher-sentence-0
     Value: "I can teach you!\r"
   - Key: crabby-teacher-sentence-1
@@ -71,4 +69,16 @@ MonoBehaviour:
   - Key: boss1-dialog-1-0
     Value: "No0000000!!!!!!!!!!\r"
   - Key: boss1-dialog-1-1
-    Value: I tolld ya!
+    Value: "I tolld ya!\r"
+  - Key: shield-info
+    Value: "Use shield for self protection\r"
+  - Key: dash-info
+    Value: "Allows you to make a breakthrough\r"
+  - Key: double-jump-info
+    Value: "This is Double jump!\r"
+  - Key: super-throw-info
+    Value: "This is Super Throw!\r"
+  - Key: wall-jump-info
+    Value: "Allows you to climb the wall\r"
+  - Key: loading-text
+    Value: Loading...

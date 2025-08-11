@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 255738577}
   - component: {fileID: 255738576}
   - component: {fileID: 255738575}
+  - component: {fileID: 255738578}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -492,6 +493,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255738573}
   m_CullTransparentMesh: 0
+--- !u!114 &255738578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255738573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71787296c4504883b99e1ef967db3e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_continue
+  _capitalize: 0
 --- !u!1 &348714824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
     type: 3}
   m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
@@ -2347,6 +2363,7 @@ GameObject:
   - component: {fileID: 1571345138}
   - component: {fileID: 1571345137}
   - component: {fileID: 1571345136}
+  - component: {fileID: 1571345139}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -2468,6 +2485,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571345134}
   m_CullTransparentMesh: 0
+--- !u!114 &1571345139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571345134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71787296c4504883b99e1ef967db3e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_continue
+  _capitalize: 0
 --- !u!1 &1641954066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,6 +2970,7 @@ GameObject:
   - component: {fileID: 1679286766}
   - component: {fileID: 1679286765}
   - component: {fileID: 1679286767}
+  - component: {fileID: 1679286768}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -3060,6 +3092,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1679286768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679286763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71787296c4504883b99e1ef967db3e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_continue
+  _capitalize: 0
 --- !u!1 &1686131317
 GameObject:
   m_ObjectHideFlags: 0

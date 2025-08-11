@@ -22,7 +22,7 @@ namespace PixelCrew.UI.Windows.InGameMenu
             WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
-        public void OnShowLocalization()
+        public void OnLanguages()
         {
             WindowUtils.CreateWindow("UI/LocalizationWindow");
         }

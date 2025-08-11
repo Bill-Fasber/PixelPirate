@@ -26,39 +26,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021390204}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-=======
-=======
->>>>>>> Stashed changes
-<<<<<<< HEAD
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-=======
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
->>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4569069099167975880}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-  m_RootOrder: 1
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-  m_RootOrder: 1
-=======
->>>>>>> Stashed changes
   m_RootOrder: 2
->>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -770,21 +743,7 @@ RectTransform:
   - {fileID: 4569069098257319032}
   - {fileID: 3188598484684820184}
   m_Father: {fileID: 4569069099167975880}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_RootOrder: 1
-=======
-=======
->>>>>>> Stashed changes
-<<<<<<< HEAD
-  m_RootOrder: 2
-=======
-  m_RootOrder: 1
->>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -870,24 +829,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3238320151173155742}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   - {fileID: 4569069098589211875}
   - {fileID: 2021390205}
-=======
-=======
->>>>>>> Stashed changes
-<<<<<<< HEAD
-  - {fileID: 2021390205}
-  - {fileID: 4569069098589211875}
-=======
-  - {fileID: 4569069098589211875}
-  - {fileID: 2021390205}
->>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -908,21 +851,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2c4a1d760b6994ce783c7a86143d1c17, type: 2}
   m_CullingMode: 0
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_UpdateMode: 0
-=======
-=======
->>>>>>> Stashed changes
-<<<<<<< HEAD
-  m_UpdateMode: 2
-=======
-  m_UpdateMode: 0
->>>>>>> d84cd14e979ec79cfeb818536bdaa39b6c05abbc
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -978,7 +907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15}
+  m_AnchoredPosition: {x: 0, y: -12}
   m_SizeDelta: {x: 70.46448, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4569069100176261602

@@ -1,16 +1,16 @@
 using System;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
-using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
 
 namespace PixelCrew.Model.Models
 {
-    public class QuickInventoryModel : IDisposable
+    public class ShopInventoryModel : IDisposable
     {
         private readonly PlayerData _data;
+        public readonly StringProperty InterfaceSelection = new StringProperty();
 
         public InventoryItemData[] Inventory { get; private set; }
 
@@ -28,10 +28,8 @@ namespace PixelCrew.Model.Models
                 return null;
             }
         }
-
-        public ItemDef SelectedDef => DefsFacade.I.Items.Get(SelectedItem?.Id);
-
-        public QuickInventoryModel(PlayerData data)
+        
+        public ShopInventoryModel(PlayerData data)
         {
             _data = data;
 
@@ -50,11 +48,6 @@ namespace PixelCrew.Model.Models
             Inventory = _data.Inventory.GetAll(ItemTag.Usable);
             SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
             OnChanged?.Invoke();
-        }
-
-        public void SetNextItem()
-        {
-            SelectedIndex.Value = (int) Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
         }
 
         public void Dispose()

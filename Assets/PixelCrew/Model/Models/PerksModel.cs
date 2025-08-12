@@ -1,10 +1,11 @@
 using System;
+using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
 
-namespace PixelCrew.Model.Data
+namespace PixelCrew.Model.Models
 {
     public class PerksModel : IDisposable
     {

@@ -19,13 +19,13 @@ namespace PixelCrew.Model.Definitions.Repositories.Items
         [SerializeField] private Sprite _icon;
         [SerializeField] private ItemTag[] _tags;
         [SerializeField] private string _info;
-        [SerializeField] private ItemWithCount _price;
+        [SerializeField] private Repositories.ItemWithCount _price;
 
         public string Id => _id;
         public bool IsVoid => string.IsNullOrEmpty(_id);
         public Sprite Icon => _icon;
         public string Info => _info;
-        public ItemWithCount Price => _price;
+        public Repositories.ItemWithCount Price => _price;
 
         public bool HasTag(ItemTag tag)
         {

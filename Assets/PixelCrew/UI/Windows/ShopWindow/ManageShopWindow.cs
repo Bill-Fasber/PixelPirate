@@ -14,9 +14,9 @@ namespace PixelCrew.UI.Windows.ShopWindow
         [SerializeField] private Transform _container;
         [SerializeField] private Button _buyButton;
         [SerializeField] private Text _infoText;
-        [SerializeField] private ShopItemWidget _price;
+        [SerializeField] private QuickItemWidget _price;
         
-        private PredefinedDataGroup<ItemDef, ShopItemWidget> _dataGroup;
+        private PredefinedDataGroup<ItemDef, ShopWidget> _dataGroup;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         private GameSession _session;
 
@@ -24,7 +24,7 @@ namespace PixelCrew.UI.Windows.ShopWindow
         {
             base.Start();
             
-            _dataGroup = new PredefinedDataGroup<ItemDef, ShopItemWidget>(_container);
+            _dataGroup = new PredefinedDataGroup<ItemDef, ShopWidget>(_container);
             _session = FindObjectOfType<GameSession>();
 
             _trash.Retain(_session.QuickInventory.Subscribe(OnShopChanged));
@@ -38,10 +38,10 @@ namespace PixelCrew.UI.Windows.ShopWindow
         {
             _dataGroup.SetData(DefsFacade.I.Items.All);
 
-            var selected = _session.PerksModel.InterfaceSelection.Value;
+            var selected = _session.ShopInventory.InterfaceSelection.Value;
 
-            _buyButton.gameObject.SetActive(!_session.PerksModel.IsUnlocked(selected));
-            _buyButton.interactable = _session.PerksModel.CanBuy(selected);
+            _buyButton.gameObject.SetActive(!_session.ShopInventory.IsUnlocked(selected)); 
+            _buyButton.interactable = _session.ShopInventory.CanBuy(selected);
 
             var def = DefsFacade.I.Items.Get(selected);
             _price.SetData(def.Price);
@@ -51,7 +51,8 @@ namespace PixelCrew.UI.Windows.ShopWindow
         
         private void OnBuy()
         {
-            throw new System.NotImplementedException();
+            var selected = _session.ShopInventory.InterfaceSelection.Value;
+            _session.ShopInventory.Unlock(selected);
         }
 
         private void OnDestroy()

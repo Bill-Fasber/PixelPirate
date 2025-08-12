@@ -1,6 +1,7 @@
 using System;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
+using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
@@ -18,17 +19,6 @@ namespace PixelCrew.Model.Models
 
         public event Action OnChanged;
 
-        public InventoryItemData SelectedItem
-        {
-            get
-            {
-                if (Inventory.Length > 0 && Inventory.Length > SelectedIndex.Value)
-                    return Inventory[SelectedIndex.Value];
-
-                return null;
-            }
-        }
-        
         public ShopInventoryModel(PlayerData data)
         {
             _data = data;
@@ -49,10 +39,31 @@ namespace PixelCrew.Model.Models
             SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
             OnChanged?.Invoke();
         }
+        
+        public void Unlock(string id)
+        {
+            var def = DefsFacade.I.Items.Get(id);
+            var isEnoughResources = _data.Inventory.IsEnough(def.Price);
+
+            if (isEnoughResources)
+            {
+                _data.Inventory.Remove(def.Price.ItemId, def.Price.Count);
+                _data.Perks.AddPerk(id);
+
+                OnChanged?.Invoke();
+            }
+        }
+
+        public bool CanBuy(string itemId)
+        {
+            var def = DefsFacade.I.Items.Get(itemId);
+            return _data.Inventory.IsEnough(def.Price);
+        }
 
         public void Dispose()
         {
             _data.Inventory.OnChanged -= OnChangedInventory;
         }
+
     }
 }

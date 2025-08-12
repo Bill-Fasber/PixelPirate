@@ -1,7 +1,7 @@
 using PixelCrew.Model.Definitions;
-using PixelCrew.Model.Definitions.Repositories;
 using UnityEngine;
 using UnityEngine.UI;
+using ItemWithCount = PixelCrew.Model.Definitions.Repositories.ItemWithCount;
 
 namespace PixelCrew.UI.Widgets
 {

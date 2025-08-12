@@ -1,4 +1,3 @@
-using System;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Localization;
@@ -16,7 +15,7 @@ namespace PixelCrew.UI.Windows.PerksWindow
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _useButton;
         [SerializeField] private Text _infoText;
-        [SerializeField] private ItemWidget _price;
+        [SerializeField] private QuickItemWidget _price;
 
         private PredefinedDataGroup<PerkDef, PerkWidget> _dataGroup;
         private readonly CompositeDisposable _trash = new CompositeDisposable();

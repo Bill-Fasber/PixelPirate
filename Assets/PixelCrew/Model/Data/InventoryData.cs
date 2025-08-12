@@ -6,6 +6,7 @@ using PixelCrew.Model.Definitions.Repositories;
 using PixelCrew.Model.Definitions.Repositories.Items;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ItemWithCount = PixelCrew.Model.Definitions.Repositories.ItemWithCount;
 
 namespace PixelCrew.Model.Data
 {

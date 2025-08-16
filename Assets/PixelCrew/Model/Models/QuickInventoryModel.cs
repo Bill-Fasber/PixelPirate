@@ -1,12 +1,11 @@
 using System;
-using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
 
-namespace PixelCrew.Model.Models
+namespace PixelCrew.Model.Data
 {
     public class QuickInventoryModel : IDisposable
     {

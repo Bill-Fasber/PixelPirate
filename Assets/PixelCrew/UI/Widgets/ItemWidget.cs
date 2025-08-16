@@ -1,11 +1,11 @@
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repositories;
 using UnityEngine;
 using UnityEngine.UI;
-using ItemWithCount = PixelCrew.Model.Definitions.Repositories.ItemWithCount;
 
 namespace PixelCrew.UI.Widgets
 {
-    public class QuickItemWidget : MonoBehaviour
+    public class ItemWidget : MonoBehaviour
     {
         [SerializeField] private Image _icon;
         [SerializeField] private Text _value;

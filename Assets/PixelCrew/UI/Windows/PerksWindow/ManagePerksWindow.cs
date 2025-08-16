@@ -15,7 +15,7 @@ namespace PixelCrew.UI.Windows.PerksWindow
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _useButton;
         [SerializeField] private Text _infoText;
-        [SerializeField] private QuickItemWidget _price;
+        [SerializeField] private ItemWidget _price;
 
         private PredefinedDataGroup<PerkDef, PerkWidget> _dataGroup;
         private readonly CompositeDisposable _trash = new CompositeDisposable();

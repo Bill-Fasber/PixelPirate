@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.CutScenes
 {
     public class ShowTargetController : MonoBehaviour
     {
@@ -12,8 +12,9 @@ namespace PixelCrew.Components
 
         public void SetPosition(Vector3 targetPosition)
         {
-            targetPosition.z = _camera.transform.position.z;
-            _camera.transform.position = targetPosition;
+            var transform1 = _camera.transform;
+            targetPosition.z = transform1.position.z;
+            transform1.position = targetPosition;
         }
 
         public void SetState(bool isShown)

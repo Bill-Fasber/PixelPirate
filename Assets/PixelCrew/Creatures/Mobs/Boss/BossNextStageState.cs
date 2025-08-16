@@ -1,15 +1,17 @@
 ﻿using PixelCrew.Components.GoBased;
-using PixelCrew.Creatures.Mobs.Boss;
 using UnityEngine;
 
-public class BossNextStageState : StateMachineBehaviour
+namespace PixelCrew.Creatures.Mobs.Boss
 {
-    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public class BossNextStageState : StateMachineBehaviour
     {
-        var spawner = animator.GetComponent<CircularProjectileSpawner>();
-        spawner.Stage++;
+        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            var spawner = animator.GetComponent<CircularProjectileSpawner>();
+            spawner.Stage++;
 
-        var changeLight = animator.GetComponent<ChangeLightsComponent>();
-        changeLight.SetColor();
+            var changeLight = animator.GetComponent<ChangeLightsComponent>();
+            changeLight.SetColor();
+        }
     }
 }

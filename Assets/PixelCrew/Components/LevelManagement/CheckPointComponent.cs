@@ -3,7 +3,7 @@ using PixelCrew.Model;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components.LevelManegement
+namespace PixelCrew.Components.LevelManagement
 {
     [RequireComponent(typeof(SpawnComponent))]
     public class CheckPointComponent : MonoBehaviour

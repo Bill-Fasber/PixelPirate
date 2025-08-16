@@ -16,9 +16,10 @@ namespace PixelCrew.Effects
 
         private void LateUpdate()
         {
-            var currentPosition = transform.position;
+            var transform1 = transform;
+            var currentPosition = transform1.position;
             var deltaX = _followTarget.position.x * _effectValue;
-            transform.position = new Vector3(_startX + deltaX, currentPosition.y, currentPosition.z);
+            transform1.position = new Vector3(_startX + deltaX, currentPosition.y, currentPosition.z);
         }
     }
 }

@@ -81,4 +81,8 @@ MonoBehaviour:
   - Key: wall-jump-info
     Value: "Te permite escalar la pared\r"
   - Key: loading-text
-    Value: Cargando...
+    Value: "Cargando...\r"
+  - Key: price-text
+    Value: "Precio:\r"
+  - Key: skip-button
+    Value: saltar

@@ -1,4 +1,3 @@
-using System;
 
 namespace PixelCrew.Model.Data.Properties
 {

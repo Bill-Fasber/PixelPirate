@@ -2,7 +2,7 @@ using PixelCrew.Model;
 using PixelCrew.UI.LevelsLoader;
 using UnityEngine;
 
-namespace PixelCrew.Components.LevelManegement
+namespace PixelCrew.Components.LevelManagement
 {
     public class ExitLevelComponent : MonoBehaviour
     {

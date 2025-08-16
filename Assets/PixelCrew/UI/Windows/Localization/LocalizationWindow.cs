@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.UI.Widgets;
-using PixelCrew.UI.Windows;
 using UnityEngine;
 
-namespace PixelCrew.UI.Localization
+namespace PixelCrew.UI.Windows.Localization
 {
     public class LocalizationWindow : AnimatedWindow
     {

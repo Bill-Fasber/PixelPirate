@@ -1,6 +1,5 @@
 using System.Collections;
 using PixelCrew.Model.Data;
-using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.Events;

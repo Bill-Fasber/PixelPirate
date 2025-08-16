@@ -2,7 +2,7 @@ using PixelCrew.Components.Health;
 using PixelCrew.Utils;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Creatures.Hero.Features
 {
     public class HeroShield : MonoBehaviour
     {

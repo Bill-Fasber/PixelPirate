@@ -21,7 +21,7 @@ MonoBehaviour:
   - Key: menu_title_pause
     Value: "Pause\r"
   - Key: menu_title_locales
-    Value: "Languages\r"
+    Value: "Language\r"
   - Key: label_music
     Value: "Music:\r"
   - Key: button_restart
@@ -81,4 +81,8 @@ MonoBehaviour:
   - Key: wall-jump-info
     Value: "Allows you to climb the wall\r"
   - Key: loading-text
-    Value: Loading...
+    Value: "Loading...\r"
+  - Key: price-text
+    Value: "Price:\r"
+  - Key: skip-button
+    Value: skip

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.CutScenes
 {
     public class ShowTargetComponent : MonoBehaviour
     {

@@ -1,11 +1,14 @@
 ﻿using PixelCrew.Components.GoBased;
 using UnityEngine;
 
-public class BossShootState : StateMachineBehaviour
+namespace PixelCrew.Creatures.Mobs.Boss
 {
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public class BossShootState : StateMachineBehaviour
     {
-        var spawner = animator.GetComponent<CircularProjectileSpawner>();
-        spawner.LaunchProjectiles();
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            var spawner = animator.GetComponent<CircularProjectileSpawner>();
+            spawner.LaunchProjectiles();
+        }
     }
 }

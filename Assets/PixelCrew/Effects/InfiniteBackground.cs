@@ -57,11 +57,12 @@ namespace PixelCrew.Effects
             var newBounds = new Bounds(new Vector3(boundCenterX, _containerBounds.center.y), _containerBounds.size);
             _allBounds.Encapsulate(newBounds);
 
-            _boundsToTransformDelta = transform.position - _allBounds.center;
+            var transform1 = transform;
+            _boundsToTransformDelta = transform1.position - _allBounds.center;
             var newContainerXPos = boundCenterX + _containerDelta.x;
             var newPosition = new Vector3(newContainerXPos, _container.transform.position.y);
 
-            Instantiate(_container, newPosition, Quaternion.identity, transform);
+            Instantiate(_container, newPosition, Quaternion.identity, transform1);
         }
 
         private void OnDrawGizmosSelected()

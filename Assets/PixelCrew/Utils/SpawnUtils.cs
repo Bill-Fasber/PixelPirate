@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PixelCrew.Utils
 {
-    public class SpawnUtils
+    public static class SpawnUtils
     {
         private const string ContainerName = "###SPAWNED###";
 

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelCrew.Components.LevelManegement
+namespace PixelCrew.Components.LevelManagement
 {
     public class ReloadLevelComponent : MonoBehaviour
     {

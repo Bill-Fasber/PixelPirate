@@ -1,10 +1,9 @@
 using System;
 using PixelCrew.UI.LevelsLoader;
-using PixelCrew.UI.Windows;
 using PixelCrew.Utils;
 using UnityEngine;
 
-namespace PixelCrew.UI.MainMenu
+namespace PixelCrew.UI.Windows.MainMenu
 {
     public class MainMenuWindow : AnimatedWindow
     {

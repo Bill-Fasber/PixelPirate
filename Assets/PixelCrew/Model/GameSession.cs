@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using PixelCrew.Components.LevelManegement;
+using PixelCrew.Components.LevelManagement;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions.Player;
 using PixelCrew.Model.Models;
@@ -24,7 +24,6 @@ namespace PixelCrew.Model
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         public QuickInventoryModel QuickInventory { get; private set; }
-        public ShopInventoryModel ShopInventory { get; private set; }
         public PerksModel PerksModel { get; private set; }
         public StatsModel StatsModel { get; private set; }
 

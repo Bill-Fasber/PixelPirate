@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71787296c4504883b99e1ef967db3e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: menu_title_locales
+  _key: menu_title
   _capitalize: 0
 --- !u!1 &7150498640318365694
 GameObject:

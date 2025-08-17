@@ -60,7 +60,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4c86d862ad0434d45a8ba1e84da5bab7, type: 3}
   - {fileID: 21300000, guid: 6929c0c29fa4a4e439d6fcf232073c9e, type: 3}
   - {fileID: 21300000, guid: 4bf2ffe2acbf3440895401b812fc2cd5, type: 3}
+  - {fileID: 21300000, guid: 6c38ed43a64ec384b8ff32d626f5f2b7, type: 3}
   - {fileID: 21300000, guid: efbce1b320ccd425b80a95111ed0b1b4, type: 3}
+  - {fileID: 21300000, guid: b908843409517144e8f1ce0fdf58a8e4, type: 3}
   - {fileID: 21300000, guid: 5e205d4454e5944e881996717190432d, type: 3}
   - {fileID: 21300000, guid: 3a60a2548828f4c78b82c10389a7fec5, type: 3}
   - {fileID: 21300000, guid: 53d1c2547ceb84d91b6a48bc174aca9f, type: 3}
@@ -120,7 +122,9 @@ SpriteAtlas:
   - green-button
   - Check_Mark
   - I_Clover
+  - on-mute
   - yellow-box-large
+  - off-mute
   - I_Clock
   - pirate-face
   - S_Bow13

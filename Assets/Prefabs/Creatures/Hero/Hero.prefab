@@ -681,6 +681,7 @@ MonoBehaviour:
   _interactionCheck: {fileID: 1344783690}
   _wallCheck: {fileID: 1885359798}
   _slamDownVelocity: 20
+  _dashDelta: 2
   _throwCooldown:
     _value: 1
   _armed: {fileID: 9100000, guid: a9a5b4df3a8474fa88396e3b4da9f657, type: 2}
@@ -839,6 +840,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1fcc6109-7a5b-4f03-b8df-b21f7fc59c64
     m_ActionName: Hero/UseFlashlight[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7595805516646929357}
+        m_MethodName: Dash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 125b4622-265f-4973-a962-f1c53989eaa8
+    m_ActionName: Hero/Dash[/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero

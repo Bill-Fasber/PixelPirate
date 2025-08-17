@@ -42,6 +42,12 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
+        public void OnDash(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                _hero.Dash();
+        }
+
         public void OnNextItem(InputAction.CallbackContext context)
         {
             if (context.performed)

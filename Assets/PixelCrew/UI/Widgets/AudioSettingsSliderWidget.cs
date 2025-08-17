@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace PixelCrew.UI.Widgets
 {
-    public class AudioSettingsWidget : MonoBehaviour
+    public class AudioSettingsSliderWidget : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
         [SerializeField] private Text _value;
@@ -18,7 +18,7 @@ namespace PixelCrew.UI.Widgets
         {
             _trash.Retain(_slider.onValueChanged.Subscribe(OnSliderValueChanged));
         }
-
+        
         public void SetModel(FloatPersistentProperty model)
         {
             _model = model;

@@ -9,9 +9,9 @@ namespace PixelCrew.UI.Windows.InGameMenu
     {
         private float _defaultTimeScale;
 
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
 
             _defaultTimeScale = Time.timeScale;
             Time.timeScale = 0;

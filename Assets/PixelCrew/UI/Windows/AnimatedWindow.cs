@@ -9,11 +9,14 @@ namespace PixelCrew.UI.Windows
         private static readonly int Show = Animator.StringToHash("Show");
         private static readonly int Hide = Animator.StringToHash("Hide");
 
+        protected virtual void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
+
         protected virtual void Start()
         {
             AnalyticsEvent.ScreenVisit(gameObject.name);
-            _animator = GetComponent<Animator>();
-
             _animator.SetTrigger(Show);
         }
 
@@ -22,7 +25,7 @@ namespace PixelCrew.UI.Windows
             _animator.SetTrigger(Hide);
         }
 
-        public virtual void OnCloseAnimationComplete()
+        protected virtual void OnCloseAnimationComplete()
         {
             Destroy(gameObject);
         }

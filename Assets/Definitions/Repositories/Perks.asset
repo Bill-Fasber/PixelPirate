@@ -15,7 +15,7 @@ MonoBehaviour:
   _collection:
   - _id: double-jump
     _icon: {fileID: 21300000, guid: e724acb77312c46d090e8c71f05a1fef, type: 3}
-    _info: This is Double jump!
+    _info: double-jump-info
     _price:
       _itemId: GreenGem
       _count: 2
@@ -41,9 +41,9 @@ MonoBehaviour:
       _itemId: GreenGem
       _count: 10
     _cooldown: 5
-  - _id: wal-jump
+  - _id: wall-jump
     _icon: {fileID: 21300000, guid: d1562eec4c08945c5a7bda1bed3ba9f2, type: 3}
-    _info: wal-jump-info
+    _info: wall-jump-info
     _price:
       _itemId: GreenGem
       _count: 10

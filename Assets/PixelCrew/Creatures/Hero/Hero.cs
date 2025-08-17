@@ -24,6 +24,7 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private ColliderCheck _wallCheck;
 
         [SerializeField] private float _slamDownVelocity;
+        [SerializeField] private float _dashDelta;
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private RuntimeAnimatorController _armed;
         [SerializeField] private RuntimeAnimatorController _disarmed;
@@ -343,6 +344,15 @@ namespace PixelCrew.Creatures.Hero
 
             Animator.SetTrigger(ThrowKey);
             _throwCooldown.Reset();
+        }
+        
+        public void Dash()
+        {
+            if (_session.PerksModel.IsDashSupported)
+            {
+                var newPosition = Rigidbody.position + new Vector2(_dashDelta * transform.localScale.x, 0);
+                Rigidbody.MovePosition(newPosition);
+            }
         }
 
         public void NextItem()

@@ -21,9 +21,9 @@ namespace PixelCrew.UI.Windows.PlayerStats
         private GameSession _session;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
 
             _dataGroup = new DataGroup<StatDef, StatWidget>(_prefab, _statsContainer);
 

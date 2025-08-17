@@ -110,7 +110,14 @@ namespace PixelCrew.UI.Hud.Dialogs
             _typingRoutine = StartCoroutine(TypeDialogText());
         }
 
-        private void OnCloseAnimationComplete()
+        public void OnSkipDialog()
+        {
+            StopTypeAnimation();
+            HideDialogBox();
+            _onComplete?.Invoke();
+        }
+
+        public void OnCloseAnimationComplete()
         {
         }
     }

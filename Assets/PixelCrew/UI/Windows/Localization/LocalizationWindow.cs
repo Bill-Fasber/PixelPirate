@@ -14,9 +14,9 @@ namespace PixelCrew.UI.Windows.Localization
 
         private readonly string[] _supportedLocales = {"en", "ru", "es"};
 
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
             _dataGroup = new DataGroup<LocaleInfo, LocaleItemWidget>(_prefab, _container);
             _dataGroup.SetData(ComposeData());
         }

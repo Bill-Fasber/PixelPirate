@@ -21,9 +21,9 @@ namespace PixelCrew.UI.Windows.PerksWindow
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         private GameSession _session;
 
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
 
             _dataGroup = new PredefinedDataGroup<PerkDef, PerkWidget>(_container);
             _session = FindObjectOfType<GameSession>();

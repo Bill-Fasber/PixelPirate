@@ -1,5 +1,6 @@
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
 
 namespace PixelCrew.Model.Data.Properties
 {
@@ -34,5 +35,5 @@ namespace PixelCrew.Model.Data.Properties
             return EditorGUI.GetPropertyHeight(property, label, true);
         }
     }
-
 }
+#endif

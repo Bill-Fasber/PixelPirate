@@ -64,12 +64,26 @@ MonoBehaviour:
     Value: "\xA1Vamos!\r"
   - Key: boss1-dialog-0-0
     Value: "\xA1Te matar\xE9!\r"
-  - Key: boss1-dialog-0-2
+  - Key: boss1-dialog-0-1
     Value: "\xA1No! \xA1Te matar\xE9!\r"
   - Key: boss1-dialog-1-0
     Value: "\xA1No0000000!!!!!!!!!!\r"
   - Key: boss1-dialog-1-1
     Value: "\xA1Te toldo!\r"
+  - Key: boss2-dialog-0-0
+    Value: "\xBFQu\xE9 carajo haces con la resurrecci\xF3n?\r"
+  - Key: boss2-dialog-0-1
+    Value: "Tuve un t\xF3tem de resurrecci\xF3n y no te dar\xE9\r"
+  - Key: boss2-dialog-0-2
+    Value: "Bueno, espera, Patrick, voy a ser tu segunda vez.\r"
+  - Key: boss2-dialog-1-0
+    Value: "\xA1NoooooOOOOOOooooooooooooooOOOOOooooo!!!! No te dar\xE9 la resurrecci\xF3n
+      del t\xF3tem porque...\r"
+  - Key: boss2-dialog-1-1
+    Value: "\xBFPOR QU\xC9???\r"
+  - Key: boss2-dialog-1-2
+    Value: "es desechable.......................................................................................BAE
+      (muerto definitivamente)\r"
   - Key: shield-info
     Value: "Use escudo para la autoprotecci\xF3n\r"
   - Key: dash-info

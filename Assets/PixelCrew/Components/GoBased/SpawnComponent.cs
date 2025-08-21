@@ -1,4 +1,4 @@
-using PixelCrew.Utils;
+ using PixelCrew.Utils;
 using PixelCrew.Utils.ObjectPool;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ namespace PixelCrew.Components.GoBased
         [SerializeField] private GameObject _prefab;
         [SerializeField] private bool _usePool;
 
-        [ContextMenu("Spawn")]
+        [ContextMenu("BombPoints")]
         public void Spawn()
         {
             SpawnInstance();

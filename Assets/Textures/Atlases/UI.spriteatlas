@@ -88,6 +88,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 36b0e229088da4003baa23be76c3df57, type: 3}
   - {fileID: 21300000, guid: 5b63f3994fa564614bc02db929e74bf0, type: 3}
   - {fileID: 21300000, guid: 3f63cd99197574d85a02e61a4026bf3a, type: 3}
+  - {fileID: 21300000, guid: b876aab9c8ddf434f8d65c896a970bce, type: 3}
   - {fileID: 21300000, guid: b108e82acf4e64efb8b161cbe337bd07, type: 3}
   - {fileID: 21300000, guid: 4def7f8ab438644db8f71e763d363f97, type: 3}
   - {fileID: 21300000, guid: d18f084bc03e4eb4f96a1da6eb540ec2, type: 3}
@@ -101,6 +102,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b45fdf7d4d18d4976a0f41af1f822459, type: 3}
   - {fileID: 21300000, guid: d26305ddcc4e14775ae43fe869487b78, type: 3}
   - {fileID: 21300000, guid: 1838ebed55e4149599ea40b181e353d3, type: 3}
+  - {fileID: 21300000, guid: 4b267c6edfd071a4785e0556f2440568, type: 3}
   - {fileID: 21300000, guid: fd85738e05ab5417191e6c3169c7a0c4, type: 3}
   - {fileID: 21300000, guid: 921169dea6c71481490d94e1a2942953, type: 3}
   - {fileID: 21300000, guid: 7f819aee42df44c8ca582b3e1ac15d84, type: 3}
@@ -150,6 +152,7 @@ SpriteAtlas:
   - slider-horizontal
   - common-button
   - green
+  - dash
   - red
   - green-box-widel
   - Flag_of_Russia.svg
@@ -163,6 +166,7 @@ SpriteAtlas:
   - common-button-pressed
   - SmallBar
   - geen-box-small
+  - wall-jump
   - sharky-face
   - yellow-box-small
   - papper

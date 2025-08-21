@@ -1,5 +1,4 @@
 using PixelCrew.Model.Data;
-using PixelCrew.Model.Data.Properties;
 using PixelCrew.UI.Widgets;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +9,7 @@ namespace PixelCrew.UI.Windows.Settings
     {
         [Space] [Header("Sliders")]
         [SerializeField] private AudioSettingsSliderWidget _music;
+        
         [SerializeField] private AudioSettingsSliderWidget _sfx;
 
         [Space] [Header("Mute")] 
@@ -17,46 +17,39 @@ namespace PixelCrew.UI.Windows.Settings
         [SerializeField] private Sprite _onMute;
         [SerializeField] private Sprite _offMute;
 
-        private float _defaultMusic;
-        private float _defaultSfx;
+        private float _lastMusicVolume = 0.5f;
+        private float _lastSfxVolume = 0.5f;
+
+        private bool _isMute;
         
-        private bool _flag;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            OnSave(GameSettings.I.Music, GameSettings.I.Sfx);
-        }
-
         protected override void Start()
         {
             base.Start();
+            if (_isMute == true) return;
             _music.SetModel(GameSettings.I.Music);
             _sfx.SetModel(GameSettings.I.Sfx);
         }
 
-        private void OnSave(FloatPersistentProperty modelMusic, FloatPersistentProperty modelSfx)
-        {
-            _defaultMusic = modelMusic.Value;
-            _defaultSfx = modelSfx.Value;
-        }
-        
         public void OnMute()
         {
-            switch (_flag)
+            switch (_isMute)
             {
-                case false:
-                    _image.sprite = _offMute;
-                    GameSettings.I.Music.Value = _defaultMusic;
-                    GameSettings.I.Sfx.Value = _defaultSfx;
-                    _flag = true;
-                    break;
-                
                 case true:
                     _image.sprite = _onMute;
+                    _lastMusicVolume = GameSettings.I.Music.Value;
+                    _lastSfxVolume = GameSettings.I.Sfx.Value;
                     GameSettings.I.Music.Value = 0;
                     GameSettings.I.Sfx.Value = 0;
-                    _flag = false;
+                    _isMute = false;
+                    break;
+                
+                case false:
+                    _image.sprite = _offMute;
+                    GameSettings.I.Music.Value = _lastMusicVolume;
+                    GameSettings.I.Sfx.Value = _lastSfxVolume;
+                    _lastMusicVolume = GameSettings.I.Music.Value;
+                    _lastSfxVolume = GameSettings.I.Sfx.Value;
+                    _isMute = true;
                     break;
             }
         }

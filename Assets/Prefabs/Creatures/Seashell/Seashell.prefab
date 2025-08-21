@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 6058096184758432678}
   - component: {fileID: 6058096184758432679}
   - component: {fileID: 6058096184758432676}
+  - component: {fileID: 5457697181942461854}
   - component: {fileID: 6058096184758432677}
   - component: {fileID: 1743640633}
   - component: {fileID: 7215448693749611824}
@@ -401,6 +402,27 @@ PolygonCollider2D:
       - {x: 0.52951527, y: -0.38437706}
       - {x: 0.53807974, y: -0.16955832}
       - {x: 0.27650642, y: 0.03935334}
+--- !u!50 &5457697181942461854
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6058096184758432681}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!95 &6058096184758432677
 Animator:
   serializedVersion: 3
@@ -498,7 +520,6 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
-  _immune: 0
 --- !u!114 &1743640634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6058096184758432678}
   _prefab: {fileID: 3463489625641586832, guid: 53d4daa12c3b24ea093f3327f4e39d7f, type: 3}
+  _usePool: 0
 --- !u!1 &6058096184972760239
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,3 +810,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6058096186776423917}
   _prefab: {fileID: 2095589212933951376, guid: 27712600b4fed4d4e8ff422aff113758, type: 3}
+  _usePool: 0

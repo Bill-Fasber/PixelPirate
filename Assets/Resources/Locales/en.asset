@@ -64,12 +64,26 @@ MonoBehaviour:
     Value: "Let's go!\r"
   - Key: boss1-dialog-0-0
     Value: "I will kill you!\r"
-  - Key: boss1-dialog-0-2
+  - Key: boss1-dialog-0-1
     Value: "NO! I will kill you!\r"
   - Key: boss1-dialog-1-0
     Value: "No0000000!!!!!!!!!!\r"
   - Key: boss1-dialog-1-1
     Value: "I tolld ya!\r"
+  - Key: boss2-dialog-0-0
+    Value: "Dude, how the fuck did you get resurrected?\r"
+  - Key: boss2-dialog-0-1
+    Value: "I had a resurrection totem and I won't give it to you.\r"
+  - Key: boss2-dialog-0-2
+    Value: "Well, wait a minute, Patrick, you're going to be a blind man for the
+      second time.\r"
+  - Key: boss2-dialog-1-0
+    Value: "NOOOOOOOOOETttttttttt!!!! I won't give you a resurrection totem because...\r"
+  - Key: boss2-dialog-1-1
+    Value: "BECAUSE OF WHAT???\r"
+  - Key: boss2-dialog-1-2
+    Value: "It's disposable.......................................................................................
+      Bae (dead for good)\r"
   - Key: shield-info
     Value: "Use shield for self protection\r"
   - Key: dash-info

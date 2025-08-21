@@ -45,10 +45,10 @@ namespace PixelCrew.Creatures.Mobs
         {
             if (_isDead) return;
 
+            _target = go;
             // smth to do:
             var cast = Physics2D.LinecastAll(transform.position, _target.transform.position);
             
-            _target = go;
             StartState(AgroToHero());
         }
 

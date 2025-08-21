@@ -27,7 +27,7 @@ namespace PixelCrew.UI.Widgets
         }
 
         private void OnSliderValueChanged(float value)
-        {
+        { 
             _model.Value = value;
         }
 
@@ -39,7 +39,7 @@ namespace PixelCrew.UI.Widgets
             _slider.normalizedValue = newValue;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             _trash.Dispose();
         }

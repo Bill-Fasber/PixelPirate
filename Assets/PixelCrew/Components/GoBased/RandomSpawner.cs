@@ -11,7 +11,7 @@ namespace PixelCrew.Components.GoBased
 {
     public class RandomSpawner : MonoBehaviour
     {
-        [Header("Spawn bound:")] [SerializeField]
+        [Header("BombPoints bound:")] [SerializeField]
         private float _sectorAngle = 60;
 
         [SerializeField] private float _sectorRotation;
